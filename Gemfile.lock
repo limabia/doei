@@ -159,6 +159,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
     phantomjs (2.1.1.0)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
@@ -300,6 +301,7 @@ DEPENDENCIES
   jasmine
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rspec-rails (~> 4.0.1)
