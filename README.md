@@ -1,7 +1,7 @@
 # Doei!
 
 ## Integrações e Badges
-Travis: [![Build Status](https://travis-ci.org/limabia/sin5005-g1.svg?branch=master)](https://travis-ci.org/github/limabia/sin5005-g1)
+Travis: [![Build Status](https://travis-ci.org/limabia/doei.svg?branch=master)](https://travis-ci.org/github/limabia/doei)
 
 
 Codeclimate: [![Maintainability](https://api.codeclimate.com/v1/badges/74f36bdefb43b427e55f/maintainability)](https://codeclimate.com/github/limabia/sin5005-g1/maintainability)
