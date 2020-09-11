@@ -1,6 +1,6 @@
-# Repositório do grupo 1
+# Doei!
 
-## Integrações
+## Integrações e Badges
 Travis: [![Build Status](https://travis-ci.org/limabia/sin5005-g1.svg?branch=master)](https://travis-ci.org/github/limabia/sin5005-g1)
 
 
