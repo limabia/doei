@@ -109,6 +109,11 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -307,6 +312,10 @@
         1,
         null
       ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/helpers/usuarios_helper.rb": [
+        1,
+        null
+      ],
       "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/helpers/produtos_helper_spec.rb": [
         1,
         null,
@@ -369,6 +378,6 @@
         null
       ]
     },
-    "timestamp": 1600625927
+    "timestamp": 1600638221
   }
 }
