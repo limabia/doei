@@ -22,3 +22,16 @@
     <%= form.submit 'Salvar novo produto' %>
   </p>
 <% end %>
+
+<% if @produto.errors.any? %>
+<div id="error_explanation">
+    <h2>
+    <%= @produto.errors.count %> erro(s) impedem que o produto seja salvo:
+    </h2>
+    <ul>
+    <% @produto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+</div>
+<% end %>

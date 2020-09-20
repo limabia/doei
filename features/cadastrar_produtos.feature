@@ -14,3 +14,12 @@ Quando preencho o campo "Tamanho" com "M"
 E clico em salvar
 Então ele deve ter sido salvo no banco de dados
 E deverei ver o produto na página de listagem de produtos
+
+Cenário: Cadastro de produto com erro - sem nome
+Dado que estou na página de cadastro de produto
+Quando preencho o campo "Situacao" com "Novo"
+Quando preencho o campo "Categoria" com "Infantil"
+Quando preencho o campo "Tamanho" com "P"
+E deixo o campo "Nome" vazio
+E clico em salvar
+Então deverei ver a mensagem de erro "É obrigatório informar o nome do produto!"

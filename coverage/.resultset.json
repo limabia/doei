@@ -292,6 +292,7 @@
       "/home/usp/Desktop/UspSIn5005/Doei/doei/config/routes.rb": [
         1,
         1,
+        1,
         null
       ],
       "/home/usp/Desktop/UspSIn5005/Doei/doei/app/helpers/application_helper.rb": [
@@ -302,7 +303,58 @@
         1,
         null
       ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/helpers/produtos_helper.rb": [
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/helpers/produtos_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/models/produto_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/models/produto.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/requests/default_request_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/requests/produtos_request_spec.rb": [
         1,
         null,
         1,
@@ -310,6 +362,6 @@
         null
       ]
     },
-    "timestamp": 1600532308
+    "timestamp": 1600619240
   }
 }

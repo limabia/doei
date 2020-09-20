@@ -1,10 +1,15 @@
 class ProdutosController < ApplicationController
-    def new         
+    def new       
+        @produto = Produto.new  
     end
     def create
       @produto = Produto.new(produto_params) 
-      @produto.save
-      redirect_to @produto
+
+      if @produto.save
+        redirect_to @produto
+      else
+        render 'new'
+      end      
     end
     def show
         @produto = Produto.find(params[:id])
