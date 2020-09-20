@@ -23,3 +23,12 @@ Quando preencho o campo "Tamanho" com "P"
 E deixo o campo "Nome" vazio
 E clico em salvar
 Então deverei ver a mensagem de erro "É obrigatório informar o nome do produto!"
+
+Cenário: Cadastro de produto com erro - sem situacao
+Dado que estou na página de cadastro de produto
+Quando preencho o campo "Categoria" com "Infantil"
+Quando preencho o campo "Tamanho" com "P"
+E deixo o campo "Nome" vazio
+E deixo o campo "Situacao" vazio
+E clico em salvar
+Então deverei ver a mensagem de erro "É obrigatório informar a situação do produto!"

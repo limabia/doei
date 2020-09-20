@@ -8,4 +8,10 @@ RSpec.describe Produto, type: :model do
     produto.tamanho = "P"
     expect(produto).not_to be_valid
   end
+  it 'invalido sem a situacao' do
+    produto = Produto.new    
+    produto.categoria = "Infantil"
+    produto.tamanho = "P"
+    expect(produto).not_to be_valid
+  end
 end

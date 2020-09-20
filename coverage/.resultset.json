@@ -335,9 +335,16 @@
         1,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/home/usp/Desktop/UspSIn5005/Doei/doei/app/models/produto.rb": [
+        1,
         1,
         1,
         null
@@ -362,6 +369,6 @@
         null
       ]
     },
-    "timestamp": 1600619240
+    "timestamp": 1600621834
   }
 }
