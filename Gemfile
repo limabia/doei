@@ -30,7 +30,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :production do
   # Use postgresql as the database for Active Record
   gem 'pg', '>= 0.18', '< 2.0'
-  gem 'mini_racer', '~> 0.1.14'
 end 
 
 group :development, :test do
@@ -70,4 +69,3 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem 'ruby-debug-ide'
 gem 'debase'
-gem "autoprefixer-rails"
