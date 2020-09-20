@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2020_09_20_161406) do
 
+  create_table "produtos", force: :cascade do |t|
+    t.string "nome"
+    t.string "situacao"
+    t.string "categoria"
+    t.string "tamanho"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "email"

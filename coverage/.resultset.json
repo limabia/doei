@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/usp/Desktop/LAB/sin5005-g1/spec/helpers/default_helper_spec.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/helpers/default_helper_spec.rb": [
         1,
         null,
         null,
@@ -18,7 +18,7 @@
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/spec/rails_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -84,14 +84,14 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/environment.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/application.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/application.rb": [
         1,
         null,
         1,
@@ -108,17 +108,22 @@
         null,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/boot.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/boot.rb": [
         1,
         null,
         1,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/environments/test.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/environments/test.rb": [
         null,
         null,
         null,
@@ -169,7 +174,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/application_controller_renderer.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -179,7 +184,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/assets.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -195,7 +200,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/backtrace_silencers.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -204,7 +209,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/content_security_policy.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/content_security_policy.rb": [
         null,
         null,
         null,
@@ -236,20 +241,20 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/cookies_serializer.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/filter_parameter_logging.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/inflections.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -267,13 +272,13 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/mime_types.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/wrap_parameters.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -289,20 +294,83 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/routes.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/config/routes.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/helpers/default_helper.rb": [
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/helpers/produtos_helper.rb": [
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/helpers/usuarios_helper.rb": [
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/helpers/produtos_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/app/helpers/application_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/models/produto_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/models/produto.rb": [
+        1,
+        1,
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/app/helpers/default_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/app/models/application_record.rb": [
+        1,
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/spec/requests/default_request_spec.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/requests/default_request_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/doei/spec/requests/produtos_request_spec.rb": [
         1,
         null,
         1,
@@ -310,6 +378,6 @@
         null
       ]
     },
-    "timestamp": 1599317626
+    "timestamp": 1600638221
   }
 }

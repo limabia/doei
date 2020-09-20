@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :usuarios
-  get "/", to:"default#index"
+  resources :produtos 
+  root 'produtos#new'
 end
