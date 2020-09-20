@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/usp/Desktop/LAB/sin5005-g1/spec/helpers/default_helper_spec.rb": [
+      "/home/bianca/projects/sin5005-g1/spec/helpers/default_helper_spec.rb": [
         1,
         null,
         null,
@@ -18,7 +18,7 @@
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/spec/rails_helper.rb": [
+      "/home/bianca/projects/sin5005-g1/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -84,14 +84,14 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/environment.rb": [
+      "/home/bianca/projects/sin5005-g1/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/application.rb": [
+      "/home/bianca/projects/sin5005-g1/config/application.rb": [
         1,
         null,
         1,
@@ -112,13 +112,13 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/boot.rb": [
+      "/home/bianca/projects/sin5005-g1/config/boot.rb": [
         1,
         null,
         1,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/environments/test.rb": [
+      "/home/bianca/projects/sin5005-g1/config/environments/test.rb": [
         null,
         null,
         null,
@@ -169,7 +169,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/application_controller_renderer.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -179,7 +179,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/assets.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -195,7 +195,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/backtrace_silencers.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -204,7 +204,7 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/content_security_policy.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/content_security_policy.rb": [
         null,
         null,
         null,
@@ -236,20 +236,20 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/cookies_serializer.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/filter_parameter_logging.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/inflections.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -267,13 +267,13 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/mime_types.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/initializers/wrap_parameters.rb": [
+      "/home/bianca/projects/sin5005-g1/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -289,20 +289,88 @@
         null,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/config/routes.rb": [
+      "/home/bianca/projects/sin5005-g1/config/routes.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/bianca/projects/sin5005-g1/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/bianca/projects/sin5005-g1/app/helpers/default_helper.rb": [
+        1,
+        null
+      ],
+      "/home/bianca/projects/sin5005-g1/app/helpers/produtos_helper.rb": [
+        1,
+        null
+      ],
+      "/home/bianca/projects/sin5005-g1/spec/helpers/produtos_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/app/helpers/application_helper.rb": [
+      "/home/bianca/projects/sin5005-g1/spec/models/produto_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/bianca/projects/sin5005-g1/app/models/produto.rb": [
+        1,
+        1,
+        1,
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/app/helpers/default_helper.rb": [
+      "/home/bianca/projects/sin5005-g1/app/models/application_record.rb": [
+        1,
         1,
         null
       ],
-      "/home/usp/Desktop/LAB/sin5005-g1/spec/requests/default_request_spec.rb": [
+      "/home/bianca/projects/sin5005-g1/spec/requests/default_request_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/bianca/projects/sin5005-g1/spec/requests/produtos_request_spec.rb": [
         1,
         null,
         1,
@@ -310,6 +378,6 @@
         null
       ]
     },
-    "timestamp": 1599317626
+    "timestamp": 1600633997
   }
 }

@@ -1,0 +1,48 @@
+<h1>Doar um produto</h1>
+
+<% if @produto.errors.any? %>
+<div id="error_explanation">
+    <h2> Atenção:</h2>
+    <ul>
+    <% @produto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+</div>
+<% end %>
+
+<%= form_with scope: :produto, url: produtos_path, local: true do |form| %>
+
+<p>
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+</p>
+
+<p>
+    <%= form.label :categoria %>
+    <%= form.text_field :categoria %>
+</p>
+
+
+<p>
+    <%= form.label :estado %>
+    <%= form.text_field :estado %>
+</p>
+
+
+<p>
+    <%= form.label :tamanho %>
+    <%= form.text_field :tamanho %>
+</p>
+
+
+<p>
+    <%= form.label :marca %>
+    <%= form.text_field :marca %>
+</p>
+
+<p>
+    <%= form.submit 'Cadastrar' %>
+</p>
+
+<% end %>

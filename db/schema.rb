@@ -10,6 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_09_20_185037) do
+
+  create_table "produtos", force: :cascade do |t|
+    t.string "descricao"
+    t.string "categoria"
+    t.string "estado"
+    t.string "tamanho"
+    t.string "marca"
+    t.datetime "data_criacao"
+    t.datetime "data_atualizacao"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
