@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+
+ .min-width-btn {
+    min-width:100px;
+    margin:1px;
+  }
