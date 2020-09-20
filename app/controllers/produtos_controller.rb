@@ -1,4 +1,8 @@
 class ProdutosController < ApplicationController
+    def index   
+        @produto = Produto.new      
+        render 'new'
+    end
     def new       
         @produto = Produto.new  
     end
