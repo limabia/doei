@@ -1,0 +1,24 @@
+<h1>Novo produto</h1>
+<%= form_with scope: :produto, url: produtos_path, local: true do |form| %>
+  <p>
+    <%= form.label :nome %><br>
+    <%= form.text_field :nome %>
+  </p>
+ 
+  <p>
+    <%= form.label :situacao %><br>
+    <%= form.text_field :situacao %>
+  </p>
+
+  <p>
+    <%= form.label :categoria %><br>
+    <%= form.text_field :categoria %>
+  </p>  
+  <p>
+    <%= form.label :tamanho %><br>
+    <%= form.text_field :tamanho %>
+  </p>  
+  <p>
+    <%= form.submit 'Salvar novo produto' %>
+  </p>
+<% end %>
