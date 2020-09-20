@@ -30,7 +30,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :production do
   # Use postgresql as the database for Active Record
   gem 'pg', '>= 0.18', '< 2.0'
-  gem "autoprefixer-rails"
   gem 'mini_racer', '~> 0.1.14'
 end 
 
