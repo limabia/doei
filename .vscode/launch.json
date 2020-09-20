@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Rails server",
+        "type": "Ruby",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "program": "${workspaceRoot}/bin/rails",
+  
+        "useBundler": true,
+        "pathToRDebugIDE": "/var/lib/gems/2.5.0/gems/ruby-debug-ide-0.7.2",
+        "pathToBundler": "/usr/bin/bundle",
+        "args": ["server"]
+      }
+    ]
+  }
