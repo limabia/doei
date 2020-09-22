@@ -31,3 +31,31 @@
 
 en:
   hello: "Hello world"
+  "en-US": 
+  activerecord:
+    errors: 
+        template: 
+            body: Ocorreram erros de validação
+            header: 
+                one: 1 erro {{model}} encontrado
+                other: "{{count}} erros encontrados"  
+        messages:
+            inclusion: "is not included in the list"
+            exclusion: "is reserved"
+            invalid: "é invalido"
+            confirmation: "doesn't match confirmation"
+            accepted: "must be accepted"
+            empty: "não pode ser vazio"
+            blank: "não pode ser vazio"
+            too_long: "is too long (maximum is {{count}} characters)"
+            too_short: "deve ter ao menos {{count}} caracteres"
+            wrong_length: "is the wrong length (should be {{count}} characters)"
+            taken: "já existe"
+            not_a_number: "is not a number"
+            greater_than: "must be greater than {{count}}"
+            greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+            equal_to: "must be equal to {{count}}"
+            less_than: "must be less than {{count}}"
+            less_than_or_equal_to: "must be less than or equal to {{count}}"
+            odd: "must be odd"
+            even: "must be even"

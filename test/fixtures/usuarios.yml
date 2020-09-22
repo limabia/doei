@@ -2,16 +2,18 @@
 
 one:
   nome: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
   email: MyString
   cpf: MyString
-  dataNascimento: 2020-09-20
+  dataNascimento: 2020-09-22
   cep: MyString
   telefone: MyString
 
 two:
   nome: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
   email: MyString
   cpf: MyString
-  dataNascimento: 2020-09-20
+  dataNascimento: 2020-09-22
   cep: MyString
   telefone: MyString

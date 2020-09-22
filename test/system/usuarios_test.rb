@@ -19,6 +19,8 @@ class UsuariosTest < ApplicationSystemTestCase
     fill_in "Datanascimento", with: @usuario.dataNascimento
     fill_in "Email", with: @usuario.email
     fill_in "Nome", with: @usuario.nome
+    fill_in "Password", with: 'secret'
+    fill_in "Password confirmation", with: 'secret'
     fill_in "Telefone", with: @usuario.telefone
     click_on "Create Usuario"
 
@@ -35,6 +37,8 @@ class UsuariosTest < ApplicationSystemTestCase
     fill_in "Datanascimento", with: @usuario.dataNascimento
     fill_in "Email", with: @usuario.email
     fill_in "Nome", with: @usuario.nome
+    fill_in "Password", with: 'secret'
+    fill_in "Password confirmation", with: 'secret'
     fill_in "Telefone", with: @usuario.telefone
     click_on "Update Usuario"
 
