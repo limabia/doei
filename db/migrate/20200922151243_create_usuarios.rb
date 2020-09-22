@@ -2,6 +2,7 @@ class CreateUsuarios < ActiveRecord::Migration[6.0]
   def change
     create_table :usuarios do |t|
       t.string :nome
+      t.string :password_digest
       t.string :email
       t.string :cpf
       t.date :dataNascimento

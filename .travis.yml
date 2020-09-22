@@ -3,8 +3,13 @@ language: ruby
 rvm:
  - 2.7.1
 
+before_install:
+  - node -v
+  - nvm install --lts
+  - nvm use --lts
+
 script:
- - bundle update --bundler
+ - bundle update --bundler 
  - bundle exec rake db:migrate
  - bundle exec rspec spec
  - bundle exec cucumber
