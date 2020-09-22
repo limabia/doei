@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 2020_09_22_151243) do
     t.string "tamanho"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "usuario_id", null: false
+    t.string "descricao"
+    t.string "marca"
+    t.index ["usuario_id"], name: "index_produtos_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -34,4 +38,5 @@ ActiveRecord::Schema.define(version: 2020_09_22_151243) do
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 
+  add_foreign_key "produtos", "usuarios"
 end

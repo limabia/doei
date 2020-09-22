@@ -1,7 +1,7 @@
 #language: pt
 
 Funcionalidade: Cadastrar produtos
-Como administrador
+Como usuário
 Para que eu possa registrar os produtos disponiveis para doacao
 Eu quero cadastrar um produto no banco de dados
 
