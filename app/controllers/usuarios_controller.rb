@@ -28,7 +28,7 @@ class UsuariosController < ApplicationController
 
     respond_to do |format|
       if @usuario.save
-        format.html { redirect_to @usuario, notice: 'Usuario criado com sucesso.' }
+        format.html { redirect_to @usuario, notice: 'Usuário criado com sucesso.' }
         format.json { render :show, status: :created, location: @usuario }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :email, :cpf, :dataNascimento, :cep, :telefone)
+      params.require(:usuario).permit(:nome, :password, :password_confirmation, :email, :cpf, :dataNascimento, :cep, :telefone)
     end
 end

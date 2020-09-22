@@ -4,6 +4,9 @@
   Quando('preencho o campo {string} com {string}') do |string, string2|
     fill_in string, :with => string2
   end
+  Quando('preencho o drop {string} com {string}') do |string, string2|
+    page.select(string2, :from => string)    
+  end
   Quando('clico em salvar') do
     click_on "Salvar novo produto"
   end
