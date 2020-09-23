@@ -15,10 +15,11 @@ class ProdutosController < ApplicationController
         u = Usuario.new
         u.nome = 'user teste'
         u.email = 'user@teste.com'
-        u.cpf = '123456789'
-        u.dataNascimento = '2010-10-10'
+        u.cpf = '647.249.980-24'
+        u.dataNascimento = '2000-10-10'
         u.cep = '03590080'
         u.telefone = '11987678976'
+        u.password = 'secret123456'
         u.save
       else 
         u = Usuario.first
