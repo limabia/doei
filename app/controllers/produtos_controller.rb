@@ -1,7 +1,6 @@
 class ProdutosController < ApplicationController
     def index   
-        @produto = Produto.new      
-        render 'new'
+      @produtos = Produto.order :nome
     end
 
     def new       
@@ -27,7 +26,7 @@ class ProdutosController < ApplicationController
       # retirar esse trecho quando tiver criação de usuários e login funcionando
       @produto.usuario_id = u.id
       if @produto.save
-        redirect_to @produto
+        redirect_to produtos_path
       else
         render 'new'
       end      
