@@ -1,10 +1,14 @@
 class ProdutosController < ApplicationController
     def index   
-        @produto = Produto.new      
-        render 'new'
+        @produtos = Produto.order :nome
     end
 
-    def new       
+    def busca
+      @nome = params[:nome]
+      @produtos = Produto.where "nome like ?", "%#{@nome}%"
+    end
+
+    def create       
         @produto = Produto.new  
     end
 
@@ -41,4 +45,5 @@ class ProdutosController < ApplicationController
     def produto_params
        params.require(:produto).permit(:nome, :situacao, :categoria, :tamanho)
     end
+
 end
