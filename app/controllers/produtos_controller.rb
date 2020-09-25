@@ -31,19 +31,24 @@ class ProdutosController < ApplicationController
       # retirar esse trecho quando tiver criação de usuários e login funcionando
       @produto.usuario_id = u.id
       if @produto.save
-        redirect_to @produto
+        redirect_to produtos_path
       else
         render 'new'
       end      
     end
 
     def show
-        @produto = Produto.find(params[:id])
+      @produto = Produto.find(params[:id])
+    end
+
+    def errors
+      puts "Error"
     end
     
     private
     def produto_params
        params.require(:produto).permit(:nome, :situacao, :categoria, :tamanho)
     end
+
 
 end

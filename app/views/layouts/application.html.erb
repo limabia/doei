@@ -11,6 +11,9 @@
   <body>
     <%= nav_bar brand: "Doei!", brand_link: root_url do %>
       <%= menu_group do %>
+        <%= menu_item "Entrar", login_path %>
+      <% end %>
+      <%= menu_group do %>
         <%= menu_item "Cadastrar novo produto", new_produto_path %>
       <% end %>
       <%= form_tag busca_produto_path, method: :get, class:"navbar-form navbar-right" do %>

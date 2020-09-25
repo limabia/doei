@@ -17,7 +17,7 @@ class Usuario < ApplicationRecord
   validate :age_greater_than_18?
     def age_greater_than_18?
       if dataNascimento.present? && dataNascimento > Date.today - 18.years
-        errors.add(:dataNascimento, "Deve ser maior de 18 anos")
+        errors.add(:dataNascimento, "Deve ser  de 18 anos")
       end
     end
 end
