@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_000644) do
 
   create_table "produtos", force: :cascade do |t|
     t.string "nome"
+    t.string "apelido"
     t.string "situacao"
     t.string "categoria"
     t.string "tamanho"

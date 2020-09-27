@@ -1,6 +1,8 @@
-<div class="container-fluid">
-    <h1>Novo Usuario</h1>
-    <%= render 'form', usuario: @usuario %>
-    <br>
-    <%= link_to 'Voltar', usuarios_path, class:"btn btn-light min-width-btn" %>
-</div>
+<h1>Sign Up</h1>
+<%= form_for @usuario do |f|%>
+  <%= f.label :apelido%><br>
+  <%= f.text_field :apelido%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit %>
+<%end%>

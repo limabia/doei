@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :produtos, only: [:new, :create, :destroy, :edit]
-  resources :usuarios
-  get "/produtos", to:"produtos#index"
-  get "/login", to:"login#login"
-  get "/", to:"home#index"
+  resources :usuarios, only: [:new, :create]
+  get 'entrar', to: 'sessoes#new'
+  post 'entrar', to: 'sessoes#create'
+  get 'home', to: 'sessoes#welcome'
+  get 'sair', to: 'sessoes#destroy'
+  get 'authorized', to: 'sessoes#page_requires_login'
   root to:"home#index"
 end
