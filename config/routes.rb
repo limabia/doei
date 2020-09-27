@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'home', to: 'sessoes#welcome'
   get 'sair', to: 'sessoes#destroy'
   get 'cadastrar', to: 'usuarios#new'
+  get 'produtos/cadastrar', to: 'produtos#new'
   get 'authorized', to: 'sessoes#page_requires_login'
   root to:"home#index"
 end
