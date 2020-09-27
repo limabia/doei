@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'entrar', to: 'sessoes#create'
   get 'home', to: 'sessoes#welcome'
   get 'sair', to: 'sessoes#destroy'
+  get 'cadastrar', to: 'usuarios#new'
   get 'authorized', to: 'sessoes#page_requires_login'
   root to:"home#index"
 end
