@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+    background: #fff !important;
+    font-size: 14px;
+    height: 100%;
+    margin: 0px; 
+    padding: 0px;
+}
+
+/* Navbar Class*/
+.navbar > a.logo > img{
+    height: 40px;
+}
+.navbar-nav > li.nav-item{
+    font-size: 1em;
+    margin-left: 12px;
+}
+.navbar-nav > li.nav-item > a{
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #efefef;
+    background: #0d98ba;
+}
+.navbar-nav > li.nav-item > a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #0d98ba;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #0d98ba;
+    background: #efefef;
+}
+
+/* Home */
+#pagina-home{
+    background:#fff;
+    height: calc(100vh - 50px)
+}
+.quero-doacao, .quero-doar{
+    width: 50%;
+    background:#efefef;
+    height: 100%;
+    display: block;
+    border: 0px;
+    margin: 0px;
+    float: left;
+    opacity: 0.5;
+}
+.quero-doacao > a, .quero-doar > a{
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #efefef;
+    background: #0d98ba;
+    font-size: 2em;
+    
+}
+.quero-doacao > a{
+    position: absolute;
+    right: 5%;
+    top: 90%;
+}
+.quero-doar > a{
+    position: absolute;
+    left: 35%;
+    top: 90%;
+}
+.quero-doacao:hover, .quero-doar:hover{
+    opacity: 1;
+}
+.quero-doacao > a:hover, .quero-doar > a:hover{
+    color: #0d98ba;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #0d98ba;
+    background: #efefef;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Custom Class*/
+.bg-pink{
+    background: #D791D2 !important;
+}
+.bg-blue{
+    background: #0d98ba !important;
+}
+

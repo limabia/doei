@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm bg-pink navbar-dark">
+    <a class="navbar-brand logo" href="/"><%= image_tag("logo.png") %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex flex-row-reverse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <% if logged_in? %>
+            <li class="nav-item">
+                Olá, <%= current_user.apelido %>
+            </li>   
+            <li class="nav-item">
+                <a href="/sair">Sair</a>
+            </li>   
+            <% else %>  
+            <li class="nav-item">
+                <a href="/entrar">Entrar</a>
+            </li> 
+            <li class="nav-item">
+                <a href="/cadastrar">Cadastrar</a>
+            </li> 
+            <%end%>      
+        </ul>
+    </div>  
+</nav>
+
+
+
+    
+    
