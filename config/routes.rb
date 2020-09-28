@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'cadastrar', to: 'usuarios#new'
   get 'produtos/cadastrar', to: 'produtos#new'
   get 'authorized', to: 'sessoes#page_requires_login'
-  root to:"home#index"
+  get '/', to:"home#index"
 end

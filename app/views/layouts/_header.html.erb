@@ -10,14 +10,14 @@
                 Olá, <%= current_user.apelido %>
             </li>   
             <li class="nav-item">
-                <a href="/sair">Sair</a>
+                <a id="sair" href="/sair">Sair</a>
             </li>   
             <% else %>  
             <li class="nav-item">
-                <a href="/entrar">Entrar</a>
+                <a id="entrar" href="/entrar">Entrar</a>
             </li> 
             <li class="nav-item">
-                <a href="/cadastrar">Cadastrar</a>
+                <a id="cadastrar" href="/cadastrar">Cadastrar</a>
             </li> 
             <%end%>      
         </ul>
