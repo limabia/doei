@@ -17,4 +17,5 @@ E clico em "Entrar"
 Quando preencho o campo "Apelido" com "caiomelzer"
 Quando preencho o campo "Password" com "mewtwo"
 E clico em "Entrar"
-Então deverei estar na autenticado
+Então deverei ver o link "Sair"
+Então estarei autenticado como "caiomelzer"

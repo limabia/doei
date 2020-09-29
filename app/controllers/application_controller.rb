@@ -14,5 +14,4 @@ class ApplicationController < ActionController::Base
     end
     include SessoesHelper
     include UsuariosHelper
-
 end

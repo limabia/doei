@@ -22,8 +22,12 @@ Quando('preencho o campo {string} com {string}') do |string, string2|
     fill_in string, :with => string2
 end
 
-Então('deverei estar na autenticado') do
-    UsuariosHelper.entrar
+Então('estarei autenticado como {string}') do |string|
+    expect(sessoes.entrar_como(string)).to eq('logado caiomelzer')
+end
+
+Dado(' que devo estar na autenticado como {string}') do |string|
+    expect(sessoes.entrar_como(string)).to eq('logado caiomelzer')
 end
 
 Então('deverei estar na tela home') do
