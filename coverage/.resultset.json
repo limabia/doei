@@ -306,6 +306,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/application_helper.rb": [
@@ -322,6 +323,31 @@
       ],
       "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/sessoes_helper.rb": [
         1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/usuarios_helper.rb": [
@@ -390,6 +416,6 @@
         null
       ]
     },
-    "timestamp": 1601243173
+    "timestamp": 1601347431
   }
 }
