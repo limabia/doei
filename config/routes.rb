@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'sair', to: 'sessoes#destroy'
   get 'cadastrar', to: 'usuarios#new'
   get 'produtos/cadastrar', to: 'produtos#new'
+  get 'produtos', to: 'produtos#index'
   get 'authorized', to: 'sessoes#page_requires_login'
-  root to:"home#index"
+  get '/', to:"home#index"
 end
