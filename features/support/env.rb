@@ -58,5 +58,3 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 World(sessoes: SessoesHelper)
-
-Rails.application.config.session_store :cookie_store, key: '_your_app_session'
