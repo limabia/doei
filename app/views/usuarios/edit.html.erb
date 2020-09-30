@@ -1,6 +1,8 @@
+
 <div class="container-fluid">
-    <h1>Novo Usuario</h1>
+    <h1>Editar Usuario</h1>
     <%= render 'form', usuario: @usuario %>
     <br>
+    <%= link_to 'Detalhes', @usuario, class:"btn btn-light min-width-btn" %>
     <%= link_to 'Voltar', usuarios_path, class:"btn btn-light min-width-btn" %>
 </div>

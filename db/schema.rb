@@ -34,8 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_175335) do
     t.string "cep"
     t.string "telefone"
     t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "apelido"
+    t.datetime "updated_at", precision: 6, null: false    
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 

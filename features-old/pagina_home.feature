@@ -15,7 +15,7 @@ Cenário: Logar no sistema
 Dado que estou na página inicial
 Quando clico em Entrar
 Então deverei ver a tela de login
-Quando preencho o campo "Apelido" com "caiomelzer"
+Quando preencho o campo "Email" com "melzer.cai2o@gmail.com"
 Quando preencho o campo "Password" com "mewtwo"
 E clico em Entrar
 

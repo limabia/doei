@@ -7,7 +7,7 @@
         <ul class="navbar-nav">
             <% if logged_in? %>
             <li class="nav-item">
-                Olá, <%= current_user.apelido %>
+                Olá, <%= current_user.nome %>
             </li>   
             <li class="nav-item">
                 <a id="sair" href="/sair">Sair</a>

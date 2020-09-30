@@ -4,7 +4,8 @@ pass =  BCrypt::Password.create('mewtwo')
 
 db = SQLite3::Database.open('db/test.sqlite3')
 db.results_as_hash = true
-db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, cpf, dataNascimento, cep, telefone, apelido, created_at, updated_at) VALUES ('Caio Melzer','#{pass}', 'melzer.cai2o@gmail.com','37130262893','16/03/1989','05754060','11980872469','caiomelzer','121212','121212')")
+db.execute("DELETE FROM 'usuarios' WHERE email = 'melzer.cai2o@gmail.com'")
+db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, cpf, dataNascimento, cep, telefone, created_at, updated_at) VALUES ('Caio Melzer','#{pass}', 'melzer.cai2o@gmail.com','37130262893','16/03/1989','05754060','11980872469','121212','121212')")
 
 Dado('que estou na tela inicial') do 
     visit '/'

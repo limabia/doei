@@ -9,7 +9,7 @@ Cenário: Cadastro de produto com sucesso
 Dado que estou na página inicial
 Quando clico em Entrar
 Então deverei ver a tela de login
-Quando preencho o campo "Apelido" com "caiomelzer"
+Quando preencho o campo "Email" com "melzer.cai2o@gmail.com"
 Quando preencho o campo "Password" com "mewtwo"
 Dado que estou na página de cadastro de produto
 Quando preencho o campo "Nome" com "Camiseta"
