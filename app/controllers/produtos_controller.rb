@@ -9,7 +9,7 @@ class ProdutosController < ApplicationController
 
     def create
       @produto = Produto.new(produto_params) 
-      @produto.usuario_id = session[:usuario_id]
+      #@produto.usuario_id = session[:usuario_id]
       if @produto.save
         redirect_to produtos_path
       else
