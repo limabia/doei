@@ -7,7 +7,7 @@ class SessoesController < ApplicationController
    def login
    end
    def create
-      @usuario = Usuario.find_by(apelido: params[:apelido])
+      @usuario = Usuario.find_by(email: params[:email])
       if @usuario && @usuario.authenticate(params[:password])
          entrar @usuario
          redirect_to '/home'

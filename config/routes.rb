@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :usuarios, only: [:new, :create]
+  resources :usuarios
   resources :produtos, only: [:new, :create, :destroy, :edit]
   get 'entrar', to: 'sessoes#new'
   post 'entrar', to: 'sessoes#create'
