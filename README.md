@@ -17,23 +17,23 @@ Coveralls: [![Coverage Status](https://coveralls.io/repos/github/limabia/sin5005
 
 
 
-## Integrantes
-Bianca L. Santos
+## Integrantes - Git
+Bianca L. Santos - [limabia](https://github.com/limabia)
 
 
-Bruno E. M. Barros
+Bruno E. M. Barros - [BrnEmilio](https://github.com/BrnEmilio)
 
 
-Caio M. de Oliveira
+Caio M. de Oliveira - [caiomelzer](https://github.com/caiomelzer)
 
 
-Marcelo F. Rodrigues
+Marcelo F. Rodrigues - [marcelofrodrigues](https://github.com/marcelofrodrigues)
 
 
-Mauricio T. Ozaki
+Mauricio T. Ozaki - [mautoz](https://github.com/mautoz)
 
 
-Renato M. Takakura
+Renato M. Takakura - [renatotkr](https://github.com/renatotkr)
 
 
 
