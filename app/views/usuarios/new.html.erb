@@ -1,6 +1,11 @@
-<div class="container-fluid">
-    <h1>Novo Usuario</h1>
-    <%= render 'form', usuario: @usuario %>
-    <br>
-    <%= link_to 'Voltar', usuarios_path, class:"btn btn-light min-width-btn" %>
-</div>
+<%= render '/layouts/info' %>
+<body>
+    <%= render '/layouts/header' %>
+    <div class="container-fluid col-9 mt-4">
+        <h2>Novo Usuário</h2>
+        <%= render 'form', usuario: @usuario %>
+        <br>
+        <%= link_to 'Voltar', usuarios_path, class:"btn btn-light min-width-btn" %>
+    </div>
+</body>
+<%= render '/layouts/footer' %>
