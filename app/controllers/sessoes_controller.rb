@@ -6,13 +6,16 @@ class SessoesController < ApplicationController
    end
    def login
    end
-   def create
+   def create      
       @usuario = Usuario.find_by(email: params[:email])
       if @usuario && @usuario.authenticate(params[:password])
          entrar @usuario
          redirect_to '/home'
       else
-         redirect_to '/entrar'
+         respond_to do |format|
+         @faillogin = true;
+         format.html { render :new }
+         end
       end
    end
    def page_requires_login
