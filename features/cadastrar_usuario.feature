@@ -20,3 +20,4 @@ Quando preencho o drop "usuario[dataNascimento(2i)]" com "July"
 Quando preencho o drop "usuario[dataNascimento(3i)]" com "17"
 Quando preencho o campo "Telefone" com "11551234"
 E clico em "Salvar"
+Então ele deve ter sido salvo usuario
