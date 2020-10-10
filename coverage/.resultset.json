@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/c/Users/caiomelzer/Development/doei/spec/helpers/default_helper_spec.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/spec/helpers/default_helper_spec.rb": [
         1,
         null,
         null,
@@ -18,7 +18,7 @@
         1,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/spec/rails_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -84,14 +84,14 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/environment.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/application.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/application.rb": [
         1,
         null,
         1,
@@ -117,13 +117,13 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/boot.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/boot.rb": [
         1,
         null,
         1,
         1
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/environments/test.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/environments/test.rb": [
         null,
         null,
         null,
@@ -174,7 +174,7 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/application_controller_renderer.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -184,7 +184,7 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/assets.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -200,7 +200,7 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/backtrace_silencers.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -209,7 +209,7 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/content_security_policy.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/content_security_policy.rb": [
         null,
         null,
         null,
@@ -241,20 +241,20 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/cookies_serializer.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/filter_parameter_logging.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/inflections.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -272,13 +272,13 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/mime_types.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/initializers/wrap_parameters.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -294,7 +294,7 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/config/routes.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/config/routes.rb": [
         1,
         1,
         1,
@@ -307,21 +307,22 @@
         1,
         1,
         1,
-        null
-      ],
-      "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/default_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/produtos_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/app/helpers/default_helper.rb": [
         1,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/sessoes_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/app/helpers/produtos_helper.rb": [
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/app/helpers/sessoes_helper.rb": [
         1,
         1,
         0,
@@ -350,11 +351,11 @@
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/app/helpers/usuarios_helper.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/app/helpers/usuarios_helper.rb": [
         1,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/spec/helpers/produtos_helper_spec.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/spec/helpers/produtos_helper_spec.rb": [
         1,
         null,
         null,
@@ -367,48 +368,48 @@
         null,
         null,
         null,
-        1,
-        1,
-        null
-      ],
-      "/mnt/c/Users/caiomelzer/Development/doei/spec/models/produto_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/mnt/c/Users/caiomelzer/Development/doei/app/models/produto.rb": [
-        1,
         1,
         1,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/app/models/application_record.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/spec/models/produto_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/app/models/produto.rb": [
+        1,
         1,
         1,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/spec/requests/default_request_spec.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/spec/requests/default_request_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/mnt/c/Users/caiomelzer/Development/doei/spec/requests/produtos_request_spec.rb": [
+      "/home/usp/Desktop/UspSIn5005/Doei/Perfil/doei/spec/requests/produtos_request_spec.rb": [
         1,
         null,
         1,
@@ -416,6 +417,6 @@
         null
       ]
     },
-    "timestamp": 1601347431
+    "timestamp": 1602342713
   }
 }
