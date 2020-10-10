@@ -1,0 +1,62 @@
+/* Home */
+#pagina-home {
+    background: #fff;
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+.quero-doacao {
+    background: asset_url("receber.jpg");
+}
+
+
+.quero-doar {
+    background: asset_url("doar.jpg");
+}
+
+.quero-doacao,
+.quero-doar {
+    height: 100%;
+    min-height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-primario {
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    background: #0d98ba;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    &:hover {
+        opacity: 1;
+        color: #0d98ba;
+        font-weight: bold;
+        padding: 5px 10px;
+        border: 2px solid #0d98ba;
+        background: #efefef;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.home {
+    h4 {
+        color: white;
+    }
+    .btn-primario {
+        font-size: 1.5em;
+    }
+}
+
+/* Custom Class*/
+.bg-pink {
+    background: #D791D2;
+}
+
+.bg-blue {
+    background: #0d98ba;
+}
