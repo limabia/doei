@@ -1,12 +1,44 @@
 <%= render '/layouts/info' %>
-<body> 
+
+<body>
     <%= render '/layouts/header' %>
-    <div class="quero-doar">
-      <a href="#">Quero Doar</a> 
-    </div>
-    <div class="quero-doacao">
-      <a href="#">Quero Doação</a> 
-    </div>
-<%= render '/layouts/footer' %>
 
+    <h4 class="text-center my-4 mx-3 p-5">
+        Olá, seja bem vindo! Nós somos uma plataforma para conectar doadores e resgatadores. <br>
+        A proposta da nossa plataforma é repensar a forma como consumimos e trazendo a você a possibilidade
+        de ajudar pessoas e poupar seu bolso e a longo prazo ajudar a preservar o planeta.
+    </h4>
 
+    <div class="row home">
+        <div class="col-12 col-md-6 quero-doar d-flex">
+            <div class="m-3 row align-items-center justify-content-center">
+                <div class="col-12 p-4 bg-pink">
+                    <h4 class="text-center my-3">
+                        Sabe aquela peça ou objeto que está largado na sua casa e você nunca mais usou e não tem planos de usar?
+                        Que tal beneficiar alguém com ela?
+                    </h4>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="btn-primario">Quero Doar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 quero-doacao d-flex">
+            <div class="m-3 row align-items-center justify-content-center">
+                <div class="col-12 p-4 bg-pink">
+                    <h4 class="text-center my-3">
+                        Já pensou que as peças ou objetos que você tanto deseja comprar podem estar esperando por um novo dono?
+                        E você não precisa pagar nada por eles?
+                    </h4>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="btn-primario">Quero Doação</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <%= render '/layouts/footer' %>
+</body>
