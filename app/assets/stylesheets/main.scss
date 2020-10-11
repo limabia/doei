@@ -34,6 +34,37 @@ $radius-padrao: 5px;
     }
 }
 
+.btn-secundario-nopad {
+    color: $rosa;
+    font-weight: bold;
+    padding: 5px 10px;
+    background: white;
+    border: 2px solid $rosa;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: $radius-padrao;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        color: white;
+        font-weight: bold;
+        background: $rosa;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.buscar-produto-menu{
+    border: 2px solid $rosa;
+    line-height: 2em;
+}
+.texto-azul{
+    color: $azul;
+}
+.texto-rosa{
+    color: $rosa;
+}
+    
+
 /* Navbar Class*/
 .navbar {
     background: #fff;
@@ -44,7 +75,9 @@ $radius-padrao: 5px;
         height: 40px;
     }
 }
-
+form.nav-item{
+    margin-top: -6px;
+}
 .navbar-nav>li.nav-item {
     font-size: 1em;
     margin-left: 12px;
