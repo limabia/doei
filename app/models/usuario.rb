@@ -1,7 +1,7 @@
 class Usuario < ActiveRecord::Base
     has_secure_password
     validates :nome, presence:  true
-    validates :password, length: { minimum: 6 }
+    validates :password, length: { minimum: 6}, presence: { message: "É obrigatório informar a senha correta para relizar alteração." }    
     validates :email,
         presence: true,
         uniqueness: true,
@@ -19,5 +19,5 @@ class Usuario < ActiveRecord::Base
       if dataNascimento.present? && dataNascimento > Date.today - 18.years
         errors.add(:dataNascimento, "Deve ser maior de 18 anos")
       end
-    end
+    end    
 end

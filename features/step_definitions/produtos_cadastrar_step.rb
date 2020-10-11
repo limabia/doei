@@ -8,9 +8,7 @@ end
 Quando('preencho o drop {string} com {string}') do |string, string2|
     page.select(string2, :from => string)    
 end
-Quando('clico em salvar') do
-click_on "Salvar novo produto"
-end
+
 Então('ele deve ter sido salvo no banco de dados') do
 produto = Produto.order("id").last
 expect(produto.nome).to eq('Camiseta')

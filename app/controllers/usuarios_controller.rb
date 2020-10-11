@@ -34,7 +34,7 @@ class UsuariosController < ApplicationController
   respond_to do |format|
     if @usuario.save
       session[:usuario_id] = @usuario.id
-      format.html { redirect_to '/home', notice: 'Usuário criado com sucesso.' }
+      format.html { redirect_to '/home', notice: 'Usuário criado com sucesso. ' }
     else
       format.html { render :new }
       format.json { render json: @usuario.errors, status: :unprocessable_entity }
