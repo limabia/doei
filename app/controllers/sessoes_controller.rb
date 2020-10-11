@@ -1,16 +1,20 @@
 class SessoesController < ApplicationController
-   skip_before_action :authorized, only: [:new, :create, :welcome]
+   skip_before_action :authorized, only: [:new, :create, :welcome, :busca]
    include SessoesHelper
 
    def new
    end
    def login
    end
+   def busca
+      @nome = params[:nome]
+      @produtos = Produto.where "nome like ?", "%#{@nome}%"
+   end
    def create      
       @usuario = Usuario.find_by(email: params[:email])
       if @usuario && @usuario.authenticate(params[:password])
          entrar @usuario
-         redirect_to '/home'
+         redirect_to '/produtos'
       else
          respond_to do |format|
          @faillogin = true;
