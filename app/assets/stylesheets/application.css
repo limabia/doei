@@ -13,30 +13,41 @@
  *= require_tree .
  *= require_self
  */
-body{
+body {
     background: #fff !important;
     font-size: 14px;
     height: 100%;
-    margin: 0px; 
+    margin: 0px;
     padding: 0px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Navbar Class*/
-.navbar > a.logo > img{
+.navbar {
+    background: #fff;
+    box-shadow: 0 1px 15px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
+}
+
+.navbar>a.logo>img {
     height: 40px;
 }
-.navbar-nav > li.nav-item{
+
+.navbar-nav>li.nav-item {
     font-size: 1em;
     margin-left: 12px;
 }
-.navbar-nav > li.nav-item > a{
+
+.navbar-nav>li.nav-item>a {
     color: #333;
     font-weight: bold;
     padding: 5px 10px;
     border: 2px solid #efefef;
     background: #0d98ba;
 }
-.navbar-nav > li.nav-item > a:hover{
+
+.navbar-nav>li.nav-item>a:hover {
     text-decoration: none;
     cursor: pointer;
     color: #0d98ba;
@@ -132,4 +143,4 @@ body{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-  
+
