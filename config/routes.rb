@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'cadastrar', to: 'usuarios#new'
   get 'produtos/cadastrar', to: 'produtos#new'
   get 'sessoes/busca', to: 'sessoes#busca', as: :buscar_produto
+  post 'sessoes/busca', to: 'sessoes#busca'
   get 'produtos', to: 'produtos#index'
   get 'authorized', to: 'sessoes#page_requires_login'
   get '/', to:"home#index"
