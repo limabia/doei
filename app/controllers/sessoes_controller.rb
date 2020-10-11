@@ -14,7 +14,7 @@ class SessoesController < ApplicationController
       @usuario = Usuario.find_by(email: params[:email])
       if @usuario && @usuario.authenticate(params[:password])
          entrar @usuario
-         redirect_to '/produtos'
+         redirect_to '/'
       else
          respond_to do |format|
          @faillogin = true;
