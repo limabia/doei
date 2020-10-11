@@ -1,7 +1,7 @@
 
    <%= form_tag '/entrar' do %>
       <div class="form-signin"> 
-      <%= image_tag("logo.png") %>
+      <%= image_tag("logo.png", height: '100%', width: '100%') %>
       <h1 class="h3 mb-3 font-weight-normal">Bem vindo</h1>
       <% if @faillogin %>
       <div class="alert alert-danger" role="alert">
