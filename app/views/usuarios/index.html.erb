@@ -14,33 +14,31 @@
       </tr>
     </thead>
     <tbody>
-      <% @usuarios.find(current_user.id) do |usuario| %>
         <tr>
-                      <td>
-              <%= usuario.nome %>
+            <td>
+              <%= current_user.nome %>
             </td>      
                       <td>
-              <%= usuario.email %>
+              <%= current_user.email %>
             </td>      
                       <td>
-              <%= usuario.cpf %>
+              <%= current_user.cpf %>
             </td>      
                       <td>
-              <%= usuario.dataNascimento %>
+              <%= current_user.dataNascimento %>
             </td>      
                       <td>
-              <%= usuario.cep %>
+              <%= current_user.cep %>
             </td>      
                       <td>
-              <%= usuario.telefone %>
+              <%= current_user.telefone %>
             </td>      
                     <td>
-          <%= link_to 'Detalhes', usuario, class:"btn btn-light min-width-btn" %>
-          <%= link_to 'Editar', edit_usuario_path(usuario),class:"btn btn-primary min-width-btn"  %>     
-          <%= link_to 'Deletar', usuario, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger min-width-btn"%>
+          <%= link_to 'Detalhes', current_user, class:"btn btn-light min-width-btn" %>
+          <%= link_to 'Editar', edit_usuario_path(current_user),class:"btn btn-primary min-width-btn"  %>     
+          <%= link_to 'Deletar', current_user, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger min-width-btn"%>
           </td>
         </tr>
-      <% end %>
     </tbody>
   </table>
   <br>
