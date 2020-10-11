@@ -6,12 +6,6 @@ class ProdutosController < ApplicationController
     def new       
         @produto = Produto.new  
     end
-
-    def busca
-      @nome = params[:nome]
-      @produtos = Produto.where "nome like ?", "%#{@nome}%"
-    end
-
     def create
       @produto = Produto.new(produto_params) 
       # TODO pegar da session o usuario
