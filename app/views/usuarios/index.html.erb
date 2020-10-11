@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @usuarios.each do |usuario| %>
+      <% @usuarios.find(current_user.id) do |usuario| %>
         <tr>
                       <td>
               <%= usuario.nome %>
@@ -44,5 +44,9 @@
     </tbody>
   </table>
   <br>
-  <%= link_to 'Novo Usuario', new_usuario_path,class:"btn btn-success min-width-btn" %>
+  <% if logged_in? && current_user.nome == 'admin' %>
+    <%= link_to 'Novo Usuario', new_usuario_path,class:"btn btn-success min-width-btn" %>
+  <% end %>
+  <hr>
+   <a id="voltar" href="/" class="btn btn-light min-width-btn">Voltar</a>  
 </div>

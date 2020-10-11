@@ -9,5 +9,5 @@ Eu quero buscar um produto no banco de dados sem precisar logar
 Cenário: Realizar uma busca sem login
 Dado que estou na tela inicial permitida sem login
 Então preencho o campo "nome" com "camiseta"
-E clico em Buscar
-Então deverei ver o resultado da busca
+E clico em "Buscar"
+Então deverei ver o "Resultado da busca"
