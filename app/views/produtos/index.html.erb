@@ -1,31 +1,36 @@
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <td>Nome</td>
-            <td>Situação</td>
-            <td>Categoria</td>
-            <td>Tamanho</td>
-            <td>Descrição</td>
-            <td>Marca</td>
-            <td colspan="1">
-        </tr>
-    </thead>
-    <tbody>
+<%= render '/layouts/info' %>
+<%= render '/layouts/header' %>
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Situação</td>
+                    <td>Categoria</td>
+                    <td>Tamanho</td>
+                    <td>Descrição</td>
+                    <td>Marca</td>
+                    <td colspan="1">
+                </tr>
+            </thead>
+            <tbody>
 
-    <% @produtos.each do |produto| %>
-        <tr>
-            <td><%= produto.nome %></td>
-            <td><%= produto.situacao %></td>
-            <td><%= produto.categoria %></td>
-            <td><%= produto.tamanho %></td>
-            <td><%= produto.descricao %></td>
-            <td><%= produto.marca %></td>
-            <!-- A ideia é que essa opção fique disponível apenas para -->
-            <!-- os produtos que o usuário cadastrou. --> 
-            <td><%= button_to "Remover", produto, method: :delete, 
-            class:"btn btn-danger",
-            data: {confirm: "Tem certeza que deseja remover o produto #{produto.nome}"} %></td>
-        </tr>
-    <% end %>
-    </tbody>
-</table>
+            <% @produtos.each do |produto| %>
+                <tr>
+                    <td><%= produto.nome %></td>
+                    <td><%= produto.situacao %></td>
+                    <td><%= produto.categoria %></td>
+                    <td><%= produto.tamanho %></td>
+                    <td><%= produto.descricao %></td>
+                    <td><%= produto.marca %></td>
+                    <!-- A ideia é que essa opção fique disponível apenas para -->
+                    <!-- os produtos que o usuário cadastrou. --> 
+                    <td><%= button_to "Remover", produto, method: :delete, 
+                    class:"btn btn-danger",
+                    data: {confirm: "Tem certeza que deseja remover o produto #{produto.nome}"} %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+    </div>
+<%= render '/layouts/footer' %>
