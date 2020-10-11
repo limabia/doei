@@ -1,7 +1,7 @@
 class Usuario < ActiveRecord::Base
     has_secure_password
     validates :nome, presence:  true
-    validates :password, length: { minimum: 6}, presence: { message: "É obrigatório informar a senha correta para relizar alteração." }    
+    validates :password, length: { minimum: 6}, presence: { message: "É obrigatório informar a senha correta para realizar alteração." }    
     validates :email,
         presence: true,
         uniqueness: true,
