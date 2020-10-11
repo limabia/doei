@@ -29,7 +29,7 @@
                 <%= form_tag buscar_produto_path, method: :get, class:"nav-item" do %>
                     <div>
                         <%= text_field_tag :nome, @nome, class:"nav-item" %>
-                        <%= button_to "Buscar", nil, class:"btn btn-primary" %>
+                        <%= button_to "Buscar", nil, class:"btn btn-primary", id:"buscar" %>
                     </div>
                 <% end %>
             </li>
