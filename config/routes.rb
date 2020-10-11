@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'entrar', to: 'sessoes#new'
   post 'entrar', to: 'sessoes#create'
-  get 'home', to: 'sessoes#welcome'
+  get 'home', to:"home#index"
   get 'sair', to: 'sessoes#destroy'
   get 'cadastrar', to: 'usuarios#new'
   get 'perfil', to: 'usuarios#edit'
