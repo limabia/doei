@@ -1,0 +1,179 @@
+/* variaveis */
+$rosa: #D971D2;
+$azul: #0d98ba;
+$branco-gelo: #efefef;
+$radius-padrao: 5px;
+
+
+/* componentes padroes */
+.bg-pink {
+    background: $rosa;
+}
+
+.bg-blue {
+    background: $azul;
+}
+
+.btn-primario {
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    background: $azul;
+    border: 2px solid $azul;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: $radius-padrao;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        color: $azul;
+        font-weight: bold;
+        background: $branco-gelo;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.btn-secundario-nopad {
+    color: $rosa;
+    font-weight: bold;
+    padding: 5px 10px;
+    background: white;
+    border: 2px solid $rosa;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: $radius-padrao;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        color: white;
+        font-weight: bold;
+        background: $rosa;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.buscar-produto-menu{
+    border: 2px solid $rosa;
+    line-height: 2em;
+}
+.texto-azul{
+    color: $azul;
+}
+.texto-rosa{
+    color: $rosa;
+}
+    
+
+/* Navbar Class*/
+.navbar {
+    background: #fff;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+
+    a.logo>img {
+        height: 40px;
+    }
+}
+form.nav-item{
+    margin-top: -6px;
+}
+.navbar-nav>li.nav-item {
+    font-size: 1em;
+    margin-left: 12px;
+}
+
+.navbar-nav>li.nav-item>a {
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid $azul;
+    background: $azul;
+    border-radius: $radius-padrao;
+
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        color: $azul;
+        font-weight: bold;
+        border: 2px solid $azul;
+        background: $branco-gelo;
+    }
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+
+    .checkbox {
+        font-weight: 400;
+    }
+
+    .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+
+        &:focus {
+            z-index: 2;
+        }
+    }
+
+    &:input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    &:input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+
+/* Home */
+#pagina-home {
+    background: branco;
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+.quero-doacao {
+    background: asset_url("receber.jpg");
+}
+
+
+.quero-doar {
+    background: asset_url("doar.jpg");
+}
+
+.quero-doacao,
+.quero-doar {
+    opacity: 0.7;
+    height: 100%;
+    min-height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+
+.home {
+    h4 {
+        color: white;
+    }
+
+    .btn-primario {
+        font-size: 1.5em;
+    }
+}

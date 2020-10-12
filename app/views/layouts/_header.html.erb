@@ -1,38 +1,41 @@
-<nav class="navbar navbar-expand-sm bg-pink navbar-dark">
+<nav class="navbar navbar-expand-sm navbar-dark">
     <a class="navbar-brand logo" href="/"><%= image_tag("logo.png") %></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse d-flex flex-row-reverse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <% if logged_in? %>
             <li class="nav-item">
-                Olá, <%= current_user.nome %>
-            </li>   
+                <a id="cadastrar-produto" href="/produtos/new" class="nav-link">Cadastrar produto</a>
+            </li>
             <li class="nav-item">
-                <a id="sair" href="/sair">Sair</a>
-            </li>   
-            <% else %>  
+                Olá, <%= current_user.nome %>
+            </li>
+            <li class="nav-item">
+                <a id="sair" href="/sair">Sair</a>                
+            </li>
+            <li class="nav-item">
+                <a id="usuarios" href="/usuarios" class="nav-link">Perfil</a>
+            </li>
+            <% else %>
             <li class="nav-item">
                 <a id="entrar" href="/entrar">Entrar</a>
-            </li> 
+            </li>
             <li class="nav-item">
                 <a id="cadastrar" href="/cadastrar">Cadastrar</a>
-            </li> 
-            <%end%> 
-            <li> 
-                <%= form_tag busca_produto_path, method: :get, class:"navbar-form navbar-right" do %>
-                    <div class="form-group">
-                        <%= text_field_tag :nome, @nome, class:"form-control" %>
-                        <%= button_to "Buscar", nil, class:"btn btn-default" %>
+            </li>
+            <%end%>
+            <li class="nav-item">
+                <%= form_tag buscar_produto_path, method: :get, class:"nav-item" do %>
+                    <div>
+                        <%= text_field_tag :nome, @nome, class:"buscar-produto-menu" %>
+                        <%= button_to "Buscar", nil, class:"btn-secundario-nopad", id:"buscar" %>
                     </div>
                 <% end %>
-            </li>  
+            </li>
         </ul>
-    </div>  
+    </div>
 </nav>
-
-
-
-    
-    
