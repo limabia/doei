@@ -1,24 +1,29 @@
 #language: pt
 
-Funcionalidade: Cadastrar usuário
-Como usuário da plataforma sem cadastro.
-De forma que eu consiga cadastrar meu usuário na plataforma.
-Eu quero ter acesso na plataforma.
+Funcionalidade: Cadastrar usuarios
+Como Usuario
+Para que eu possa me registrar na plataforma
+Eu quero me cadastrar como novo usuário
 
 Cenário: Cadastro de usuario com sucesso
-Dado que estou na tela inicial
-Então deverei ver o link "Cadastrar"
-E clico em "Cadastrar"
-Quando preencho o campo "Nome" com "testa6"
-Quando preencho o campo "Email" com "testa6@gmail.com"
-Quando preencho o campo "Cep" com "01234567"
-Quando preencho o campo "Cpf" com "396.372.210-00"
-Quando preencho o campo "usuario[password]" com "testa6"
-Quando preencho o campo "usuario[password_confirmation]" com "testa6"
-Quando preencho o drop "usuario[dataNascimento(1i)]" com "1971"
-Quando preencho o drop "usuario[dataNascimento(2i)]" com "July"
-Quando preencho o drop "usuario[dataNascimento(3i)]" com "17"
-Quando preencho o campo "Telefone" com "11551234"
-E clico em "Salvar"
-Então ele deve ter sido salvo usuario
-Então deverei ver o link "Sair"
+Dado que estou na página de cadastro de usuario
+Quando preencho o campo "Nome" com "Teste Novo Usuario"
+Quando preencho o campo "usuario[password]" com "123456"
+Quando preencho o campo "usuario[password_confirmation]" com "123456"
+Quando preencho o campo "cadastrar_form_email" com "email@usuario.com"
+E clico em salvar usuario
+Então o usuario "Teste Novo Usuario" com o email "email@usuario.com" deve ter sido salvo
+
+Cenário: Cadastro de usuario com erro
+Dado que estou na página de cadastro de usuario
+Quando clico em salvar usuario
+E deverei ver a mensagem de erro "Email não pode ser vazio"
+
+Cenário: Cadastro de usuario com erro de confirmacao de senha
+Dado que estou na página de cadastro de usuario
+Quando preencho o campo "Nome" com "Novo Usuario"
+Quando preencho o campo "usuario[password]" com "senha123"
+Quando preencho o campo "usuario[password_confirmation]" com "senha_diferente"
+Quando preencho o campo "cadastrar_form_email" com "email@usuario.com"
+E clico em salvar usuario
+E deverei ver a mensagem de erro "Password confirmation doesn't match confirmation"
