@@ -15,18 +15,17 @@
   </div>
   <div class="form-group col-10">
     <%= form.label :email %>
-    <%= form.text_field :email  ,class:"form-control", id:"cadastrar_form_email"%>
+    <%= form.text_field :email  ,class:"form-control" %>
   </div>
   <div class="form-group col-6">
     <%= form.label :Senha %>
-    <%= form.password_field :password, class:"form-control", id:"cadastrar_form_senha" %>
+    <%= form.password_field :password, class:"form-control" %>
   </div>
   <div class="form-group col-6">
     <%= form.label :Redigite_Senha %>
     <%= form.password_field :password_confirmation ,class:"form-control" %>
-  </div>
-  
-  <!-- <div class="form-group col-6">
+  </div>  
+  <div class="form-group col-6">
     <%= form.label :cpf %>
     <%= form.text_field :cpf  ,class:"form-control"%>
   </div>
@@ -41,8 +40,8 @@
   <div class="form-group col-6">
     <%= form.label :telefone %>
     <%= form.text_field :telefone  ,class:"form-control"%>
-  </div> -->
+  </div> 
   <div class="actions col-3">
-    <%= form.submit "Salvar", class:"btn btn-success min-width-btn", id:"cadastrar_form_botao_salvar" %>
+    <%= form.submit "Salvar", class:"btn btn-success min-width-btn" %>
   </div>  
 <% end %>
