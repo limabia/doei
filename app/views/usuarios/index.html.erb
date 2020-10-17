@@ -1,50 +1,53 @@
-
-<div class="container-fluid">
-  <h1>Usuarios</h1>
-  <table class="table">
-    <thead>
-      <tr>
-                  <th>Nome</th>
-                  <th>Email</th>
-                  <th>Cpf</th>
-                  <th>Datanascimento</th>
-                  <th>Cep</th>
-                  <th>Telefone</th>
-                <th></th>
-      </tr>
-    </thead>
-    <tbody>
+<%= render '/layouts/info' %>
+<body> 
+<%= render '/layouts/header' %>
+  <div class="container">
+    <h1 class="text-left mt-4">Usuarios</h1>
+    <table class="table">
+      <thead>
         <tr>
-            <td>
-              <%= current_user.nome %>
-            </td>      
-                      <td>
-              <%= current_user.email %>
-            </td>      
-                      <td>
-              <%= current_user.cpf %>
-            </td>      
-                      <td>
-              <%= current_user.dataNascimento %>
-            </td>      
-                      <td>
-              <%= current_user.cep %>
-            </td>      
-                      <td>
-              <%= current_user.telefone %>
-            </td>      
-                    <td>
-          <%= link_to 'Detalhes', current_user, class:"btn btn-light min-width-btn" %>
-          <%= link_to 'Editar', edit_usuario_path(current_user),class:"btn btn-primary min-width-btn"  %>     
-          <%= link_to 'Deletar', current_user, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger min-width-btn"%>
-          </td>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Cpf</th>
+                    <th>Datanascimento</th>
+                    <th>Cep</th>
+                    <th>Telefone</th>
+                  <th></th>
         </tr>
-    </tbody>
-  </table>
-  <br>
-  <% if logged_in? && current_user.nome == 'admin' %>
-    <%= link_to 'Novo Usuario', new_usuario_path,class:"btn btn-success min-width-btn" %>
-  <% end %>
-  <hr>
-   <a id="voltar" href="/" class="btn btn-light min-width-btn">Voltar</a>  
-</div>
+      </thead>
+      <tbody>
+          <tr>
+              <td>
+                <%= current_user.nome %>
+              </td>      
+                        <td>
+                <%= current_user.email %>
+              </td>      
+                        <td>
+                <%= current_user.cpf %>
+              </td>      
+                        <td>
+                <%= current_user.dataNascimento %>
+              </td>      
+                        <td>
+                <%= current_user.cep %>
+              </td>      
+                        <td>
+                <%= current_user.telefone %>
+              </td>      
+                      <td>
+            <%= link_to 'Detalhes', current_user, class:"btn btn-light min-width-btn" %>
+            <%= link_to 'Editar', edit_usuario_path(current_user),class:"btn btn-primary min-width-btn"  %>     
+            <%= link_to 'Deletar', current_user, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger min-width-btn"%>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <br>
+    <% if logged_in? && current_user.nome == 'admin' %>
+      <%= link_to 'Novo Usuario', new_usuario_path,class:"btn btn-success min-width-btn" %>
+    <% end %>
+    <hr>
+    <a id="voltar" href="/" class="btn btn-light min-width-btn">Voltar</a>  
+  </div>
+<%= render '/layouts/footer' %>
