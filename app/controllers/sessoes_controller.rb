@@ -8,6 +8,9 @@ class SessoesController < ApplicationController
    end
    def busca
       @nome = params[:nome]
+      if @nome.length == 0
+         redirect_to request.referrer
+      end
       @produtos = Produto.where "nome like ?", "%#{@nome}%"
    end
    def create      
