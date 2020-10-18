@@ -11,6 +11,8 @@
                     <td>Tamanho</td>
                     <td>Descrição</td>
                     <td>Marca</td>
+                    <td>Imagem</td>
+                    <td colspan="1">
                     <td colspan="1">
                 </tr>
             </thead>
@@ -24,7 +26,9 @@
                     <td><%= produto.tamanho %></td>
                     <td><%= produto.descricao %></td>
                     <td><%= produto.marca %></td>
-                    <!-- A ideia é que essa opção fique disponível apenas para -->
+                    <td><img src='/uploads/<%= produto.imagem %>' width="45px" height="45px" /></td>
+                    <td><%= button_to "Detalhes", produto, method: :show, 
+                    class:"btn btn-primary" %></td>
                     <!-- os produtos que o usuário cadastrou. --> 
                     <td><%= button_to "Remover", produto, method: :delete, 
                     class:"btn btn-danger",

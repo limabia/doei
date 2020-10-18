@@ -1,21 +1,36 @@
-<a href="/"><\ Home></a>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @produto.nome %>
-</p>
- 
-<p>
-  <strong>Situação:</strong>
-  <%= @produto.situacao %>
-</p>
-
-<p>
-  <strong>Categoria:</strong>
-  <%= @produto.categoria %>
-</p>
- 
-<p>
-  <strong>Tamanho:</strong>
-  <%= @produto.tamanho %>
-</p>
+<%= render '/layouts/info' %>
+<%= render '/layouts/header' %>
+    <div class="container">
+      <h1>Detalhes do produto</h1>
+      <table class="table table-striped">
+        <tbody>
+            <tr>
+              <th>Nome:</th>
+                <td><%= @produto.nome %></td>
+            </tr>
+            <tr>
+              <th>Situação</th>
+                <td><%= @produto.situacao %></td>
+            </tr>
+            <tr>
+              <th>Categoria:</th>
+                <td><%= @produto.categoria %></td>
+            </tr>
+            <tr>
+              <th>Tamanho:</th>
+                <td><%= @produto.tamanho %></td>
+            </tr>
+            <tr>
+              <th>Descrição:</th>
+                <td><%= @produto.descricao %></td>
+            </tr>
+        </tbody>
+      </table>
+      <!-- Criar funções para que os botões sejam apresentados de acordo com o user -->
+      <div class="d-flex justify-content-around">
+        <button class="btn btn-primary">Quero resgatar</button>
+        <button class="btn btn-warning">Editar</button>
+        <button class="btn btn-danger">Remover</button>
+      </div>
+    </div>
+<%= render '/layouts/footer' %>

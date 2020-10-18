@@ -1,4 +1,5 @@
 class ProdutosController < ApplicationController
+
     def index  
       @produtos = Produto.order :nome
     end
@@ -7,22 +8,34 @@ class ProdutosController < ApplicationController
       @produto = Produto.new  
     end
     
-    def create
-      @produto = Produto.new(produto_params) 
-      @produto.usuario_id = current_user.id
-      if @produto.save
-        redirect_to produtos_path
-      else
-        render 'new'
-      end      
-    end
+  def create
+    @produto = Produto.new(produto_params) 
+    @produto.usuario_id = current_user.id
+    time = Time.now
+    if params[:produto][:imagem].present?
+      uploaded_io = params[:produto][:imagem]
 
-    def show
-        @produto = Produto.find(params[:id])
-    end
-    
-    private
-    def produto_params
-       params.require(:produto).permit(:nome, :situacao, :categoria, :tamanho)
-    end
+      filename = time.strftime("%Y%m%d-%H%M%S_") + uploaded_io.original_filename
+      File.open(Rails.root.join('public', 'uploads', filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+      @produto.imagem = filename
+    else  
+      @produto.imagem = "no-image.png"  
+    end  
+    if @produto.save
+      redirect_to produtos_path
+    else
+      render 'new'
+    end      
+  end
+
+  def show
+      @produto = Produto.find(params[:id])
+  end
+  
+  private
+  def produto_params
+     params.require(:produto).permit(:nome, :situacao, :categoria, :tamanho)
+  end
 end
