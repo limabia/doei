@@ -4,7 +4,9 @@
     <%= render '/layouts/header' %>
 
     <h4 class="text-center my-4 mx-3 p-5">
-        Olá, seja bem vindo! Nós somos uma plataforma para conectar doadores e resgatadores. <br>
+        Olá, seja bem vindo! 
+        <br>
+        Nós somos uma plataforma para conectar doadores e resgatadores.
         A proposta da nossa plataforma é repensar a forma como consumimos e trazendo a você a possibilidade
         de ajudar pessoas e poupar seu bolso e a longo prazo ajudar a preservar o planeta.
     </h4>
@@ -18,7 +20,11 @@
                         Que tal beneficiar alguém com ela?
                     </h4>
                     <div class="d-flex justify-content-center">
-                        <a href="#" class="btn-primario">Quero Doar</a>
+                        <% if logged_in? %>
+                            <a href="/produtos/new" class="btn-primario">Quero Doar</a>
+                        <% else %>
+                            <a href="/cadastrar" class="btn-primario">Quero Doar</a>
+                        <% end %>
                     </div>
                 </div>
             </div>
@@ -32,7 +38,7 @@
                         E você não precisa pagar nada por eles?
                     </h4>
                     <div class="d-flex justify-content-center">
-                        <a href="#" class="btn-primario">Quero Doação</a>
+                        <a href="/produtos" class="btn-primario">Quero Doação</a>
                     </div>
                 </div>
             </div>
