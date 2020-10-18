@@ -12,6 +12,7 @@
                     <td>Descrição</td>
                     <td>Marca</td>
                     <td colspan="1">
+                    <td colspan="1">
                 </tr>
             </thead>
             <tbody>
@@ -24,7 +25,8 @@
                     <td><%= produto.tamanho %></td>
                     <td><%= produto.descricao %></td>
                     <td><%= produto.marca %></td>
-                    <!-- A ideia é que essa opção fique disponível apenas para -->
+                    <td><%= button_to "Detalhes", produto, method: :show, 
+                    class:"btn btn-primary" %></td>
                     <!-- os produtos que o usuário cadastrou. --> 
                     <td><%= button_to "Remover", produto, method: :delete, 
                     class:"btn btn-danger",
