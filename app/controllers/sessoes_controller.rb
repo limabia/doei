@@ -8,10 +8,17 @@ class SessoesController < ApplicationController
    end
    def busca
       @nome = params[:nome]
-      if @nome == ''
-         redirect_to request.referrer
+      @categoria = params[:categoria]
+      @situacao = params[:situacao]
+      @tamanho = params[:tamanho]
+      @produtos = Produto.where(["nome like ?", "%#{@nome}%"])
+      @produtos =  @produtos.where(["categoria = ?", "#{@categoria}"]) unless @categoria.blank?
+      @produtos =  @produtos.where(["situacao = ?", "#{@situacao}"]) unless @situacao.blank?
+      @produtos =  @produtos.where(["tamanho = ?", "#{@tamanho}"]) unless @tamanho.blank?      
+      respond_to do |format|         
+         format.html { render :busca }
       end
-      @produtos = Produto.where "nome like ?", "%#{@nome}%"
+      
    end
    def create      
       @usuario = Usuario.find_by(email: params[:email])
