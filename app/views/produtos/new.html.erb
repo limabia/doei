@@ -23,6 +23,10 @@
       <%= form.text_field :tamanho, class: 'form-control' %>
     </p>  
     <p>
+      <%= form.label :imagem %><br>
+      <%= form.file_field :imagem, class: 'form-control' %>
+    </p> 
+    <p>
       <%= form.submit 'Salvar novo produto', class: "btn btn-lg btn-primary btn-block" %>
     </p>
   <% end %>

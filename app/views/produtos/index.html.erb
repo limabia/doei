@@ -11,6 +11,7 @@
                     <td>Tamanho</td>
                     <td>Descrição</td>
                     <td>Marca</td>
+                    <td>Imagem</td>
                     <td colspan="1">
                     <td colspan="1">
                 </tr>
@@ -25,6 +26,7 @@
                     <td><%= produto.tamanho %></td>
                     <td><%= produto.descricao %></td>
                     <td><%= produto.marca %></td>
+                    <td><img src='/uploads/<%= produto.imagem %>' width="45px" height="45px" /></td>
                     <td><%= button_to "Detalhes", produto, method: :show, 
                     class:"btn btn-primary" %></td>
                     <!-- os produtos que o usuário cadastrou. --> 

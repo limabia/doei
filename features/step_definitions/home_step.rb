@@ -43,9 +43,15 @@ Então('deverei estar na tela home') do
     expect(page).to have_content('Sair')
 end
 
+
 Dado('que estou logado como usuario doador A') do 
     visit '/entrar'
     fill_in 'Email', :with => 'melzer.cai2o@gmail.com'
     fill_in 'password', :with => 'mewtwo'
     click_on 'Entrar'
 end
+
+E('faço o upload da imagem {string} no campo {string}') do |nome_imagem, campo| 
+    attach_file(campo, Rails.root.join('features', 'upload-files', nome_imagem))
+end
+
