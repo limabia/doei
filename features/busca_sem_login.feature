@@ -10,4 +10,4 @@ Cenário: Realizar uma busca sem login
 Dado que estou na tela inicial
 Então preencho o campo "nome" com "camiseta"
 E clico em "Buscar"
-Então deverei ver o "Resultado da busca"
+Então deverei ver o link "Resultado da busca"
