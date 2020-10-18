@@ -3,7 +3,7 @@ Então('deverei ver a tela entrar') do
 end
 
 Dado('que estou na página de cadastro de produto') do
-    visit '/produtos/cadastrar'
+    visit '/produtos/new'
 end
 Quando('preencho o drop {string} com {string}') do |string, string2|
     page.select(string2, :from => string)    
