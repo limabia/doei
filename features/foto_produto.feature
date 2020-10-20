@@ -15,5 +15,5 @@ E clico em "Entrar"
 Então deverei ver o link "Sair"
 Então estarei autenticado como "caiomelzer"
 Então deverei ver o link "Produtos"
-E clico em "Produtos"git res        
+E clico em "Produtos"        
 Então deverei ver a "Imagem" do produto
