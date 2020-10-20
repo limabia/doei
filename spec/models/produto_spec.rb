@@ -14,4 +14,12 @@ RSpec.describe Produto, type: :model do
     produto.tamanho = "P"
     expect(produto).not_to be_valid
   end
+  it 'invalido sem a imagem do produto' do
+    produto = Produto.new    
+    produto.nome = "Camisa"
+    produto.situacao = "Usado"
+    produto.categoria = "Infantil"
+    produto.tamanho = "P"
+    expect(produto).not_to be_valid
+  end
 end
