@@ -28,3 +28,9 @@ end
 Então('deverei ver a mensagem de erro {string}') do |string|
 expect(page).to have_content(string)
 end
+Então('deverei ver a {string} do produto') do |string|
+    expect(page).to have_content(string)
+end
+Então('não deverei ver a {string} do produto') do |string|
+    expect(page).to have_content(string)
+end
