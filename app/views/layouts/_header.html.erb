@@ -32,10 +32,10 @@
             </li>
             <%end%>
             <li class="nav-item">
-                <%= form_tag buscar_produto_path, method: :get, class:"nav-item" do %>
+             <%= form_with method: :get, url: buscar_produto_path, class:"nav-item", local: true do |form| %>                
                     <div>
-                        <%= text_field_tag :nome, @nome, class:"buscar-produto-menu" %>
-                        <%= button_to "Buscar", nil, class:"btn-secundario-nopad", id:"buscar" %>
+                        <%= form.text_field :nome, class:"buscar-produto-menu" %>
+                        <%= form.submit 'Buscar', class: "btn-secundario-nopad" %>                        
                     </div>
                 <% end %>
             </li>
