@@ -2,7 +2,36 @@
 <body> 
 <%= render '/layouts/header' %>
     <div class="container">
-        <h1 class="text-left mt-4">Resultado da busca por '<%= @nome %>'</h1>
+    <h1 class="text-left mt-4">Busca Avançada</h1>    
+      <%= form_with model: @produto, method: :get, url: buscar_produto_path, local: true do |form| %>
+  <div class="row">
+    <div class="col-sm">
+      <%= form.label :nome %><br>
+      <%= form.text_field :nome, class: 'form-control' %>
+    </div>
+    <div class="col-sm">
+      <%= form.label :categoria %><br>
+      <%= form.text_field :categoria, class: 'form-control' %>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-sm">
+      <%= form.label :situação %><br>
+      <%= form.text_field :situacao, class: 'form-control' %>
+    </div>
+    <div class="col-sm">
+            <%= form.label :tamanho %><br>
+      <%= form.text_field :tamanho, class: 'form-control' %>
+    </div> 
+  </div>
+     <div class="row">
+     <div class="col-sm">
+     <br>
+         <%= form.submit 'Buscar', class: "btn btn-primary btn-block" %>
+    </div>
+        </div>
+  <% end %>
+        <h2 class="text-left mt-4">Resultado da busca</h2>      
         <div class="row mt-4 pb-6">    
             <% @produtos.each do |produto| %>
                 <div class="col-sm col-xs-12">
