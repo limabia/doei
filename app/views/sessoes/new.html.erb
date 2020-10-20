@@ -1,18 +1,30 @@
 
    <%= form_tag '/entrar' do %>
-      <div class="form-signin"> 
-      <%= image_tag("logo.png", height: '100%', width: '100%') %>
-      <h1 class="h3 mb-3 font-weight-normal">Bem vindo</h1>
-      <% if @faillogin %>
-      <div class="alert alert-danger" role="alert">
-      Usuário ou senha inválido
-      </div>
-      <% end %>
-      <%= label_tag :email %>
-      <%= text_field_tag :email , nil, class: 'form-control' %>
-      <%= label_tag :senha %>
-      <%= password_field_tag :password , nil, class: 'form-control' %>
-      <%= submit_tag "Entrar", class: "btn btn-lg btn-primario btn-block"  %>   
+      <div class="form-signin my-3"> 
+         <a href="/">
+            <%= image_tag("logo.png", height: '100%', width: '100%') %>
+         </a>
+
+         <h1 class="h3 my-3 font-weight-normal text-center">Bem vindo</h1>
+         
+         <% if @faillogin %>
+         <div class="alert alert-danger" role="alert">
+         Usuário ou senha inválido
+         </div>
+         <% end %>
+
+         <div class="my-3">
+            <%= label_tag :email %>
+            <%= text_field_tag :email , nil, class: 'form-control' %>
+         </div>
+
+         <div class="my-3">
+            <%= label_tag :senha %>
+            <%= password_field_tag :password , nil, class: 'form-control' %>
+         </div>
+         
+         <%= submit_tag "Entrar", class: "btn btn-lg mt-3 btn-primario btn-block"  %>   
+         
          <div style="text-align:center">                   
             <br>
             <a id="cadastrar" class="texto-azul" href="/cadastrar">Ainda não tenho conta</a>
