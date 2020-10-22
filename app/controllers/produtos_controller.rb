@@ -1,16 +1,16 @@
 class ProdutosController < ApplicationController
-  def index   
-    @produtos = Produto.order :nome
-  end
+  skip_before_action :verify_authenticity_token
+    def index  
+      @produtos = Produto.order :nome
+    end
 
-  def new       
-    @produto = Produto.new  
-  end
+    def new       
+      @produto = Produto.new  
+    end
+    
   def create
     @produto = Produto.new(produto_params) 
-    # TODO pegar da session o usuario
-    u = Usuario.first
-    @produto.usuario_id = u.id
+    @produto.usuario_id = current_user.id
     time = Time.now
     if params[:produto][:imagem].present?
       uploaded_io = params[:produto][:imagem]
