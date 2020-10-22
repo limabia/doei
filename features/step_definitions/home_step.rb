@@ -7,6 +7,11 @@ db.results_as_hash = true
 db.execute("DELETE FROM 'usuarios' WHERE email = 'melzer.cai2o@gmail.com'")
 db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, cpf, dataNascimento, cep, telefone, created_at, updated_at) VALUES ('Caio Melzer','#{pass}', 'melzer.cai2o@gmail.com','37130262893','16/03/1989','05754060','11980872469','121212','121212')")
 
+db.execute("DELETE FROM 'usuarios' WHERE email = 'teste.inativo@gmail.com'")
+db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, ativo, created_at, updated_at) VALUES ('teste inativo','#{pass}', 'teste.inativo@gmail.com',0, 121212, 121212)")
+
+
+
 Dado('que estou na tela inicial') do 
     visit '/'
 end
@@ -20,6 +25,10 @@ Dado('que estou na tela cadastrar') do
 end
 
 Dado('deverei ver o link {string}') do |string|
+    expect(page).to have_content(string)
+end
+
+Dado('deverei ver o texto {string}') do |string|
     expect(page).to have_content(string)
 end
 
