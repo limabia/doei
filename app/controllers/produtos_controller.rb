@@ -7,6 +7,13 @@ class ProdutosController < ApplicationController
     def new       
       @produto = Produto.new  
     end
+
+    def destroy  
+      @produto = Produto.find(params[:id])
+      @produto.destroy
+
+      redirect_to produtos_path
+    end
     
   def create
     @produto = Produto.new(produto_params) 
@@ -20,9 +27,8 @@ class ProdutosController < ApplicationController
         file.write(uploaded_io.read)
       end
       @produto.imagem = filename
-    else  
-      @produto.imagem = "no-image.png"  
     end  
+    
     if @produto.save
       redirect_to produtos_path
     else
