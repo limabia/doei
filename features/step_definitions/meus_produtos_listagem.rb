@@ -14,14 +14,16 @@ Before("@doador_com_produtos") do
     produto.situacao = "Usada"
     produto.categoria = "Roupas"
     produto.tamanho = "M"
+    produto.imagem = "no-image.png"
     produto.usuario_id = usuario.id
     produto.save
-
+    
     produto = Produto.new
     produto.nome = "Produto 2"
     produto.situacao = "Usada"
     produto.categoria = "Roupas"
     produto.tamanho = "44"
+    produto.imagem = "no-image.png"
     produto.usuario_id = usuario.id
     produto.save
 end
@@ -36,14 +38,14 @@ end
   
 Dado('estou na página Meus Produtos') do
     usuario = Usuario.order('id').last
-    visit("produtos/meus_produtos/#{usuario.id}")
+    visit("produtos/meus_produtos/#{usuario.id}")    
 end
   
 Entao('deverei ver a mensagem {string}') do |mensagem|
     expect(page).to have_content(mensagem)
 end
   
-Entao('deverei ver a lista dos meus produtos cadastrados') do
+Entao('deverei ver a lista dos meus produtos cadastrados') do    
     expect(page).to have_content('Produto 1')
     expect(page).to have_content('Produto 2')
 end
