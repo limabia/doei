@@ -7,32 +7,38 @@
   <div class="row">
     <div class="col-sm">
       <%= form.label :nome %><br>
-      <%= form.text_field :nome, class: 'form-control' %>
+      <%= form.text_field :nomebusca, class: 'form-control', value: @nome %>
     </div>
     <div class="col-sm">
       <%= form.label :categoria %><br>
-      <%= form.text_field :categoria, class: 'form-control' %>
+      <%= form.text_field :categoria, class: 'form-control', value: @categoria %>
     </div>
   </div>
    <div class="row">
     <div class="col-sm">
       <%= form.label :situação %><br>
-      <%= form.text_field :situacao, class: 'form-control' %>
+      <%= form.text_field :situacao, class: 'form-control', value: @situacao %>
     </div>
     <div class="col-sm">
             <%= form.label :tamanho %><br>
-      <%= form.text_field :tamanho, class: 'form-control' %>
+      <%= form.text_field :tamanho, class: 'form-control', value: @tamanho %>
     </div> 
   </div>
      <div class="row">
      <div class="col-sm">
      <br>
-         <%= form.submit 'Buscar', class: "btn btn-primary btn-block" %>
+         <%= form.submit 'Buscar Produto', class: "btn btn-primary btn-block" %>
     </div>
         </div>
   <% end %>
-        <h2 class="text-left mt-4">Resultado da busca</h2>      
+        <h2 class="text-left mt-4">Resultado da busca</h2>     
+        <% if @produtos.count == 0 %>
+         <div class="alert alert-danger" role="alert">
+         Nenhum produto encontrado
+         </div>
+        <% end %>
         <div class="row mt-4 pb-6">    
+ 
             <% @produtos.each do |produto| %>
                 <div class="col-sm col-xs-12">
                     <div class="card" style="width: 18rem;">
@@ -40,7 +46,8 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">Produto: <%= produto.nome %></h5>
                             <p class="card-text">Tamanho: <%= produto.tamanho %></p>
-                            <p class="card-text">Descrição: <%= produto.descricao %></p>
+                            <p class="card-text">Categoria: <%= produto.categoria %></p>
+                            <p class="card-text">Situação: <%= produto.situacao %></p>
                             <a href="#" class="btn btn-primary">Detalhes</a>
                         </div>
                     </div>
