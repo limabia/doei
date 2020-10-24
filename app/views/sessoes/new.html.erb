@@ -8,9 +8,15 @@
          <h1 class="h3 my-3 font-weight-normal text-center">Bem vindo</h1>
          
          <% if @faillogin %>
-         <div class="alert alert-danger" role="alert">
-         Usuário ou senha inválido
-         </div>
+            <div class="alert alert-danger" role="alert">
+               Usuário ou senha inválido
+            </div>
+         <% end %>
+
+         <% if @inactiveuser %>
+            <div class="alert alert-danger" role="alert">
+               Usuário inativo 
+            </div>
          <% end %>
 
          <div class="my-3">
