@@ -19,6 +19,10 @@ Dado('que estou na tela cadastrar') do
     visit '/cadastrar'
 end
 
+Dado('que estou na página de cadastro de produtos') do 
+    visit '/produtos'
+end
+
 Dado('deverei ver o link {string}') do |string|
     expect(page).to have_content(string)
 end
@@ -43,6 +47,9 @@ Então('deverei estar na tela home') do
     expect(page).to have_content('Sair')
 end
 
+Então('deverei ver Detalhes do produto') do
+    expect(page).to have_content('Detalhes do produto')
+end
 
 Dado('que estou logado como usuario doador A') do 
     visit '/entrar'
