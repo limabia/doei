@@ -4,8 +4,10 @@ class SessoesController < ApplicationController
 
    def new
    end
+
    def login
    end
+   
    def busca
       @nome = params[:nomebusca]
       if @nome == nil
@@ -26,20 +28,28 @@ class SessoesController < ApplicationController
       end
       
    end
+   
    def create      
       @usuario = Usuario.find_by(email: params[:email])
-      if @usuario && @usuario.authenticate(params[:password])
+      if @usuario && @usuario.ativo == false
+         @inactiveuser = true;
+         respond_to do |format|
+            format.html { render :new }
+         end
+      elsif @usuario && @usuario.authenticate(params[:password])
          entrar @usuario
          redirect_to '/'
       else
-         respond_to do |format|
          @faillogin = true;
-         format.html { render :new }
+         respond_to do |format|
+            format.html { render :new }
          end
       end
    end
+
    def page_requires_login
    end
+
    def destroy
       #sign_out
       session.delete(:usuario_id)

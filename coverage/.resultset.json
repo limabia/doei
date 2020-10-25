@@ -1,24 +1,67 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/e/Development/doei/spec/helpers/default_helper_spec.rb": [
+      "/home/versatushpc/Documentos/Git/doei/spec/models/usuario_spec.rb": [
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
         null,
         1,
         1,
+        null,
+        1,
+        7,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
-      "/mnt/e/Development/doei/spec/rails_helper.rb": [
+      "/home/versatushpc/Documentos/Git/doei/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -84,14 +127,14 @@
         null,
         null
       ],
-      "/mnt/e/Development/doei/config/environment.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/mnt/e/Development/doei/config/application.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/application.rb": [
         1,
         null,
         1,
@@ -117,13 +160,13 @@
         null,
         null
       ],
-      "/mnt/e/Development/doei/config/boot.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/boot.rb": [
         1,
         null,
         1,
         1
       ],
-      "/mnt/e/Development/doei/config/environments/test.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/environments/test.rb": [
         null,
         null,
         null,
@@ -171,67 +214,12 @@
         1,
         null,
         null,
+        null,
+        1,
         null,
         null
       ],
-      "/mnt/e/Development/doei/config/initializers/application_controller_renderer.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/mnt/e/Development/doei/config/initializers/assets.rb": [
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/mnt/e/Development/doei/config/initializers/backtrace_silencers.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/mnt/e/Development/doei/config/initializers/content_security_policy.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -241,20 +229,77 @@
         null,
         null
       ],
-      "/mnt/e/Development/doei/config/initializers/cookies_serializer.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/assets.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/backtrace_silencers.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/content_security_policy.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/mnt/e/Development/doei/config/initializers/filter_parameter_logging.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/mnt/e/Development/doei/config/initializers/inflections.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -272,13 +317,13 @@
         null,
         null
       ],
-      "/mnt/e/Development/doei/config/initializers/mime_types.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/mnt/e/Development/doei/config/initializers/wrap_parameters.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -294,7 +339,7 @@
         null,
         null
       ],
-      "/mnt/e/Development/doei/config/routes.rb": [
+      "/home/versatushpc/Documentos/Git/doei/config/routes.rb": [
         1,
         1,
         1,
@@ -311,21 +356,14 @@
         1,
         1,
         1,
-        null
-      ],
-      "/mnt/e/Development/doei/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/mnt/e/Development/doei/app/helpers/default_helper.rb": [
+      "/home/versatushpc/Documentos/Git/doei/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/mnt/e/Development/doei/app/helpers/produtos_helper.rb": [
-        1,
-        null
-      ],
-      "/mnt/e/Development/doei/app/helpers/sessoes_helper.rb": [
+      "/home/versatushpc/Documentos/Git/doei/app/helpers/sessoes_helper.rb": [
         1,
         1,
         0,
@@ -354,31 +392,11 @@
         null,
         null
       ],
-      "/mnt/e/Development/doei/app/helpers/usuarios_helper.rb": [
+      "/home/versatushpc/Documentos/Git/doei/app/helpers/usuarios_helper.rb": [
         1,
         null
       ],
-      "/mnt/e/Development/doei/spec/helpers/produtos_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/mnt/e/Development/doei/spec/models/produto_spec.rb": [
-        1,
-        1,
-        1,
+      "/home/versatushpc/Documentos/Git/doei/app/models/usuario.rb": [
         1,
         1,
         1,
@@ -386,40 +404,26 @@
         1,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/mnt/e/Development/doei/app/models/produto.rb": [
+      "/home/versatushpc/Documentos/Git/doei/app/models/produto.rb": [
+        1,
         1,
         1,
         1,
         null
       ],
-      "/mnt/e/Development/doei/app/models/application_record.rb": [
+      "/home/versatushpc/Documentos/Git/doei/app/models/application_record.rb": [
         1,
         1,
-        null
-      ],
-      "/mnt/e/Development/doei/spec/requests/default_request_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/mnt/e/Development/doei/spec/requests/produtos_request_spec.rb": [
-        1,
-        null,
-        1,
-        null,
         null
       ]
     },
-    "timestamp": 1602456110
+    "timestamp": 1603593352
   }
 }

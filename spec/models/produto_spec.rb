@@ -22,4 +22,12 @@ RSpec.describe Produto, type: :model do
     produto.tamanho = "P"
     expect(produto).not_to be_valid
   end
+  it 'nao eh valido apertar em detalhes se o produto nao foi cadastrado corretamente' do
+    produto = Produto.new    
+    produto.nome = "Short"
+    produto.situacao = "Usado"
+    produto.categoria = "Masculino"
+    produto.tamanho = "GG"
+    expect(produto).not_to respond_to(:show)
+  end   
 end

@@ -42,7 +42,6 @@ class UsuariosControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Usuario.count', -1) do
       delete usuario_url(@usuario)
     end
-
     assert_redirected_to usuarios_url
   end
 end

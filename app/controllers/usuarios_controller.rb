@@ -1,6 +1,7 @@
 class UsuariosController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+
   def new
     @usuario = Usuario.new
   end
@@ -59,9 +60,12 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1
   # DELETE /usuarios/1.json
   def destroy
-    @usuario.destroy
+    @usuario.ativo = false
+    @usuario.save(validate: false)
+    session.delete(:usuario_id)
+    @current_user = nil
     respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: 'Usuario was successfully destroyed.' }
+      format.html { redirect_to '/home'}
       format.json { head :no_content }
     end
   end
@@ -74,6 +78,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :password, :password_confirmation, :email, :cpf, :dataNascimento, :cep, :telefone)
+      params.require(:usuario).permit(:nome, :password, :password_confirmation, :email, :cpf, :dataNascimento, :cep, :telefone, :ativo)
     end
 end
