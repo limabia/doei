@@ -9,14 +9,20 @@ class SessoesController < ApplicationController
    end
    
    def busca
-      @nome = params[:nome]
+      @nome = params[:nomebusca]
+      if @nome == nil
+         @nome = params[:nome]
+      end
+      if @nome != nil
+         @nome = @nome.downcase
+      end
       @categoria = params[:categoria]
       @situacao = params[:situacao]
       @tamanho = params[:tamanho]
-      @produtos = Produto.where(["nome like ?", "%#{@nome}%"])
-      @produtos =  @produtos.where(["categoria = ?", "#{@categoria}"]) unless @categoria.blank?
-      @produtos =  @produtos.where(["situacao = ?", "#{@situacao}"]) unless @situacao.blank?
-      @produtos =  @produtos.where(["tamanho = ?", "#{@tamanho}"]) unless @tamanho.blank?      
+      @produtos = Produto.where(["lower(nome) like ?", "%#{@nome}%"])
+      @produtos =  @produtos.where(["lower(categoria) = ?", "#{@categoria.downcase}"]) unless @categoria.blank?
+      @produtos =  @produtos.where(["lower(situacao) = ?", "#{@situacao.downcase}"]) unless @situacao.blank?
+      @produtos =  @produtos.where(["lower(tamanho) = ?", "#{@tamanho.downcase}"]) unless @tamanho.blank?      
       respond_to do |format|         
          format.html { render :busca }
       end
