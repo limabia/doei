@@ -48,7 +48,7 @@
                             <p class="card-text">Tamanho: <%= produto.tamanho %></p>
                             <p class="card-text">Categoria: <%= produto.categoria %></p>
                             <p class="card-text">Situação: <%= produto.situacao %></p>
-                            <a href="#" class="btn btn-primary">Detalhes</a>
+                            <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %><
                         </div>
                     </div>
                 </div>

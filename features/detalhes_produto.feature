@@ -22,5 +22,5 @@ Quando realizo upload no campo "Imagem" com a foto do produto "no-image.png"
 E clico em "Salvar"
 Então ele deve ter sido salvo no banco de dados
 E deverei ver o produto na página de listagem de produtos
-E clico em "Detalhes"
+E clico no primeiro "Detalhes"
 Então deverei ver Detalhes do produto

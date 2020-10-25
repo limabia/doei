@@ -40,6 +40,10 @@ Então('clico em {string}') do |string|
     click_on string
 end
 
+Então('clico no primeiro {string}') do |string|
+    first("input[value='#{string}']").click
+end
+
 Quando('preencho o campo {string} com {string}') do |string, string2|
     fill_in string, :with => string2
 end

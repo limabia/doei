@@ -10,7 +10,3 @@ db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, situacao, created_
 Dado('que estou na tela de busca') do
     visit '/sessoes/busca' 
 end
-
-Dado('deverei ver o texto {string}') do |string|
-    expect(page).to have_content(string)
-end
