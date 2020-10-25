@@ -47,4 +47,12 @@ RSpec.describe Usuario, type: :model do
     usuario2.updated_at = date
     expect(usuario2).not_to be_valid
   end
+  it 'usuario veja a pagina com produtos' do
+    produto = Produto.new    
+    produto.nome = "Short"
+    produto.situacao = "Usado"
+    produto.categoria = "Masculino"
+    produto.tamanho = "GG"
+    expect(produto).not_to respond_to(:new)
+  end
 end
