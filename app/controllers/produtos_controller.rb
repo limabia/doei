@@ -17,7 +17,10 @@ class ProdutosController < ApplicationController
     
   def create
     @produto = Produto.new(produto_params) 
-    @produto.usuario_id ? current_user.id : params[:produto][:usuario_id]
+    if params[:produto][:usuario_id]
+      current_user.id = params[:produto][:usuario_id]
+    end  
+    @produto.usuario_id = current_user.id
     time = Time.now
     if params[:produto][:imagem].present?
       uploaded_io = params[:produto][:imagem]
