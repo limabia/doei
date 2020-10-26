@@ -40,4 +40,4 @@
 yarn-debug.log*
 .yarn-integrity
 rerun.txt
-coverage/*
+/coverage/
