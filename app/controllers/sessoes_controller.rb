@@ -4,36 +4,52 @@ class SessoesController < ApplicationController
 
    def new
    end
+
    def login
    end
+   
    def busca
-      @nome = params[:nome]
+      @nome = params[:nomebusca]
+      if @nome == nil
+         @nome = params[:nome]
+      end
+      if @nome != nil
+         @nome = @nome.downcase
+      end
       @categoria = params[:categoria]
       @situacao = params[:situacao]
       @tamanho = params[:tamanho]
-      @produtos = Produto.where(["nome like ?", "%#{@nome}%"])
-      @produtos =  @produtos.where(["categoria = ?", "#{@categoria}"]) unless @categoria.blank?
-      @produtos =  @produtos.where(["situacao = ?", "#{@situacao}"]) unless @situacao.blank?
-      @produtos =  @produtos.where(["tamanho = ?", "#{@tamanho}"]) unless @tamanho.blank?      
+      @produtos = Produto.where(["lower(nome) like ?", "%#{@nome}%"])
+      @produtos =  @produtos.where(["lower(categoria) = ?", "#{@categoria.downcase}"]) unless @categoria.blank?
+      @produtos =  @produtos.where(["lower(situacao) = ?", "#{@situacao.downcase}"]) unless @situacao.blank?
+      @produtos =  @produtos.where(["lower(tamanho) = ?", "#{@tamanho.downcase}"]) unless @tamanho.blank?      
       respond_to do |format|         
          format.html { render :busca }
       end
       
    end
+   
    def create      
       @usuario = Usuario.find_by(email: params[:email])
-      if @usuario && @usuario.authenticate(params[:password])
+      if @usuario && @usuario.ativo == false
+         @inactiveuser = true;
+         respond_to do |format|
+            format.html { render :new }
+         end
+      elsif @usuario && @usuario.authenticate(params[:password])
          entrar @usuario
          redirect_to '/'
       else
-         respond_to do |format|
          @faillogin = true;
-         format.html { render :new }
+         respond_to do |format|
+            format.html { render :new }
          end
       end
    end
+
    def page_requires_login
    end
+
    def destroy
       #sign_out
       session.delete(:usuario_id)

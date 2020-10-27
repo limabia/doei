@@ -8,7 +8,9 @@ end
 Quando('preencho o drop {string} com {string}') do |string, string2|
     page.select(string2, :from => string)    
 end
-
+Quando('realizo upload no campo {string} com a foto do produto {string}') do |string, string2|
+    page.attach_file string, Rails.root.join('public', 'uploads', string2)    
+end
 Então('ele deve ter sido salvo no banco de dados') do
 produto = Produto.order("id").last
 expect(produto.nome).to eq('Camiseta')

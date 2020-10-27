@@ -1,7 +1,32 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/e/Development/doei/spec/helpers/default_helper_spec.rb": [
+      "/mnt/e/Development/doei/spec/controllers/produtos_controller_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
         1,
         null,
         null,
@@ -9,13 +34,13 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
+        1,
         null,
         1,
         1,
+        1,
+        null,
+        null,
         null
       ],
       "/mnt/e/Development/doei/spec/rails_helper.rb": [
@@ -172,6 +197,8 @@
         null,
         null,
         null,
+        1,
+        null,
         null
       ],
       "/mnt/e/Development/doei/config/initializers/application_controller_renderer.rb": [
@@ -311,17 +338,10 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/mnt/e/Development/doei/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/mnt/e/Development/doei/app/helpers/default_helper.rb": [
-        1,
-        null
-      ],
-      "/mnt/e/Development/doei/app/helpers/produtos_helper.rb": [
         1,
         null
       ],
@@ -358,27 +378,77 @@
         1,
         null
       ],
-      "/mnt/e/Development/doei/spec/helpers/produtos_helper_spec.rb": [
+      "/mnt/e/Development/doei/app/controllers/produtos_controller.rb": [
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/mnt/e/Development/doei/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
         1,
         null,
+        1,
+        0,
         null,
+        1,
+        0,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        0,
         null,
         1,
         1,
         null
       ],
-      "/mnt/e/Development/doei/spec/models/produto_spec.rb": [
-        1,
-        1,
-        1,
+      "/mnt/e/Development/doei/app/models/usuario.rb": [
         1,
         1,
         1,
@@ -386,15 +456,15 @@
         1,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
       "/mnt/e/Development/doei/app/models/produto.rb": [
+        1,
         1,
         1,
         1,
@@ -404,22 +474,13 @@
         1,
         1,
         null
-      ],
-      "/mnt/e/Development/doei/spec/requests/default_request_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/mnt/e/Development/doei/spec/requests/produtos_request_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
       ]
     },
-    "timestamp": 1602456110
+    "timestamp": 1603676126
+  },
+  "Unit Tests": {
+    "coverage": {
+    },
+    "timestamp": 1603673206
   }
 }

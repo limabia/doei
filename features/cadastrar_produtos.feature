@@ -19,6 +19,7 @@ Quando preencho o campo "Nome" com "Camiseta"
 Quando preencho o campo "Situacao" com "Usado"
 Quando preencho o campo "Categoria" com "Adulto"
 Quando preencho o campo "Tamanho" com "M"
+Quando realizo upload no campo "Imagem" com a foto do produto "no-image.png"
 E clico em "Salvar"
 Então ele deve ter sido salvo no banco de dados
 E deverei ver o produto na página de listagem de produtos

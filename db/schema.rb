@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_141544) do
+ActiveRecord::Schema.define(version: 2020_10_21_234544) do
 
   create_table "produtos", force: :cascade do |t|
     t.string "nome"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_141544) do
     t.string "telefone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "ativo", default: true
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 

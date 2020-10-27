@@ -7,37 +7,37 @@ Eu quero pesquisar produtos por nome, categoria, situação e tamanho
 
 Cenário: Buscar Produto por Nome
 Dado que estou na tela de busca
-Então preencho o campo "nome" com "camiseta"
-E clico em "Buscar"
-Então deverei ver o "camiseta"
+Então preencho o campo "nomebusca" com "camiseta teste"
+E clico em "Buscar Produto"
+Então deverei ver o texto "camiseta teste"
 
 Cenário: Buscar Produto por Categoria
 Dado que estou na tela de busca
-Então preencho o campo "categoria" com "roupa"
-E clico em "Buscar"
-Então deverei ver o "roupa"
+Então preencho o campo "categoria" com "roupa masculina"
+E clico em "Buscar Produto"
+Então deverei ver o texto "roupa masculina"
 
 Cenário: Buscar Produto por Tamanho
 Dado que estou na tela de busca
 Então preencho o campo "tamanho" com "M"
-E clico em "Buscar"
-Então deverei ver o "M"
+E clico em "Buscar Produto"
+Então deverei ver o texto "Tamanho: M"
 
 Cenário: Buscar Produto por situação
 Dado que estou na tela de busca
 Então preencho o campo "situacao" com "Usado"
-E clico em "Buscar"
-Então deverei ver o "Usado"
+E clico em "Buscar Produto"
+Então deverei ver o texto "Usado"
 
 Cenário: Buscar Produto por Nome e Categoria
 Dado que estou na tela de busca
-Então preencho o campo "nome" com "camiseta"
+Então preencho o campo "nomebusca" com "camiseta"
 E preencho o campo "categoria" com "roupa"
-E clico em "Buscar"
-Então deverei ver o "camiseta"
+E clico em "Buscar Produto"
+Então deverei ver o texto "camiseta"
 
 Cenário: Produto não encontrado
 Dado que estou na tela de busca
 Então preencho o campo "categoria" com "inexistente"
-E clico em "Buscar"
-Então deverei ver o "Nenhum produto encontrado"
+E clico em "Buscar Produto"
+Então deverei ver o texto "Nenhum produto encontrado"
