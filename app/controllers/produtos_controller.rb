@@ -41,6 +41,10 @@ class ProdutosController < ApplicationController
   def show
       @produto = Produto.find(params[:id])
   end
+
+  def meus_produtos
+    @produtos = Produto.filtro_por_usuario(session[:usuario_id])
+  end 
   
   private
   def produto_params
