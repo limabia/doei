@@ -43,7 +43,7 @@ class ProdutosController < ApplicationController
   end
 
   def meus_produtos
-    @produtos = Produto.filtro_por_usuario( params[:usuario])
+    @produtos = Produto.filtro_por_usuario(session[:usuario_id])
   end 
   
   private

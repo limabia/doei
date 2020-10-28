@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   get 'produtos', to: 'produtos#index'
   get 'authorized', to: 'sessoes#page_requires_login'
   get '/', to:"home#index"
-  get 'produtos/meus_produtos/:usuario', to:"produtos#meus_produtos"
+  get '/meus_produtos', to:"produtos#meus_produtos"
 end

@@ -38,7 +38,7 @@ end
   
 Dado('estou na página Meus Produtos') do
     usuario = Usuario.order('id').last
-    visit("produtos/meus_produtos/#{usuario.id}")    
+    visit("/meus_produtos")    
 end
   
 Entao('deverei ver a mensagem {string}') do |mensagem|
