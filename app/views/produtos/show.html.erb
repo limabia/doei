@@ -29,7 +29,7 @@
       <!-- Criar funções para que os botões sejam apresentados de acordo com o user -->
       <div class="d-flex justify-content-around">
         <button class="btn btn-primary">Quero resgatar</button>
-        <button class="btn btn-warning">Editar</button>
+        <%= link_to "Editar", edit_produto_path(@produto.id), class:"btn btn-warning" %>
         <button class="btn btn-danger">Remover</button>
       </div>
     </div>

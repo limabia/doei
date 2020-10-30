@@ -1,0 +1,41 @@
+<%= render '/layouts/info' %>
+<%= render '/layouts/header' %>
+<div class="container">
+    <h1 class="text-center mt-4">Editar Produto</h1>
+    <% if flash[:notice] %>
+        <div class="alert alert-warning" role="alert">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <div class="d-flex justify-content-center">
+        <%= form_for @produto do |form| %> 
+            <p>
+            <%= form.label :nome %><br>
+            <%= form.text_field :nome, class: 'form-control' %>
+            </p>
+        
+            <p>
+            <%= form.label :situacao %><br>
+            <%= form.text_field :situacao, class: 'form-control' %>
+            </p>
+
+            <p>
+            <%= form.label :categoria %><br>
+            <%= form.text_field :categoria, class: 'form-control' %>
+            </p>  
+            <p>
+            <%= form.label :tamanho %><br>
+            <%= form.text_field :tamanho, class: 'form-control' %>
+            </p>  
+            <p>
+            <%= form.label :imagem %><br>
+            <%= form.file_field :imagem, class: 'form-control' %>
+            </p> 
+            <p>
+            <%= form.submit 'Editar', class: "btn btn-lg btn-warning btn-block" %>
+            </p>
+        <% end %>
+    </div>
+</div>
+
+<%= render '/layouts/footer' %>

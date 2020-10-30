@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :usuarios  
-  resources :produtos, only: [:new, :create, :destroy, :edit, :show]
+  resources :produtos, only: [:new, :create, :destroy, :edit, :show, :update]
   post 'produtos/:id', to: 'produtos#show'
   root 'home#index'
   get 'entrar', to: 'sessoes#new'
