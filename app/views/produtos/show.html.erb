@@ -4,6 +4,9 @@
       <h1>Detalhes do produto</h1>
       <table class="table table-striped">
         <tbody>
+            <div class="d-flex justify-content-around">
+                <img src='/uploads/<%= @produto.imagem %>' />
+            </div>
             <tr>
               <th>Nome:</th>
                 <td><%= @produto.nome %></td>
