@@ -1,5 +1,9 @@
 require 'rails_helper'
 require 'spec_helper'
+
+pass = 'mewtwo123A'
+date = 121212
+
 RSpec.describe Produto, type: :model do
   it 'invalido sem nome' do
     produto = Produto.new
@@ -29,5 +33,13 @@ RSpec.describe Produto, type: :model do
     produto.categoria = "Masculino"
     produto.tamanho = "GG"
     expect(produto).not_to respond_to(:show)
-  end   
+  end 
+  it 'editar nao existe produto por erro no cadastro' do
+    produto = Produto.new    
+    produto.nome = "Short"
+    produto.situacao = "Usado"
+    produto.categoria = "Masculino"
+    produto.tamanho = "GG"
+    expect(produto).not_to respond_to(:edit)
+  end
 end
