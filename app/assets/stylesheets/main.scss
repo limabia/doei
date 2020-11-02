@@ -4,7 +4,6 @@ $azul: #0d98ba;
 $branco-gelo: #efefef;
 $radius-padrao: 5px;
 
-
 /* componentes padroes */
 .bg-pink {
     background: $rosa;
@@ -175,5 +174,18 @@ form.nav-item{
 
     .btn-primario {
         font-size: 1.5em;
+    }
+}
+
+.form-desc-control {
+    position: relative;
+    box-sizing: border-box;
+    height: 250px;
+    width: 600px;
+    padding: 10px;
+    font-size: 16px;
+
+    &:focus {
+        z-index: 2;
     }
 }
