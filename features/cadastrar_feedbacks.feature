@@ -2,7 +2,7 @@
 Funcionalidade: Cadastro de feedback
 Como usuário deslogado na plataforma.
 De forma que eu consiga cadastrar um feedback.
-Eu quero um botão cadastrar um feedback na plataforma que seja exibido no rodapé do site.
+Eu quero um botão cadastrar feedback na plataforma que seja exibido no rodapé do site.
 
 Cenário: Cadastro feedback elogio com sucesso                                    
 Dado que estou na tela inicial                                               
