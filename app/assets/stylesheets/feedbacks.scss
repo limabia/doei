@@ -1,0 +1,15 @@
+
+.feedback {
+    background: asset_url("iconFeedback.png");
+    opacity: 0.7;
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;    
+    font-size: 0%;
+
+    &:hover {
+        opacity: 1;
+    }
+}

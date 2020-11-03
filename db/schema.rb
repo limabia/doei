@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_234544) do
+ActiveRecord::Schema.define(version: 2020_11_02_152533) do
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "nome"
+    t.string "descricao"
+    t.string "tipo"
+    t.integer "curtiu"
+    t.integer "naocurtiu"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "produtos", force: :cascade do |t|
     t.string "nome"

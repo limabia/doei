@@ -1,0 +1,23 @@
+<%= render '/layouts/info' %>
+<%= render '/layouts/header' %>
+    <div class="container">
+        <h1 class="text-center mt-4">O seu feedback foi cadastrado com sucesso!</h1>
+        <br><br>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <td class="text-center">Nome</td>
+                    <td class="text-center">Tipo</td>
+                    <td colspan="2" class="text-center">Descrição</td>                               
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center"><%= @feedback.nome %></td>
+                    <td class="text-center"><%= @feedback.tipo %></td>
+                    <td colspan="2" class="text-center"><%= @feedback.descricao %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<%= render '/layouts/footer' %>
