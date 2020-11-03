@@ -47,6 +47,26 @@ RSpec.describe Usuario, type: :model do
     usuario2.updated_at = date
     expect(usuario2).not_to be_valid
   end
+  it 'usuario tenha perfil admin' do
+    usuario3 = Usuario.new   
+    usuario3.email = "adm@adm.com"
+    usuario3.password = pass
+    usuario3.password_confirmation = pass
+    usuario3.created_at = date
+    usuario3.updated_at = date
+    usuario3.admin = true
+    expect(usuario3).to be_valid
+  end
+  it 'usuario não tenha perfil admin' do
+    usuario4 = Usuario.new   
+    usuario4.email = "notadm@adm.com"
+    usuario4.password = pass
+    usuario4.password_confirmation = pass
+    usuario4.created_at = date
+    usuario4.updated_at = date
+    usuario4.admin = false
+    expect(usuario4).to be_valid
+  end
   it 'usuario veja a pagina com produtos' do
     produto = Produto.new    
     produto.nome = "Short"
