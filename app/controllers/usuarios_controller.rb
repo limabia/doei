@@ -70,6 +70,20 @@ class UsuariosController < ApplicationController
     end
   end
 
+  def adicionar_admin
+    @usuario = Usuario.find(params[:id])
+    @usuario.admin = true;
+    @usuario.save(validate: false)
+    redirect_to '/usuarios'
+  end  
+
+  def remover_admin
+    @usuario = Usuario.find(params[:id])
+    @usuario.admin = false;
+    @usuario.save(validate: false)
+    redirect_to '/usuarios'
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_usuario
@@ -78,6 +92,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :password, :password_confirmation, :email, :cpf, :dataNascimento, :cep, :telefone, :ativo)
+      params.require(:usuario).permit(:nome, :password, :password_confirmation, :email, :cpf, :dataNascimento, :cep, :telefone, :ativo, :admin)
     end
 end
