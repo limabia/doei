@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_152533) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "ativo", default: true
+    t.boolean "admin"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 

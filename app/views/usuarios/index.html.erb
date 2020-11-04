@@ -4,18 +4,65 @@
     <%= render '/layouts/header' %>
     <div class="container">
         <h1 class="text-left mt-4">Usuários</h1>
+        <% if current_user.admin %>
         <table class="table">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Cpf</th>
-                    <th>Datanascimento</th>
-                    <th>Cep</th>
-                    <th>Telefone</th>
                     <th>Conta ativa?</th>
+                    <th>Conta admin?</th>
                     <th></th>
 
+                </tr>
+            </thead>
+            <tbody>
+            <% @usuarios.each do |usuario| %>
+                <tr>
+                    <td>
+                        <%= usuario.nome %>
+                    </td>
+                    <td>
+                        <%= usuario.email %>
+                    </td>
+                    <td>
+                        <% if usuario.ativo %>
+                        Sim
+                        <%else %>
+                        Não
+                        <% end %>
+                    </td>
+                    <td>
+                        <% if usuario.admin %>
+                        Sim
+                        <%else %>
+                        Não
+                        <% end %>
+                    </td>
+                    <td>
+                        <%= link_to 'Detalhes', usuario, class:"btn btn-light min-width-btn" %>
+                        <%= link_to 'Editar', edit_usuario_path(usuario),class:"btn btn-primary min-width-btn"  %>
+                        <% if usuario.ativo %>
+                            <%= link_to 'Desativar', usuario, method: :delete, data: { confirm: 'Você tem certeza que deseja desativar sua conta?' }, class:"btn btn-danger min-width-btn"%>
+                        <% end %>
+                        <% if usuario.admin %>
+                            <%= link_to 'Remover Admin', remover_admin(usuario.id), method: :post, class:"btn btn-warning min-width-btn"%>
+                        <% else %>
+                            <%= link_to 'Tornar Admin', adicionar_admin(usuario.id), method: :post, class:"btn btn-warning min-width-btn"%>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+        <%else %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Conta ativa?</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,18 +72,6 @@
                     </td>
                     <td>
                         <%= current_user.email %>
-                    </td>
-                    <td>
-                        <%= current_user.cpf %>
-                    </td>
-                    <td>
-                        <%= current_user.dataNascimento %>
-                    </td>
-                    <td>
-                        <%= current_user.cep %>
-                    </td>
-                    <td>
-                        <%= current_user.telefone %>
                     </td>
                     <td>
                         <% if current_user.ativo %>
@@ -55,6 +90,7 @@
                 </tr>
             </tbody>
         </table>
+        <% end %>
         <br>
         <% if logged_in? && current_user.nome == 'admin' %>
         <%= link_to 'Novo Usuario', new_usuario_path,class:"btn btn-success min-width-btn" %>
