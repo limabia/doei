@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="text-center mt-4">Feedback</h1>
+  <div class="d-flex justify-content-center">
+    <%= form_with scope: :feedback, url: feedbacks_path, local: true do |form| %>
+      <p>
+        <%= form.label :nome %>&nbsp (Opcional):<br>
+        <%= form.text_field :nome , class: 'form-control' %>
+      </p>
+      <p>  
+        <%= form.select :tipo, [['Elogio', 'Elogio'], ['Reclamação', 'Reclamação']]  %>
+      </p>
+      <p>
+        <%= form.label :descricao %>:<br>
+        <%= form.text_area :descricao, :cols => 30, :rows => 10, class: 'form-desc-control' %>
+      </p>
+      <div class="actions col-6">
+        <%= form.submit "Salvar", class:"btn btn-success min-width-btn" %>
+        <%= link_to 'Voltar', home_path, class:"btn btn-light min-width-btn" %>
+      </div>  
+    <% end %>
+      <% if @feedback.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger" role="alert">
+          <h5><%= pluralize(@feedback.errors.count, "erro") %> impedem esse feedback de ser salvo:</h5>
+          <ul>
+            <% @feedback.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+<%= render '/layouts/footer' %>

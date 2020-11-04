@@ -69,3 +69,5 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem 'ruby-debug-ide'
 gem 'debase'
+gem 'simplecov', require: false, group: :test
+gem 'rails-controller-testing'
