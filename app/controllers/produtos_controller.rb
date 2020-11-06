@@ -31,7 +31,7 @@ class ProdutosController < ApplicationController
     if @produto.update produto_params
         redirect_to produtos_path
     else
-        flash[:notice] = "Não esqueça de carregar uma imagem!"
+        flash[:notice] = "Existe(m) falha(s)! Por favor, não deixe campos vazios!"
         renderiza :edit
     end
   end
