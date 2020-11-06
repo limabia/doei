@@ -1,6 +1,6 @@
 module SessoesHelper
     def entrar(usuario)
-        session[:usuario_id] = usuario.id
+        session[:usuario_id] = @usuario.id
     end
 
     # Returns the current logged-in user (if any).
