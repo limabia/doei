@@ -1,0 +1,21 @@
+<div class="form-signin my-3">
+    <a href="/">
+        <%= image_tag("logo.png", height: '100%', width: '100%') %>
+    </a>
+    <div class="my-3">
+        <% if @emailenviado %>
+        <div class="alert alert-success text-center" role="alert">
+            Email de reativação enviado! <br>
+            Vá até seu email e veja as instruções para voltar a acessar a plataforma.
+        </div>
+        <a href="/" class="btn btn-lg mt-3 btn-primario btn-block">Vontar ao início</a>
+        <% else %>
+        <div class="alert alert-warning text-center" role="alert">
+            Não foi possível processar sua solicitação de reativação de conta! <br>
+            Certifique-se de que sua conta está realmente inativa e tente novamente.
+        </div>
+        <a href="/reativacao_solicitacao" class="btn btn-lg mt-3 btn-primario btn-block">Tentar novamente</a>
+         <a href="/" class="btn btn-lg mt-3 btn-primario btn-block">Vontar ao início</a>
+        <% end %>
+    </div>
+</div>

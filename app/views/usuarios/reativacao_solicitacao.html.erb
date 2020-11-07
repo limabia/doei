@@ -1,0 +1,36 @@
+<%= form_tag '/reativacao_efetivacao' do %>
+
+<% if @emailenviado %>
+<div class="alert alert-success text-center" role="alert">
+    Email de reativação enviado!
+</div>
+<% end %>
+<% if @emailnaoenviado %>
+<div class="alert alert-warning text-center" role="alert">
+    Não foi possível processar sua solicitação de reativação de conta. Por favor, tente novamente.
+</div>
+<% end %>
+
+<div class="form-signin my-3">
+    <a href="/">
+        <%= image_tag("logo.png", height: '100%', width: '100%') %>
+    </a>
+
+    <h1 class="h3 my-3 font-weight-normal text-center">Reativação de conta</h1>
+    <p class="text-justify">
+        Informe seu email e enviaremos o passo a passo para você voltar a doar e resgatar em nossa plataforma!
+    </p>
+
+    <div class="my-3">
+        <%= label_tag :email %>
+        <%= text_field_tag :email , nil, class: 'form-control' , required: true %>
+    </div>
+
+    <%= submit_tag "Reativar conta", class: "btn btn-lg mt-3 btn-primario btn-block"  %>
+
+    <div style="text-align:center">
+        <br>
+        <a id="cadastrar" class="texto-azul" href="/cadastrar">Ainda não tenho conta e quero criar uma</a>
+    </div>
+</div>
+<%end%>

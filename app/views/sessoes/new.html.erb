@@ -15,18 +15,19 @@
 
          <% if @inactiveuser %>
             <div class="alert alert-danger" role="alert">
-               Usuário inativo 
+               Usuário inativo. Deseja reativar? 
+               <a href="/reativacao_solicitacao">Clique aqui</a>
             </div>
          <% end %>
 
          <div class="my-3">
             <%= label_tag :email %>
-            <%= text_field_tag :email , nil, class: 'form-control' %>
+            <%= text_field_tag :email , nil, class: 'form-control', required: true  %>
          </div>
 
          <div class="my-3">
             <%= label_tag :senha %>
-            <%= password_field_tag :password , nil, class: 'form-control' %>
+            <%= password_field_tag :password , nil, class: 'form-control', required: true %>
          </div>
          
          <%= submit_tag "Entrar", class: "btn btn-lg mt-3 btn-primario btn-block"  %>   

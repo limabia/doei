@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized, only: [:new, :create, :reativacao_solicitacao, :reativacao_efetivacao]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -83,6 +83,35 @@ class UsuariosController < ApplicationController
     @usuario.save(validate: false)
     redirect_to '/usuarios'
   end 
+
+  def reativacao_solicitacao
+  end 
+
+  def reativacao_efetivacao
+    @usuario = Usuario.find_by(email: params[:email])
+    if @usuario && @usuario.ativo == false 
+      @emailenviado = false
+      # reativacao da conta
+      @usuario.ativo = true
+      @usuario.save(validate: false)
+      if @usuario.ativo == true
+        #from = Email.new(email: "melzer.caio@gmail.com")
+        #subject = 'Doei - Reativação de conta'
+        #to = Email.new(email: @usuario.email)
+        #content = Content.new(type: 'text/plain', value: 'Sua conta foi reativada! Agora você pode voltar a doar e resgatar itens em nossa plataforma. Basta acessar e fazer o login com seu email e senha cadastrados.')
+        #mail = Mail.new(from, subject, to, content)
+        #sg = SendGrid::API.new(api_key: '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')
+        #response = sg.client.mail._('send').post(request_body: mail.to_json)
+        #puts response.status_code
+        #puts response.body
+        #puts response.headers
+        @emailenviado = true
+      end
+      respond_to do |format|
+        format.html { render :reativacao_efetivacao }
+      end
+    end
+ end
 
   private
     # Use callbacks to share common setup or constraints between actions.

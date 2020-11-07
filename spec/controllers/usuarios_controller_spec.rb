@@ -4,48 +4,41 @@ require 'spec_helper'
 pass = 'mewtwo123A'
 date = 121212
 
-RSpec.describe UsuariosController do
+RSpec.describe UsuariosController, :type => :controller do 
+  render_views
+
   describe 'registrando um usuario' do
     it 'um usuario com todos os dados e ativo' do 
-      expect do 
-        post :create, params: {nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:true}
-        expect(@usuario).to be_valid 
-      end
+      post :create, params: {nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:true}
+      expect(@usuario).to be_valid 
     end
   end
+
   describe 'registrando um usuario' do
     it 'um usuario com todos os dados e inativo' do 
-      expect do 
-        post :create, params: {nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:false}
-        expect(@usuario).to be_valid 
-      end
+      post :create, params: {nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:false}
+      expect(@usuario).to be_valid 
     end
   end
 
   describe 'alterar um usuário para admin' do
     it 'um usuario ativo que será adicionado ao grupo de admin' do 
-      expect do 
-        post :adicionar_admin, params: {id:0}
-        expect(@usuario).to be_valid 
-      end
+      post :adicionar_admin, params: {id:0}
+      expect(@usuario).to be_valid 
     end
   end
 
   describe 'alterar um usuário para admin' do
     it 'um usuario ativo que será removido do grupo de admin' do 
-      expect do 
-        post :remover_admin, params: {id:0}
-        expect(@usuario).to be_valid 
-      end
+      post :remover_admin, params: {id:0}
+      expect(@usuario).to be_valid 
     end
   end
 
   describe 'registrando um usuario' do
     it 'um usuario com todos os dados e inativo' do 
-      expect do 
-        post :create, params: {nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:false}
-        expect(@usuario).to be_valid 
-      end
+      post :create, params: {nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:false}
+      expect(@usuario).to be_valid 
     end
   end
 
@@ -68,6 +61,7 @@ RSpec.describe UsuariosController do
       expect(session[:usuario_id]).to be_nil
     end
   end
+
     describe 'destivando usuario não autenticado' do
       before { 
         @usuario = Usuario.create!(
@@ -79,11 +73,55 @@ RSpec.describe UsuariosController do
         )
       }
     it 'um usuario nao logado quer desativar a conta' do 
-      expect do 
-        delete :destroy, params: { id: @usuario.id }
-        @usuario.reload
-      end
+      delete :destroy, params: { id: @usuario.id }
+      @usuario.reload
       expect(session[:usuario_id]).to be_nil
+    end
+  end
+
+  describe 'visualizando pagina de reativacao de conta' do 
+    subject { get :reativacao_solicitacao }
+    it 'usuario acessando a rota' do 
+      expect(subject).to render_template("usuarios/reativacao_solicitacao")
+    end
+  end
+
+  describe 'ativando a conta de usuario inativo' do 
+    before { 
+      @usuario = Usuario.create!(
+        email:"teste@teste.com", 
+        password: pass, 
+        password_confirmation: pass, 
+        created_at: date, 
+        updated_at: date, 
+        ativo: false,
+      )
+    }
+    it 'usuario com conta inativa' do 
+      post :reativacao_efetivacao, params: {email: "teste@teste.com"}
+      expect(@usuario).to be_valid
+      expect(response).to render_template("usuarios/reativacao_efetivacao")
+      # @emailenviado true
+      expect(response.body).to  include("Email de reativação enviado!")
+    end
+  end
+
+  describe 'ativando a conta de usuario ativo' do 
+    before { 
+      @usuario = Usuario.create!(
+        email:"teste@teste.com", 
+        password: pass, 
+        password_confirmation: pass, 
+        created_at: date, 
+        updated_at: date, 
+        ativo: true,
+      )
+    }
+    it 'usuario com conta inativa' do
+      post :reativacao_efetivacao, params: {email: "teste@teste.com"}
+      expect(response).to render_template("usuarios/reativacao_efetivacao")
+      # @emailenviado false
+      expect(response.body).to  include("Não foi possível processar sua solicitação de reativação de conta!")
     end
   end
 end

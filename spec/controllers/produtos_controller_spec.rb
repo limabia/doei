@@ -50,10 +50,8 @@ RSpec.describe ProdutosController do
       }
       it 'em caso de cadastro correto podemos editar' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
           patch :update, params: { nome: "Blusa", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id }
-          expect(@produto.update params).to change(@produto) 
-        end          
+          expect(@produto.update params).to change(@produto)               
       end
     end
     describe 'cadastrar produto e ver a página de editar' do
@@ -69,9 +67,7 @@ RSpec.describe ProdutosController do
       }
       it 'usuario logado cadastra produto e quer ver a página de editar' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
-          expect(@produto.id).to respond_to(:edit) 
-        end  
+        expect(@produto.id).to respond_to(:edit)       
       end
     end
     describe 'nao deve ser cadastrado corretamente por um usuário logado' do
@@ -87,10 +83,8 @@ RSpec.describe ProdutosController do
       }
       it 'em caso de cadastro correto não podemos editar se deixar campo vazio' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
-          patch :update, params: { nome: "", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id }
-          expect(@produto.update params).not_to change(@produto) 
-        end          
+        patch :update, params: { nome: "", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id }
+        expect(@produto.update params).not_to change(@produto) 
       end
     end
     describe 'deletar produto' do
@@ -106,10 +100,8 @@ RSpec.describe ProdutosController do
       }
       it 'um usuário logado pode deletar o produto cadastrado.' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
-          delete :destroy, params: @produto.id
-          expect(@produto.destroy params).to change(Produto, :count).by(-1) 
-        end          
+        delete :destroy, params: @produto.id
+        expect(@produto.destroy params).to change(Produto, :count).by(-1) 
       end
     end
 end
