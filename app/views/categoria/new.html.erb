@@ -1,0 +1,10 @@
+<%= render '/layouts/info' %>
+<%= render '/layouts/header' %>\
+<div class="container">
+    <h1>Novo Categoria</h1>
+    <%= render 'form', categoria: @categoria %>
+    <br>
+    <%= link_to 'Voltar', categoria_path, class:"btn btn-light min-width-btn" %>
+</div>
+
+<%= render '/layouts/footer' %>

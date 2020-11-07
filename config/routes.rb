@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categoria
   resources :usuarios  
   resources :feedbacks
   resources :produtos, only: [:new, :create, :destroy, :edit, :show, :update]
