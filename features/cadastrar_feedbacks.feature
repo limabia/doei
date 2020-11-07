@@ -37,7 +37,6 @@ E clico em "Salvar"
 Então o feedback deve ter sido salvo no banco de dados com nome "" e descricao "Cadastro feedback sem nome com sucesso."                                                          
 Então deverei ver o link "Cadastro feedback sem nome com sucesso."                                                 
                                 
-
 Cenário: Cadastro feedback com erro                                     
 Dado que estou na tela inicial                                        
 Então deverei ver o link "Entrar"                                    
@@ -46,3 +45,10 @@ Quando preencho o campo "Nome" com "Bernado"
 Quando preencho o drop "feedback[tipo]" com "Elogio"              
 E clico em "Salvar"                                                   
 E deverei ver a mensagem de erro "O campo descricao é obrigatório!"   
+
+Cenário: Cadastro feedback e voltar para home                               
+Dado que estou na tela inicial                                               
+Então deverei ver o link "Entrar"                                              
+E clico em "Feedback"  
+Então deverei ver o link "Ver avaliações"         
+E clico em "Voltar"  
