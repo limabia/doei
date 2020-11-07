@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categoria
   resources :usuarios  
   resources :feedbacks
   resources :produtos, only: [:new, :create, :destroy, :edit, :show, :update]
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   post '/usuarios/admin/:id/adicionar', to: 'usuarios#adicionar_admin'
   post '/usuarios/admin/:id/remover', to: 'usuarios#remover_admin'
   get 'home', to:"home#index"
+  get '/avaliacoes', to:"feedbacks#avaliacoes"
 end

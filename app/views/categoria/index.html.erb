@@ -1,0 +1,34 @@
+
+<%= render '/layouts/info' %>
+<%= render '/layouts/header' %>
+<div class="container">
+  <h1>Categoria</h1>
+  <table class="table">
+    <thead>
+      <tr>
+                  <th>Descrição</th>
+                  <th>Ativo</th>
+                <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categoria.each do |categoria| %>
+        <tr>
+                      <td>
+              <%= categoria.descricao %>
+            </td>      
+                      <td>
+                      <%= check_box("categoria", categoria.ativo, {checked:  categoria.ativo}) %>              
+            </td>      
+                    <td>
+          <%= link_to 'Editar', edit_categorium_path(categoria), class:"btn btn-light min-width-btn" %>          
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'Nova Categoria', new_categorium_path,class:"btn btn-success min-width-btn" %>
+</div>
+
+<%= render '/layouts/footer' %>
