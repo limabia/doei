@@ -51,16 +51,6 @@ class CategoriaController < ApplicationController
     end
   end
 
-  # DELETE /categoria/1
-  # DELETE /categoria/1.json
-  def destroy
-    @categoria.destroy
-    respond_to do |format|
-      format.html { redirect_to categoria_url, notice: 'Categoria was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_categoria

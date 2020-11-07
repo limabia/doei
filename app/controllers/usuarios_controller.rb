@@ -57,19 +57,6 @@ class UsuariosController < ApplicationController
     end
   end
 
-  # DELETE /usuarios/1
-  # DELETE /usuarios/1.json
-  def destroy
-    @usuario.ativo = false
-    @usuario.save(validate: false)
-    session.delete(:usuario_id)
-    @current_user = nil
-    respond_to do |format|
-      format.html { redirect_to '/home'}
-      format.json { head :no_content }
-    end
-  end
-
   def adicionar_admin
     @usuario = Usuario.find(params[:id])
     @usuario.admin = true;
