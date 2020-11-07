@@ -1,3 +1,5 @@
+<%= render '/layouts/info' %>
+<%= render '/layouts/header' %>
 <div class="container">
   <h1 class="text-center mt-4">Feedback</h1>
   <div class="d-flex justify-content-center">
@@ -11,11 +13,14 @@
       </p>
       <p>
         <%= form.label :descricao %>:<br>
-        <%= form.text_area :descricao, :cols => 30, :rows => 10, class: 'form-desc-control' %>
+        <%= form.text_area :descricao, :cols => 7, :rows => 3, class: 'form-desc-control' %>
       </p>
-      <div class="actions col-6">
-        <%= form.submit "Salvar", class:"btn btn-success min-width-btn" %>
-        <%= link_to 'Voltar', home_path, class:"btn btn-light min-width-btn" %>
+      <div class="actions col-12">
+        <p>
+          <%= form.submit "Salvar", class:"btn btn-success min-width-btn" %>
+          <%= link_to 'Voltar', home_path, class:"btn btn-light min-width-btn" %>&nbsp&nbsp
+           <a href="/avaliacoes" class="btn btn-primary min-width-btn">Ver avaliações</a>
+        </p>
       </div>  
     <% end %>
       <% if @feedback.errors.any? %>

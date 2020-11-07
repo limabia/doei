@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get '/meus_produtos', to:"produtos#meus_produtos"
   post '/usuarios/admin/:id/adicionar' => 'usuarios#adicionar_admin'
   post '/usuarios/admin/:id/remover' => 'usuarios#remover_admin'
+  get '/avaliacoes', to:"feedbacks#avaliacoes"
 end
