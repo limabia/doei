@@ -14,11 +14,12 @@ class FeedbacksController < ApplicationController
             render 'new'
         end                        
     end
-
+    def avaliacoes
+        @feedback = Feedback.all
+    end
     def show
         @feedback = Feedback.find(params[:id])
     end
-
     private
     def feedback_params
       params.require(:feedback).permit(:nome, :tipo, :descricao)

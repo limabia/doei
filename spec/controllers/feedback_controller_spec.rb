@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe FeedbacksController do
-  describe 'Cadastro de feedback:' do
+  describe 'Feedback:' do
     before(:all) { 
       @feedback = Feedback.create(
         nome:"testa bruno", 
@@ -39,6 +39,11 @@ RSpec.describe FeedbacksController do
             get :show, :params => { :id => @feedback}
             expect(response.status).to eq(200)
             expect(response).to render_template("show")
+        end
+        it "Acesso ao metodo avaliacoes para ver todas as avaliações." do
+            get :avaliacoes
+            expect(response.status).to eq(200)
+            expect(response).to render_template("feedbacks/avaliacoes")
         end
     end
 end
