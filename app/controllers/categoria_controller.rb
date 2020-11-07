@@ -1,6 +1,6 @@
 class CategoriaController < ApplicationController
   before_action :set_categoria, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authorized  
   # GET /categoria
   # GET /categoria.json
   def index
