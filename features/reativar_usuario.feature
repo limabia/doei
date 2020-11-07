@@ -19,7 +19,7 @@ Cenario: Reativar conta com sucesso
 Dado que estou na tela de reativação de conta
 Quando preencho o campo "Email" com "teste.inativo@gmail.com"
 E clico em "Reativar conta"
-Então deverei ver o texto "Email de reativação enviado!"
+Então deverei ver o texto "Usuário reativado!"
 
 # cenários de falhas 
 Cenário: Reativar conta ativa

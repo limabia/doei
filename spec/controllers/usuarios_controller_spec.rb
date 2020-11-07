@@ -102,7 +102,7 @@ RSpec.describe UsuariosController, :type => :controller do
       expect(@usuario).to be_valid
       expect(response).to render_template("usuarios/reativacao_efetivacao")
       # @emailenviado true
-      expect(response.body).to  include("Email de reativação enviado!")
+      expect(response.body).to  include("Usuário reativado!")
     end
   end
 

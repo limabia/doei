@@ -3,12 +3,12 @@
         <%= image_tag("logo.png", height: '100%', width: '100%') %>
     </a>
     <div class="my-3">
-        <% if @emailenviado %>
+        <% if @usuarioativo %>
         <div class="alert alert-success text-center" role="alert">
-            Email de reativação enviado! <br>
-            Vá até seu email e veja as instruções para voltar a acessar a plataforma.
+            Usuário reativado! <br>
+            Para voltar a acessar a plataforma basta clicar em entrar e informar seu email e senha cadastrados.
         </div>
-        <a href="/" class="btn btn-lg mt-3 btn-primario btn-block">Vontar ao início</a>
+        <a href="/entrar" class="btn btn-lg mt-3 btn-primario btn-block">Entrar</a>
         <% else %>
         <div class="alert alert-warning text-center" role="alert">
             Não foi possível processar sua solicitação de reativação de conta! <br>

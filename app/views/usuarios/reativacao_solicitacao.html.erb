@@ -1,16 +1,5 @@
 <%= form_tag '/reativacao_efetivacao' do %>
 
-<% if @emailenviado %>
-<div class="alert alert-success text-center" role="alert">
-    Email de reativação enviado!
-</div>
-<% end %>
-<% if @emailnaoenviado %>
-<div class="alert alert-warning text-center" role="alert">
-    Não foi possível processar sua solicitação de reativação de conta. Por favor, tente novamente.
-</div>
-<% end %>
-
 <div class="form-signin my-3">
     <a href="/">
         <%= image_tag("logo.png", height: '100%', width: '100%') %>
