@@ -27,8 +27,6 @@ require 'rspec/rails'
 # :nocov:
 begin
   ActiveRecord::Migration.maintain_test_schema!
-  # :nocov:
-
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
