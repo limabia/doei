@@ -22,15 +22,35 @@ RSpec.describe UsuariosController, :type => :controller do
   end
 
   describe 'alterar um usuário para admin' do
+    before { 
+      @usuario = Usuario.create!(
+        email:"teste@teste.com", 
+        password: pass, 
+        password_confirmation: pass, 
+        created_at: date, 
+        updated_at: date
+      )
+      session[:usuario_id] = @usuario.id
+    }
     it 'um usuario ativo que será adicionado ao grupo de admin' do 
-      post :adicionar_admin, params: {id:0}
+      post :adicionar_admin, params: {id:@usuario.id}
       expect(@usuario).to be_valid 
     end
   end
 
   describe 'alterar um usuário para admin' do
+    before { 
+      @usuario = Usuario.create!(
+        email:"teste@teste.com", 
+        password: pass, 
+        password_confirmation: pass, 
+        created_at: date, 
+        updated_at: date
+      )
+      session[:usuario_id] = @usuario.id
+    }
     it 'um usuario ativo que será removido do grupo de admin' do 
-      post :remover_admin, params: {id:0}
+      post :remover_admin, params: {id:@usuario.id}
       expect(@usuario).to be_valid 
     end
   end
@@ -99,7 +119,6 @@ RSpec.describe UsuariosController, :type => :controller do
     }
     it 'usuario com conta inativa' do 
       post :reativacao_efetivacao, params: {email: "teste@teste.com"}
-      expect(@usuario).to be_valid
       expect(response).to render_template("usuarios/reativacao_efetivacao")
       # @emailenviado true
       expect(response.body).to  include("Usuário reativado!")
