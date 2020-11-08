@@ -1,5 +1,5 @@
 require 'coveralls'
-#Coveralls.wear!
+Coveralls.wear!
 """
 para testar cobertura localmente comentar as 2 linhas acima e descomentar as duas linhas abaixo
 ATENÇÃO: para commitar as linhas acima devem estar descomentadas e as abaixo comentadas
