@@ -4,7 +4,8 @@ require 'spec_helper'
 pass = 'mewtwo123A'
 date = 121212
 
-RSpec.describe ProdutosController do
+RSpec.describe ProdutosController, :type => :controller do
+  render_views
     describe 'cadastrando um produto com imagem' do
         before { 
           @usuario = Usuario.create!(
@@ -37,6 +38,7 @@ RSpec.describe ProdutosController do
             expect(produto).not_to be_valid
         end
     end
+
     describe 'deve ser cadastrado corretamente por um usuário logado' do
       before { 
         @usuario = Usuario.create!(
@@ -50,12 +52,13 @@ RSpec.describe ProdutosController do
       }
       it 'em caso de cadastro correto podemos editar' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
-          patch :update, params: { nome: "Blusa", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id }
-          expect(@produto.update params).to change(@produto) 
-        end          
+       expect do 
+          @produto.update({nome: "Blusa", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id })
+          @produto.reload
+        end.to change{@produto.nome}.from("Camiseta").to("Blusa")
       end
     end
+
     describe 'cadastrar produto e ver a página de editar' do
       before { 
         @usuario = Usuario.create!(
@@ -69,11 +72,10 @@ RSpec.describe ProdutosController do
       }
       it 'usuario logado cadastra produto e quer ver a página de editar' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
-          expect(@produto.id).to respond_to(:edit) 
-        end  
+        expect(@produto.id).to eql(1)      
       end
     end
+    
     describe 'nao deve ser cadastrado corretamente por um usuário logado' do
       before { 
         @usuario = Usuario.create!(
@@ -87,12 +89,12 @@ RSpec.describe ProdutosController do
       }
       it 'em caso de cadastro correto não podemos editar se deixar campo vazio' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
-          patch :update, params: { nome: "", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id }
-          expect(@produto.update params).not_to change(@produto) 
-        end          
+        @produto.update({nome: "", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id })
+        @produto.reload
+        expect(@produto.nome).to eql("Camiseta")
       end
     end
+
     describe 'deletar produto' do
       before { 
         @usuario = Usuario.create!(
@@ -106,10 +108,8 @@ RSpec.describe ProdutosController do
       }
       it 'um usuário logado pode deletar o produto cadastrado.' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        expect do
-          delete :destroy, params: @produto.id
-          expect(@produto.destroy params).to change(Produto, :count).by(-1) 
-        end          
+        @produto.destroy
+        expect(Produto.count).to eql(0) 
       end
     end
 end

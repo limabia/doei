@@ -2,12 +2,6 @@ class SessoesController < ApplicationController
    skip_before_action :authorized, only: [:new, :create, :welcome, :busca]
    include SessoesHelper
 
-   def new
-   end
-
-   def login
-   end
-   
    def busca
       @nome = params[:nomebusca]
       if @nome == nil
@@ -28,7 +22,7 @@ class SessoesController < ApplicationController
       end
       
    end
-   
+
    def create      
       @usuario = Usuario.find_by(email: params[:email])
       if @usuario && @usuario.ativo == false
@@ -47,14 +41,10 @@ class SessoesController < ApplicationController
       end
    end
 
-   def page_requires_login
-   end
-
    def destroy
       #sign_out
       session.delete(:usuario_id)
       @current_user = nil
       redirect_to '/'  
    end
-
 end

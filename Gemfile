@@ -72,3 +72,6 @@ gem 'ruby-debug-ide'
 gem 'debase'
 gem 'simplecov', require: false, group: :test
 gem 'rails-controller-testing'
+
+# envio de email
+# gem 'sendgrid-ruby'
