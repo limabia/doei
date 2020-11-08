@@ -9,14 +9,14 @@ RSpec.describe UsuariosController, :type => :controller do
 
   describe 'registrando um usuario' do
     it 'um usuario com todos os dados e ativo' do 
-      @usuario = Usuario.create({nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:true})
+      @usuario = Usuario.create({nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"teste@teste.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:true})
       expect(@usuario).to be_valid 
     end
   end
 
   describe 'registrando um usuario' do
     it 'um usuario com todos os dados e inativo' do 
-      @usuario = Usuario.create({nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"melzer.caio@gmail.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:false})
+      @usuario = Usuario.create({nome:"Caio Melzer", password:"mewtwo", password_confirmation:"mewtwo", email:"teste@teste.com", cpf:"371.302.628-93", dataNascimento:"16/03/1989", cep:"05754-060", telefone:"980872469", ativo:false})
       expect(@usuario).to be_valid 
     end
   end
