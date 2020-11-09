@@ -6,6 +6,59 @@ date = 121212
 
 RSpec.describe ProdutosController, :type => :controller do
   render_views
+  
+    describe 'listar produtos' do
+        before { 
+          @usuario = Usuario.create!(
+            email:"teste@teste.com", 
+            password: pass, 
+            password_confirmation: pass, 
+            created_at: date, 
+            updated_at: date
+          )
+          session[:usuario_id] = @usuario.id
+        }
+          it 'can be created' do
+            get :index
+          expect(response).to render_template("index")
+        end
+    end
+
+    describe 'mostrar um produto' do
+      before { 
+        @usuario = Usuario.create!(
+          email:"teste@teste.com", 
+          password: pass, 
+          password_confirmation: pass, 
+          created_at: date, 
+          updated_at: date
+        )
+        session[:usuario_id] = @usuario.id
+      }
+        it 'can be created' do
+          @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+          get :show, :params => {:id =>@produto.id}
+        expect(response).to render_template("show")
+      end
+  end
+
+    describe 'mostrar tela para cadastrar novos produtos' do
+      before { 
+        @usuario = Usuario.create!(
+          email:"teste@teste.com", 
+          password: pass, 
+          password_confirmation: pass, 
+          created_at: date, 
+          updated_at: date
+        )
+        session[:usuario_id] = @usuario.id
+      }
+        it 'can be created' do
+          get :new
+        expect(response).to render_template("new")
+      end
+    end
+
     describe 'cadastrando um produto com imagem' do
         before { 
           @usuario = Usuario.create!(
@@ -18,7 +71,8 @@ RSpec.describe ProdutosController, :type => :controller do
           session[:usuario_id] = @usuario.id
         }
             it 'can be created' do
-                produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+              post  :create, :params => { :produto => { nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id, imagem: Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/files/test_ok_jpg.jpg")} }
+              produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
             expect(produto).to be_valid
         end
     end
@@ -34,7 +88,8 @@ RSpec.describe ProdutosController, :type => :controller do
           session[:usuario_id] = @usuario.id
         }
             it 'can be created' do
-                produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id)
+              post  :create, :params => { :produto => { nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id} }
+              produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id)
             expect(produto).not_to be_valid
         end
     end
@@ -53,6 +108,8 @@ RSpec.describe ProdutosController, :type => :controller do
       it 'em caso de cadastro correto podemos editar' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
        expect do 
+          #  delete :destroy, :params => {:id =>@produto.id}
+          post :edit, :params => {:id =>@produto.id}
           @produto.update({nome: "Blusa", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id })
           @produto.reload
         end.to change{@produto.nome}.from("Camiseta").to("Blusa")
@@ -108,7 +165,7 @@ RSpec.describe ProdutosController, :type => :controller do
       }
       it 'um usuário logado pode deletar o produto cadastrado.' do
         @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        @produto.destroy
+        delete :destroy, :params => {:id =>@produto.id}
         expect(Produto.count).to eql(0) 
       end
     end

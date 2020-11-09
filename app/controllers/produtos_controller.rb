@@ -36,7 +36,7 @@ class ProdutosController < ApplicationController
   end
 
   def destroy  
-    @produto = Produto.find(params.require(:id_name).permit(:variable))
+    @produto = Produto.find(params[:id])
     @produto.destroy
 
     redirect_to produtos_path
