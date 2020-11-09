@@ -2,20 +2,22 @@
 <%= render '/layouts/header' %>
     <div class="container">
         <h1>Meus Produtos</h1>
-        <div class='card-group col-12'>
+        <div class="row mt-4 pb-6">
             <% @produtos.each do |produto| %>       
-                <div class='card col-4 p-2'>            
-                    <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />
-                    <div class='card-body'>
-                        <h5 class="card-title"> <%= produto.nome %> </h5>
-                        <p class='card-text'> <%= produto.descricao %> </p>
-                        <h6>
-                            <span>Tamanho:</span> <%= produto.tamanho %>
-                        </h6>
-                        <h6>
-                            <span>Categoria:</span> <%= produto.categoria %>
-                        </h6>
-                        <a href="#" class='btn btn-primary'>Detalhes</a>
+                <div class="col-sm col-xs-12">
+                    <div class="card" style="width: 18rem;">            
+                        <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />
+                        <div class='card-body'>
+                            <h5 class="card-title"> <%= produto.nome %> </h5>
+                            <p class='card-text'> <%= produto.descricao %> </p>
+                            <h6>
+                                <span>Tamanho:</span> <%= produto.tamanho %>
+                            </h6>
+                            <h6>
+                                <span>Categoria:</span> <%= produto.categoria %>
+                            </h6>
+                            <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %>
+                        </div>
                     </div>
                 </div> 
             <% end %> 
