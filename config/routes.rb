@@ -19,8 +19,13 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessoes#page_requires_login'
   get '/', to:"home#index"
   get '/meus_produtos', to:"produtos#meus_produtos"
+  post '/usuarios/admin/:id/adicionar' => 'usuarios#adicionar_admin'
+  post '/usuarios/admin/:id/remover' => 'usuarios#remover_admin'
   post '/usuarios/admin/:id/adicionar', to: 'usuarios#adicionar_admin'
   post '/usuarios/admin/:id/remover', to: 'usuarios#remover_admin'
   get 'home', to:"home#index"
   get '/avaliacoes', to:"feedbacks#avaliacoes"
+  get '/recuperar_senha', to: 'usuarios#recuperar_senha'
+  post '/recuperar_senha', to: 'usuarios#recuperar_senha'
+
 end

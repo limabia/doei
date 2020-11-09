@@ -92,6 +92,26 @@ RSpec.describe UsuariosController, :type => :controller do
     end
   end
 
+  describe 'Solicitando recuperacao de senha' do
+    it 'sem informar e-mail' do 
+      expect do 
+        post :recuperar_senha, params: {email:""}
+        expect(response.body).to match 'E-mail não informado' 
+      end
+    end
+    it 'um usuario cadastrado na plataforma' do 
+      expect do 
+        post :recuperar_senha, params: {email:"melzer.caio@gmail.com"}
+        expect(response.body).to match 'Solicitação enviada com sucesso' 
+      end
+    end
+    it 'um usuario cadastrado na plataforma' do 
+      expect do 
+        post :recuperar_senha, params: {email:"invalido@teste.com.zz"}
+        expect(response.body).to match 'E-mail não cadastrado' 
+      end
+    end
+  end
   describe 'visualizando pagina de reativacao de conta' do 
     subject { get :reativacao_solicitacao }
     it 'usuario acessando a rota' do 

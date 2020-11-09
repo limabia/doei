@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create, :reativacao_solicitacao, :reativacao_efetivacao]
+  skip_before_action :authorized, only: [:new, :create, :reativacao_solicitacao, :reativacao_efetivacao, :recuperar_senha]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -84,6 +84,34 @@ class UsuariosController < ApplicationController
     redirect_to '/usuarios'
   end 
 
+  def recuperar_senha     
+    if request.post?       
+      if params[:email].blank?    
+        respond_to do |format|
+          flash[:notice] = "E-mail não informado"
+          format.html { redirect_to request.referrer }  
+        end                 
+      else
+        usuario = Usuario.find_by(email: params[:email]) 
+
+        if usuario.present?
+          usuario.gerar_token 
+          # Envio de e-mail
+          respond_to do |format|
+            flash[:success] = "Solicitação enviada com sucesso"
+            format.html { redirect_to request.referrer }  
+          end 
+        else
+          respond_to do |format|
+            flash[:notice] = "E-mail não cadastrado"
+            format.html { redirect_to request.referrer }  
+          end     
+        end
+      end
+      
+    end
+  end 
+
   def reativacao_solicitacao
   end 
 
@@ -102,6 +130,7 @@ class UsuariosController < ApplicationController
       end
     end
  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

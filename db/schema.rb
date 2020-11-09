@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2020_11_07_011752) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "ativo", default: true
     t.boolean "admin"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 

@@ -1,0 +1,31 @@
+<%= render '/layouts/info' %>
+<body>
+    <%= render '/layouts/header' %>
+
+    <div class="container-fluid col-9 mt-4">
+        <h2>Recuperação de senha</h2>
+        <% if flash[:notice] %>
+          <div class="alert alert-warning" role="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+        <% if flash[:success] %>
+          <div class="alert alert-success" role="alert">
+            <%= flash[:success] %>
+          </div>
+        <% end %>
+
+        <p id="notice"><%= @notice %></p>
+
+        <%= form_with(url: "/recuperar_senha", method: "post") do %>          
+           <div class="form-group col-10">
+               <%= label_tag(:email, "Informe e-mail cadastrado na plataforma") %>
+               <%= text_field_tag(:email) %>         
+            </div>
+            <div class="actions col-6">
+              <%= submit_tag("Recuperar Senha", name: "Recuperar Senha", class: "btn btn-primary") %>
+            </div>         
+        <% end %>
+    </div>
+</body>
+<%= render '/layouts/footer' %>
