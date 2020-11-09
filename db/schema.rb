@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_152533) do
+ActiveRecord::Schema.define(version: 2020_11_08_162701) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.string "nome"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_11_02_152533) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "ativo", default: true
     t.boolean "admin"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
   end
 

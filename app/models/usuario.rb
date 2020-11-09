@@ -10,4 +10,10 @@ class Usuario < ActiveRecord::Base
         with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
         }    
+
+    def gerar_token
+        self.reset_password_token = SecureRandom.hex(10)
+        self.reset_password_sent_at = Time.now.utc
+        save(validate: false)
+    end
 end

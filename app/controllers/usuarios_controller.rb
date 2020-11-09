@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized, only: [:new, :create, :recuperar_senha ]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -82,6 +82,34 @@ class UsuariosController < ApplicationController
     @usuario.admin = false;
     @usuario.save(validate: false)
     redirect_to '/usuarios'
+  end 
+
+  def recuperar_senha     
+    if request.post?       
+      if params[:email].blank?    
+        respond_to do |format|
+          flash[:notice] = "E-mail não informado"
+          format.html { redirect_to request.referrer }  
+        end                 
+      else
+        usuario = Usuario.find_by(email: params[:email]) 
+
+        if usuario.present?
+          usuario.gerar_token 
+          # Envio de e-mail
+          respond_to do |format|
+            flash[:success] = "Solicitação enviada com sucesso"
+            format.html { redirect_to request.referrer }  
+          end 
+        else
+          respond_to do |format|
+            flash[:notice] = "E-mail não cadastrado"
+            format.html { redirect_to request.referrer }  
+          end     
+        end
+      end
+      
+    end
   end 
 
   private
