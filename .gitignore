@@ -41,3 +41,4 @@ yarn-debug.log*
 .yarn-integrity
 rerun.txt
 /coverage/
+app/controllers/categoria_controller.rb

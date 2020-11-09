@@ -9,6 +9,9 @@
         <ul class="navbar-nav">
             <% if logged_in? %>
             <li class="nav-item">
+               <h3> Olá, <%= current_user.nome %></h3>
+            </li>   
+            <li class="nav-item">
                 <a id="listar-produto" href="/produtos" class="nav-link">Produtos</a>
             </li>
              <li class="nav-item">
@@ -17,14 +20,15 @@
             <li class="nav-item">
                 <a id="cadastrar-produto" href="/produtos/new" class="nav-link">Cadastrar produto</a>
             </li>
-            <li class="nav-item">
-                Olá, <%= current_user.nome %>
-            </li>
-            <li class="nav-item">
-                <a id="sair" href="/sair">Sair</a>                
-            </li>
+
             <li class="nav-item">
                 <a id="usuarios" href="/usuarios" class="nav-link">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a id="categorias" href="/categoria" class="nav-link">Categoria</a>
+            </li>
+            <li class="nav-item">
+                <a id="sair" href="/sair" class="nav-link">Sair</a>                
             </li>
             <% else %>
             <li class="nav-item">

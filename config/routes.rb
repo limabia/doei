@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categoria
   resources :usuarios  
   resources :feedbacks
   resources :produtos, only: [:new, :create, :destroy, :edit, :show, :update]
@@ -6,7 +7,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'entrar', to: 'sessoes#new'
   post 'entrar', to: 'sessoes#create'
-  get 'home', to:"home#index"
+  get 'reativacao_solicitacao', to: 'usuarios#reativacao_solicitacao'
+  post 'reativacao_efetivacao', to: 'usuarios#reativacao_efetivacao'
   get 'sair', to: 'sessoes#destroy'
   get 'cadastrar', to: 'usuarios#new'
   get 'perfil', to: 'usuarios#edit'
@@ -19,6 +21,11 @@ Rails.application.routes.draw do
   get '/meus_produtos', to:"produtos#meus_produtos"
   post '/usuarios/admin/:id/adicionar' => 'usuarios#adicionar_admin'
   post '/usuarios/admin/:id/remover' => 'usuarios#remover_admin'
+  post '/usuarios/admin/:id/adicionar', to: 'usuarios#adicionar_admin'
+  post '/usuarios/admin/:id/remover', to: 'usuarios#remover_admin'
+  get 'home', to:"home#index"
+  get '/avaliacoes', to:"feedbacks#avaliacoes"
   get '/recuperar_senha', to: 'usuarios#recuperar_senha'
   post '/recuperar_senha', to: 'usuarios#recuperar_senha'
+
 end

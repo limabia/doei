@@ -84,11 +84,12 @@ E('faço o upload da imagem {string} no campo {string}') do |nome_imagem, campo|
 end
 
 Dado('que sou um visitante') do
-    pending # Write code here that turns the phrase above into concrete actions
+    visit '/'
 end
 
 Quando('acesso a página inicial') do
     visit '/'
+    expect(page).to have_content('Entrar')
 end
 
 Dado('que estou logado como usuario administrador') do

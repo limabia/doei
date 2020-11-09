@@ -14,30 +14,29 @@ class ProdutosController < ApplicationController
 
   def update
     @produto = Produto.find(params[:id])
-    if params[:produto][:usuario_id]
-      current_user.id = params[:produto][:usuario_id]
-    end  
-    @produto.usuario_id = current_user.id
-    time = Time.now
-    if params[:produto][:imagem].present?
-      uploaded_io = params[:produto][:imagem]
-      filename = time.strftime("%Y%m%d-%H%M%S_") + uploaded_io.original_filename
-      File.open(Rails.root.join('public', 'uploads', filename), 'wb') do |file|
-        file.write(uploaded_io.read)
+    if current_user.id =  @produto.usuario_id
+      time = Time.now
+      if params[:produto][:imagem].present?
+        uploaded_io = params[:produto][:imagem]
+        filename = time.strftime("%Y%m%d-%H%M%S_") + uploaded_io.original_filename
+        File.open(Rails.root.join('public', 'uploads', filename), 'wb') do |file|
+          file.write(uploaded_io.read)
+        end
+        @produto.imagem = filename
+      end 
+      if @produto.update produto_params
+          redirect_to produtos_path
+      else
+          flash[:notice] = "Existe(m) falha(s)! Por favor, não deixe campos vazios!"
+          renderiza :edit
       end
-      @produto.imagem = filename
-    end 
-
-    if @produto.update produto_params
-        redirect_to produtos_path
     else
-        flash[:notice] = "Não esqueça de carregar uma imagem!"
-        renderiza :edit
-    end
+      flash[:notice] = "Você não tem permissão para editar este produto!"
+    end   
   end
 
   def destroy  
-    @produto = Produto.find(params.require(:id_name).permit(:variable))
+    @produto = Produto.find(params[:id])
     @produto.destroy
 
     redirect_to produtos_path

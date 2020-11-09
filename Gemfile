@@ -59,6 +59,7 @@ group :test do
   gem 'cucumber-rails', require: false
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
+
 end
  
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -71,3 +72,6 @@ gem 'ruby-debug-ide'
 gem 'debase'
 gem 'simplecov', require: false, group: :test
 gem 'rails-controller-testing'
+
+# envio de email
+# gem 'sendgrid-ruby'

@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create, :recuperar_senha ]
+  skip_before_action :authorized, only: [:new, :create, :reativacao_solicitacao, :reativacao_efetivacao, :recuperar_senha]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -111,6 +111,26 @@ class UsuariosController < ApplicationController
       
     end
   end 
+
+  def reativacao_solicitacao
+  end 
+
+  def reativacao_efetivacao
+    @usuario = Usuario.find_by(email: params[:email])
+    if @usuario && @usuario.ativo == false 
+      @usuarioativo = false
+      # reativacao da conta
+      @usuario.ativo = true
+      @usuario.save(validate: false)
+      if @usuario.ativo == true
+        @usuarioativo = true
+      end
+      respond_to do |format|
+        format.html { render :reativacao_efetivacao }
+      end
+    end
+ end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

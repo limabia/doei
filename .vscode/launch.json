@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
       {
         "name": "Rails server",
         "type": "Ruby",
@@ -12,6 +13,18 @@
         "pathToRDebugIDE": "/var/lib/gems/2.5.0/gems/ruby-debug-ide-0.7.2",
         "pathToBundler": "/usr/bin/bundle",
         "args": ["server"]
+      },
+      {
+        "name": "Debug RSpec - open spec file",
+        "type": "Ruby",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "useBundler": true,
+        "pathToBundler": "/home/renato/.rvm/gems/ruby-2.7.1/bin/bundle",
+        "pathToRDebugIDE": "/var/lib/gems/2.5.0/gems/ruby-debug-ide-0.7.2",
+        "debuggerPort": "1235",
+        "program": "/home/renato/.rvm/gems/ruby-2.7.1/bin/rspec",
+        "args": ["${file}"]
       }
     ]
   }

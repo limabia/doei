@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 body {
     background: #fff !important;
     font-size: 14px;
@@ -21,4 +22,5 @@ body {
     padding: 0px;
     max-width: 100%;
     overflow-x: hidden;
+    padding-bottom: 60px;    
 }
