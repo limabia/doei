@@ -7,7 +7,7 @@ Travis: [![Build Status](https://travis-ci.org/limabia/doei.svg?branch=master)](
 Codeclimate: [![Maintainability](https://api.codeclimate.com/v1/badges/74f36bdefb43b427e55f/maintainability)](https://codeclimate.com/github/limabia/sin5005-g1/maintainability)
 
 
-Coveralls: [![Coverage Status](https://coveralls.io/repos/github/limabia/sin5005-g1/badge.svg)](https://coveralls.io/github/limabia/sin5005-g1)
+Coveralls: [![Coverage Status](https://coveralls.io/repos/github/limabia/sin5005-g1/badge.svg?branch=master)](https://coveralls.io/github/limabia/sin5005-g1?branch=master)
 
 
 [Aplicação hospedada no Heroku ](https://sin5005-g1.herokuapp.com/)
