@@ -48,7 +48,11 @@
                       </td>    
                       <td class="text-center">
                         <div class="form-group">
-                              Curtiram: <%= feedback.curtiu %>
+                          <% if feedback.curtiu == nil %>
+                            Curtiu: 0
+                          <% else %>
+                            Curtiu: <%= feedback.curtiu %>
+                           <% end %>                              
                         </div> 
                       </td>
                       <td colspan="2" class="text-center">
