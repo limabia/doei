@@ -13,7 +13,14 @@
             <%= form.label :nome %><br>
             <%= form.text_field :nome, class: 'form-control' %>
             </p>
-        
+            <p>
+            <%= form.label :ja_doado %><br>
+            <% if @produto.ja_doado == "Não" %>
+                <%= form.select(:ja_doado, ['Sim', 'Não'], {}, { :class => 'form-control' }) %>
+            <% else %>
+                <%= form.select(:ja_doado, ['Não', 'Sim'], {}, { :class => 'form-control' }) %>
+            <% end %>
+            </p>
             <p>
             <%= form.label :situacao %><br>
             <%= form.text_field :situacao, class: 'form-control' %>
