@@ -18,8 +18,10 @@ class FeedbacksController < ApplicationController
     def curtir
         @feedback = Feedback.find(params[:id])
 
-        if(@feedback.curtiu == nil)
-            @feedback.curtiu = 1  
+        @feedback.curtiu += 1  
+        
+        if(@feedback.curtiu == nil)            
+            @feedback.increment!(:curtiu)
         else
             @feedback.curtiu += 1  
         end
