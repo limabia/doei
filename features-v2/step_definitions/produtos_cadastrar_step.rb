@@ -14,7 +14,7 @@ end
 Então('ele deve ter sido salvo no banco de dados') do
 produto = Produto.order("id").last
 expect(produto.nome).to eq('Camiseta')
-expect(produto.situacao).to eq('Usado') 
+expect(produto.condicao).to eq('Usado') 
 expect(produto.categoria).to eq('Adulto') 
 expect(produto.tamanho).to eq('M') 
 end

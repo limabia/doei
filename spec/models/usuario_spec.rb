@@ -70,7 +70,7 @@ RSpec.describe Usuario, type: :model do
   it 'usuario veja a pagina com produtos' do
     produto = Produto.new    
     produto.nome = "Short"
-    produto.situacao = "Usado"
+    produto.condicao = "Usado"
     produto.categoria = "Masculino"
     produto.tamanho = "GG"
     expect(produto).not_to respond_to(:new)

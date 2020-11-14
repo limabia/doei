@@ -3,7 +3,7 @@
 Funcionalidade: Busca Avancada
 Como usuário
 De forma que eu consiga encontrar um produto de acordo com seus atributos
-Eu quero pesquisar produtos por nome, categoria, situação e tamanho
+Eu quero pesquisar produtos por nome, categoria, condição e tamanho
 
 Cenário: Buscar Produto por Nome
 Dado que estou na tela de busca
@@ -23,9 +23,9 @@ Então preencho o campo "tamanho" com "M"
 E clico em "Buscar Produto"
 Então deverei ver o texto "Tamanho: M"
 
-Cenário: Buscar Produto por situação
+Cenário: Buscar Produto por condição
 Dado que estou na tela de busca
-Então preencho o campo "situacao" com "Usado"
+Então preencho o campo "condicao" com "Usado"
 E clico em "Buscar Produto"
 Então deverei ver o texto "Usado"
 

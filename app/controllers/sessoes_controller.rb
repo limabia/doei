@@ -11,11 +11,11 @@ class SessoesController < ApplicationController
          @nome = @nome.downcase
       end
       @categoria = params[:categoria]
-      @situacao = params[:situacao]
+      @condicao = params[:condicao]
       @tamanho = params[:tamanho]
       @produtos = Produto.where(["lower(nome) like ?", "%#{@nome}%"])
       @produtos =  @produtos.where(["lower(categoria) = ?", "#{@categoria.downcase}"]) unless @categoria.blank?
-      @produtos =  @produtos.where(["lower(situacao) = ?", "#{@situacao.downcase}"]) unless @situacao.blank?
+      @produtos =  @produtos.where(["lower(condicao) = ?", "#{@condicao.downcase}"]) unless @condicao.blank?
       @produtos =  @produtos.where(["lower(tamanho) = ?", "#{@tamanho.downcase}"]) unless @tamanho.blank?      
       respond_to do |format|         
          format.html { render :busca }

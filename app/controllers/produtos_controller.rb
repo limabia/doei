@@ -75,7 +75,7 @@ class ProdutosController < ApplicationController
   
   private
   def produto_params
-     params.require(:produto).permit(:nome, :ja_doado, :situacao, :categoria, :tamanho, :usuario_id)
+     params.require(:produto).permit(:nome, :ja_doado, :condicao, :categoria, :tamanho, :usuario_id)
   end
 
   def renderiza(view)
