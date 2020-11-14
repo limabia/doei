@@ -169,4 +169,26 @@ RSpec.describe ProdutosController, :type => :controller do
         expect(Produto.count).to eql(0) 
       end
     end
+
+    describe 'deve alterar o status de doado' do
+      before { 
+        @usuario = Usuario.create!(
+          email:"teste@teste.com", 
+          password: pass, 
+          password_confirmation: pass, 
+          created_at: date, 
+          updated_at: date
+        )
+        session[:usuario_id] = @usuario.id
+      }
+      it 'em caso de cadastro correto o usuário muda o status do produto de Não doado para Sim (foi doado)' do
+        @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+       expect do 
+          #  delete :destroy, :params => {:id =>@produto.id}
+          post :edit, :params => {:id =>@produto.id}
+          @produto.update({ja_doado: "Sim", usuario_id:@usuario.id })
+          @produto.reload
+        end.to change{@produto.ja_doado}.from("Não").to("Sim")
+      end
+    end
 end

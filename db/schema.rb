@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_14_133045) do
     t.string "descricao"
     t.string "marca"
     t.string "imagem"
+    t.string "ja_doado", default: "Não"
     t.index ["usuario_id"], name: "index_produtos_on_usuario_id"
   end
 

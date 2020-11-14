@@ -27,13 +27,20 @@
               <th>Descrição:</th>
                 <td><%= @produto.descricao %></td>
             </tr>
+            <tr>
+              <th>Já doado?</th>
+                <td><%= @produto.ja_doado %></td>
+            </tr>
         </tbody>
       </table>
       <!-- Criar funções para que os botões sejam apresentados de acordo com o user -->
       <div class="d-flex justify-content-around">
-        <button class="btn btn-primary">Quero resgatar</button>
+        <% if session[:usuario_id] == @produto.usuario_id %>
         <%= link_to "Editar", edit_produto_path(@produto.id), class:"btn btn-warning" %>
         <button class="btn btn-danger">Remover</button>
+        <% else %>
+        <button class="btn btn-primary">Quero resgatar</button>
+        <% end %>
       </div>
     </div>
 <%= render '/layouts/footer' %>
