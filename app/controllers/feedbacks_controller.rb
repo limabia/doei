@@ -17,7 +17,13 @@ class FeedbacksController < ApplicationController
     end
     def curtir
         @feedback = Feedback.find(params[:id])
-        @feedback.curtiu += 1     
+
+        if(@feedback.curtiu == nil)
+            @feedback.curtiu = 1  
+        else
+            @feedback.curtiu += 1  
+        end
+           
         @feedback.save
 
         redirect_to @feedback
