@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_07_011752) do
+ActiveRecord::Schema.define(version: 2020_11_14_133045) do
 
   create_table "categoria", force: :cascade do |t|
     t.string "descricao"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_11_07_011752) do
     t.string "nome"
     t.string "descricao"
     t.string "tipo"
-    t.integer "curtiu"
-    t.integer "naocurtiu"
+    t.integer "curtiu", default: 0, null: false
+    t.integer "naocurtiu", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

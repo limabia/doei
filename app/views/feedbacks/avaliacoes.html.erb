@@ -19,7 +19,8 @@
                   <tr>
                       <td class="text-center"><b>Nome</b></td>
                       <td class="text-center"><b>Tipo</b></td>
-                      <td colspan="2" class="text-center"><b>Descrição</b></td>                               
+                      <td colspan="2" class="text-center"><b>Descrição</b></td>      
+                      <td class="text-center"><b>Avaliação</b></td>                         
                       <td colspan="2" class="text-center"><b>Data</b></td>    
                   </tr>
               </thead>
@@ -45,11 +46,19 @@
                              <%= feedback.descricao %>
                         </div> 
                       </td>    
+                      <td class="text-center">
+                        <div class="form-group">
+                              Curtiram: <%= feedback.curtiu %>
+                        </div> 
+                      </td>
                       <td colspan="2" class="text-center">
                         <div class="form-group">
                              <%= feedback.created_at %>
                         </div> 
-                      </td>                                            
+                      </td> 
+                       <td>
+                          <%= button_to "Curtir", feedback, method: :curtir, class:"btn btn-success min-width-btn", data: {confirm: "Tem certeza que deseja curtir este feedback? #{feedback.tipo}"} %>
+                       </td>                                           
                   </tr>
                 <% end %>
               </tbody>

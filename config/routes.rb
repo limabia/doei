@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   post '/usuarios/admin/:id/remover', to: 'usuarios#remover_admin'
   get 'home', to:"home#index"
   get '/avaliacoes', to:"feedbacks#avaliacoes"
+  post '/feedbacks/:id', to:"feedbacks#curtir"
+  post '/curtir', to:"feedbacks#curtir"
 end

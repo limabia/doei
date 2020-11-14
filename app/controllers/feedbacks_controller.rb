@@ -1,5 +1,6 @@
 class FeedbacksController < ApplicationController
     skip_before_action :authorized  
+    skip_before_action :verify_authenticity_token
     def index  
         @feedback = Feedback.order :nome
     end
@@ -13,6 +14,13 @@ class FeedbacksController < ApplicationController
         else
             render 'new'
         end                        
+    end
+    def curtir
+        @feedback = Feedback.find(params[:id])
+        @feedback.curtiu += 1     
+        @feedback.save
+
+        redirect_to @feedback
     end
     def avaliacoes
         @feedback = Feedback.all
