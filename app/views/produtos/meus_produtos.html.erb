@@ -1,26 +1,53 @@
 <%= render '/layouts/info' %>
 <%= render '/layouts/header' %>
     <div class="container">
-        <h1>Meus Produtos</h1>
+        <h1>Meus Produtos - Disponíveis</h1>
         <div class="row mt-4 pb-6">
-            <% @produtos.each do |produto| %>       
-                <div class="col-sm col-xs-12">
-                    <div class="card" style="width: 18rem;">            
-                        <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />
-                        <div class='card-body'>
-                            <h5 class="card-title"> <%= produto.nome %> </h5>
-                            <p class='card-text'> <%= produto.descricao %> </p>
-                            <h6>
-                                <span>Tamanho:</span> <%= produto.tamanho %>
-                            </h6>
-                            <h6>
-                                <span>Categoria:</span> <%= produto.categoria %>
-                            </h6>
-                            <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %>
+            <% @produtos.each do |produto| %>
+                <% if produto.ja_doado == "Não" %>       
+                    <div class="col-sm col-xs-12">
+                        <div class="card" style="width: 18rem;">            
+                            <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />
+                            <div class='card-body'>
+                                <h5 class="card-title"> <%= produto.nome %> </h5>
+                                <p class='card-text'> <%= produto.descricao %> </p>
+                                <h6>
+                                    <span>Tamanho:</span> <%= produto.tamanho %>
+                                </h6>
+                                <h6>
+                                    <span>Categoria:</span> <%= produto.categoria %>
+                                </h6>
+                                <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %>
+                            </div>
                         </div>
                     </div>
-                </div> 
+                <% end %> 
             <% end %> 
-       </div>       
+       </div>
+       <hr>
+        <h1 class="pt-3">Meus Produtos - Doados</h1>
+        <p class="h4 pt-3">Caso você já tenha realizado alguma doação, os itens serão apresentados abaixo!</p>
+        <div class="row mt-4 pb-6">
+                <% @produtos.each do |produto| %>
+                    <% if produto.ja_doado == "Sim" %>       
+                        <div class="col-sm col-xs-12">
+                            <div class="card" style="width: 18rem;">            
+                                <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />
+                                <div class='card-body'>
+                                    <h5 class="card-title"> <%= produto.nome %> </h5>
+                                    <p class='card-text'> <%= produto.descricao %> </p>
+                                    <h6>
+                                        <span>Tamanho:</span> <%= produto.tamanho %>
+                                    </h6>
+                                    <h6>
+                                        <span>Categoria:</span> <%= produto.categoria %>
+                                    </h6>
+                                    <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %> 
+        </div>    
     </div>
 <%= render '/layouts/footer' %>
