@@ -9,6 +9,7 @@ class FeedbacksController < ApplicationController
     end    
     def create
         @feedback = Feedback.new(feedback_params) 
+        @feedback.increment(:curtiu)  
         if @feedback.save
             redirect_to @feedback
         else
@@ -21,7 +22,7 @@ class FeedbacksController < ApplicationController
         if(@feedback.curtiu == nil)            
             @feedback.increment!(:curtiu)
         else
-            @feedback.curtiu += 1  
+            @feedback.increment(:curtiu)            
         end
            
         @feedback.save
