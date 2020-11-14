@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_07_011752) do
+ActiveRecord::Schema.define(version: 2020_11_14_003941) do
 
   create_table "categoria", force: :cascade do |t|
     t.string "descricao"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_07_011752) do
     t.string "descricao"
     t.string "marca"
     t.string "imagem"
+    t.string "ja_doado", default: "Não"
     t.index ["usuario_id"], name: "index_produtos_on_usuario_id"
   end
 
