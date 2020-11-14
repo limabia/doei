@@ -13,7 +13,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="text-center"><%= @feedback.nome %></td>
+                    <td class="text-center">                          
+                    <% if @feedback.nome.empty? %>
+                            Anônimo
+                    <% else %>
+                            <%= @feedback.nome %>
+                    <% end %></td>
                     <td class="text-center"><%= @feedback.tipo %></td>
                     <td colspan="2" class="text-center"><%= @feedback.descricao %></td>
                 </tr>
