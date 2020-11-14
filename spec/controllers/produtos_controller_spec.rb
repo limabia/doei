@@ -36,7 +36,7 @@ RSpec.describe ProdutosController, :type => :controller do
         session[:usuario_id] = @usuario.id
       }
         it 'can be created' do
-          @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+          @produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
           get :show, :params => {:id =>@produto.id}
         expect(response).to render_template("show")
       end
@@ -71,8 +71,8 @@ RSpec.describe ProdutosController, :type => :controller do
           session[:usuario_id] = @usuario.id
         }
             it 'can be created' do
-              post  :create, :params => { :produto => { nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id, imagem: Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/files/test_ok_jpg.jpg")} }
-              produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+              post  :create, :params => { :produto => { nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id, imagem: Rack::Test::UploadedFile.new("#{Rails.root}/spec/fixtures/files/test_ok_jpg.jpg")} }
+              produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
             expect(produto).to be_valid
         end
     end
@@ -88,8 +88,8 @@ RSpec.describe ProdutosController, :type => :controller do
           session[:usuario_id] = @usuario.id
         }
             it 'can be created' do
-              post  :create, :params => { :produto => { nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id} }
-              produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id)
+              post  :create, :params => { :produto => { nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id} }
+              produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id)
             expect(produto).not_to be_valid
         end
     end
@@ -106,11 +106,11 @@ RSpec.describe ProdutosController, :type => :controller do
         session[:usuario_id] = @usuario.id
       }
       it 'em caso de cadastro correto podemos editar' do
-        @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+        @produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
        expect do 
           #  delete :destroy, :params => {:id =>@produto.id}
           post :edit, :params => {:id =>@produto.id}
-          @produto.update({nome: "Blusa", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id })
+          @produto.update({nome: "Blusa", condicao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id })
           @produto.reload
         end.to change{@produto.nome}.from("Camiseta").to("Blusa")
       end
@@ -128,7 +128,7 @@ RSpec.describe ProdutosController, :type => :controller do
         session[:usuario_id] = @usuario.id
       }
       it 'usuario logado cadastra produto e quer ver a página de editar' do
-        @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+        @produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
         expect(@produto.id).to eql(1)      
       end
     end
@@ -145,8 +145,8 @@ RSpec.describe ProdutosController, :type => :controller do
         session[:usuario_id] = @usuario.id
       }
       it 'em caso de cadastro correto não podemos editar se deixar campo vazio' do
-        @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
-        @produto.update({nome: "", situacao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id })
+        @produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+        @produto.update({nome: "", condicao: "Usada", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id })
         @produto.reload
         expect(@produto.nome).to eql("Camiseta")
       end
@@ -164,7 +164,7 @@ RSpec.describe ProdutosController, :type => :controller do
         session[:usuario_id] = @usuario.id
       }
       it 'um usuário logado pode deletar o produto cadastrado.' do
-        @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+        @produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
         delete :destroy, :params => {:id =>@produto.id}
         expect(Produto.count).to eql(0) 
       end
@@ -182,7 +182,7 @@ RSpec.describe ProdutosController, :type => :controller do
         session[:usuario_id] = @usuario.id
       }
       it 'em caso de cadastro correto o usuário muda o status do produto de Não doado para Sim (foi doado)' do
-        @produto = Produto.create(nome:"Camiseta", situacao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
+        @produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", imagem:"teste.jpg", usuario_id:@usuario.id)
        expect do 
           #  delete :destroy, :params => {:id =>@produto.id}
           post :edit, :params => {:id =>@produto.id}
