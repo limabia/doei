@@ -11,7 +11,7 @@ Before("@doador_com_produtos") do
 
     produto = Produto.new
     produto.nome = "Produto 1"
-    produto.situacao = "Usada"
+    produto.condicao = "Usada"
     produto.categoria = "Roupas"
     produto.tamanho = "M"
     produto.imagem = "no-image.png"
@@ -20,7 +20,7 @@ Before("@doador_com_produtos") do
     
     produto = Produto.new
     produto.nome = "Produto 2"
-    produto.situacao = "Usada"
+    produto.condicao = "Usada"
     produto.categoria = "Roupas"
     produto.tamanho = "44"
     produto.imagem = "no-image.png"

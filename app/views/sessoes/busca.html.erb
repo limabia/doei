@@ -16,8 +16,8 @@
   </div>
    <div class="row">
     <div class="col-sm">
-      <%= form.label :situação %><br>
-      <%= form.text_field :situacao, class: 'form-control', value: @situacao %>
+      <%= form.label :condição %><br>
+      <%= form.text_field :condicao, class: 'form-control', value: @condicao %>
     </div>
     <div class="col-sm">
             <%= form.label :tamanho %><br>
@@ -47,7 +47,7 @@
                             <h5 class="card-title">Produto: <%= produto.nome %></h5>
                             <p class="card-text">Tamanho: <%= produto.tamanho %></p>
                             <p class="card-text">Categoria: <%= produto.categoria %></p>
-                            <p class="card-text">Situação: <%= produto.situacao %></p>
+                            <p class="card-text">Condição: <%= produto.condicao %></p>
                             <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %>
                         </div>
                     </div>
