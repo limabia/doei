@@ -87,7 +87,7 @@ Quando preencho o campo "Nome" com "Pijama"
 E clico em "Editar"
 Então deverei ver a mensagem "Pijama"
 
-Cenário: Editar status
+Cenário: Editar status já doado
 Dado que estou na tela inicial
 Então deverei ver o link "Entrar"
 E clico em "Entrar"
@@ -111,6 +111,4 @@ E clico em "Editar"
 Então deverei ver a mensagem "Editar Produto"
 Quando seleciono Sim
 E clico em "Editar"
-E deverei ver o produto na página de listagem de produtos
-E clico no primeiro "Detalhes"
-Então deverei ver a mensagem "Sim"
+Então não deverei ver a "Camiseta" do produto
