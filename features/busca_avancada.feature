@@ -25,7 +25,7 @@ Então deverei ver o texto "Tamanho: M"
 
 Cenário: Buscar Produto por condição
 Dado que estou na tela de busca
-Então preencho o campo "condicao" com "Usado"
+E preencho o drop "condicao" com "Usado"
 E clico em "Buscar Produto"
 Então deverei ver o texto "Usado"
 
