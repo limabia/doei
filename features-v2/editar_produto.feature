@@ -16,7 +16,7 @@ Então deverei ver o link "Sair"
 Então estarei autenticado como "caiomelzer"
 Dado que estou na página de cadastro de produto
 Quando preencho o campo "Nome" com "Camiseta"
-Quando preencho o campo "Condicao" com "Usado"
+Quando preencho o drop "produto[condicao]" com "Usado"
 Quando preencho o campo "Categoria" com "Adulto"
 Quando preencho o campo "Tamanho" com "M"
 Quando realizo upload no campo "Imagem" com a foto do produto "no-image.png"

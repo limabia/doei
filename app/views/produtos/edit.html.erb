@@ -23,7 +23,7 @@
             </p>
             <p>
             <%= form.label :condicao %><br>
-            <%= form.text_field :condicao, class: 'form-control' %>
+            <%= form.select(:condicao, ['Novo', 'Usado'], {}, { :class => 'form-control' }) %>            
             </p>
 
             <p>

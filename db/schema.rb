@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_11_14_215202) do
     t.string "nome"
     t.string "descricao"
     t.string "tipo"
-    t.integer "curtiu"
-    t.integer "naocurtiu", default: 0, null: false
+    t.integer "curtiu", default: 0
+    t.integer "naocurtiu", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
