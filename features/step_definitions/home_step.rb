@@ -4,6 +4,8 @@ pass =  BCrypt::Password.create('mewtwo')
 
 db = SQLite3::Database.open('db/test.sqlite3')
 db.results_as_hash = true
+db.execute("DELETE FROM 'categoria' WHERE descricao = 'Roupas'")
+db.execute("INSERT INTO  'categoria' (descricao,ativo, created_at, updated_at) VALUES ('Roupas', 1, '123','123')")
 db.execute("DELETE FROM 'usuarios' WHERE email = 'melzer.cai2o@gmail.com'")
 db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, cpf, dataNascimento, cep, telefone, created_at, updated_at) VALUES ('Caio Melzer','#{pass}', 'melzer.cai2o@gmail.com','37130262893','16/03/1989','05754060','11980872469','121212','121212')")
 db.execute("DELETE FROM 'usuarios' WHERE email = 'teste.inativo@gmail.com'")
@@ -50,6 +52,10 @@ end
 
 Então('clico no primeiro {string}') do |string|
     first("input[value='#{string}']").click
+end
+
+Então('clico no primeiro link {string}') do |string|
+    first("a", :text => string).click
 end
 
 Quando('preencho o campo {string} com {string}') do |string, string2|

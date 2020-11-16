@@ -5,14 +5,17 @@ class ProdutosController < ApplicationController
   end
 
   def new       
+    @categoria = Categoria.where("ativo = ?", true)
     @produto = Produto.new  
   end
 
   def edit
+    @categoria = Categoria.all
     renderiza :edit
   end
 
   def update
+    @categoria = Categoria.where("ativo = ?", true)
     @produto = Produto.find(params[:id])
     if current_user.id =  @produto.usuario_id
       time = Time.now
@@ -43,6 +46,7 @@ class ProdutosController < ApplicationController
   end
     
   def create
+    @categoria = Categoria.where("ativo = ?", true)
     @produto = Produto.new(produto_params) 
     if params[:produto][:usuario_id]
       current_user.id = params[:produto][:usuario_id]

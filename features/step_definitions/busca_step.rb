@@ -7,8 +7,8 @@ db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, ativo, created
 user = db.execute("Select id from 'usuarios' limit 1")
 db.execute("DELETE FROM 'produtos' WHERE nome = 'camiseta teste'")
 db.execute("DELETE FROM 'produtos' WHERE categoria = 'roupa masculina'")
-db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id) VALUES ('camiseta teste', 'roupa','P','Usado', '2020-10-10', '2020-10-10', #{user[0][0]})")
-db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id) VALUES ('camiseta', 'roupa masculina','M','Novo', '2020-10-10', '2020-10-10', #{user[0][0]})")
+db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id) VALUES ('camiseta teste', 'Roupas2','P','Usado', '2020-10-10', '2020-10-10', #{user[0][0]})")
+db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id) VALUES ('camiseta', 'Roupas','M','Novo', '2020-10-10', '2020-10-10', #{user[0][0]})")
 
 
 Dado('que estou na tela de busca') do

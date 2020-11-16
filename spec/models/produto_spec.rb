@@ -8,13 +8,13 @@ RSpec.describe Produto, type: :model do
   it 'invalido sem nome' do
     produto = Produto.new
     produto.condicao = "Novo"
-    produto.categoria = "Infantil"
+    produto.categoria = "Roupas"
     produto.tamanho = "P"
     expect(produto).not_to be_valid
   end
   it 'invalido sem a condicao' do
     produto = Produto.new    
-    produto.categoria = "Infantil"
+    produto.categoria = "Roupas"
     produto.tamanho = "P"
     expect(produto).not_to be_valid
   end
@@ -22,7 +22,7 @@ RSpec.describe Produto, type: :model do
     produto = Produto.new    
     produto.nome = "Camisa"
     produto.condicao = "Usado"
-    produto.categoria = "Infantil"
+    produto.categoria = "Roupas"
     produto.tamanho = "P"
     expect(produto).not_to be_valid
   end

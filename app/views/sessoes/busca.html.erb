@@ -11,7 +11,7 @@
     </div>
     <div class="col-sm">
       <%= form.label :categoria %><br>
-      <%= form.text_field :categoria, class: 'form-control', value: @categoria %>
+      <%= form.select(:categoria, @categorias , {}, { :class => 'form-control', :selected => @categoria  }) %>                  
     </div>
   </div>
    <div class="row">
