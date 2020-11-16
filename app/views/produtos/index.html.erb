@@ -19,21 +19,23 @@
             <tbody>
 
             <% @produtos.each do |produto| %>
-                <tr>
-                    <td><%= produto.nome %></td>
-                    <td><%= produto.condicao %></td>
-                    <td><%= produto.categoria %></td>
-                    <td><%= produto.tamanho %></td>
-                    <td><%= produto.descricao %></td>
-                    <td><%= produto.marca %></td>
-                    <td><img src='/uploads/<%= produto.imagem %>' width="45px" height="45px" /></td>
-                    <td><%= button_to "Detalhes", produto, method: :show, 
-                    class:"btn btn-primary" %></td>
-                    <!-- os produtos que o usuário cadastrou. --> 
-                    <td><%= button_to "Remover", produto, method: :delete, 
-                    class:"btn btn-danger",
-                    data: {confirm: "Tem certeza que deseja remover o produto #{produto.nome}"} %></td>
-                </tr>
+                <% if produto.ja_doado == "Não" %> 
+                    <tr>
+                        <td><%= produto.nome %></td>
+                        <td><%= produto.condicao %></td>
+                        <td><%= produto.categoria %></td>
+                        <td><%= produto.tamanho %></td>
+                        <td><%= produto.descricao %></td>
+                        <td><%= produto.marca %></td>
+                        <td><img src='/uploads/<%= produto.imagem %>' width="45px" height="45px" /></td>
+                        <td><%= button_to "Detalhes", produto, method: :show, 
+                        class:"btn btn-primary" %></td>
+                        <!-- os produtos que o usuário cadastrou. --> 
+                        <td><%= button_to "Remover", produto, method: :delete, 
+                        class:"btn btn-danger",
+                        data: {confirm: "Tem certeza que deseja remover o produto #{produto.nome}"} %></td>
+                    </tr>
+                <% end %>
             <% end %>
             </tbody>
         </table>
