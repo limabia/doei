@@ -17,7 +17,7 @@ Então estarei autenticado como "caiomelzer"
 Dado que estou na página de cadastro de produto
 Quando preencho o campo "Nome" com "Camiseta"
 Quando preencho o drop "produto[condicao]" com "Usado"
-Quando preencho o campo "Categoria" com "Adulto"
+Quando preencho o drop "produto[categoria]" com "Roupas"
 Quando preencho o campo "Tamanho" com "M"
 Quando realizo upload no campo "Imagem" com a foto do produto "no-image.png"
 E clico em "Salvar"
@@ -35,7 +35,7 @@ Então deverei ver o link "Sair"
 Então estarei autenticado como "caiomelzer"
 Dado que estou na página de cadastro de produto
 Quando preencho o drop "produto[condicao]" com "Novo"
-Quando preencho o campo "Categoria" com "Infantil"
+Quando preencho o drop "produto[categoria]" com "Roupas"
 Quando preencho o campo "Tamanho" com "P"
 E deixo o campo "Nome" vazio
 E clico em "Salvar"
@@ -46,7 +46,7 @@ Dado que estou logado como usuario doador A
 E que estou na página de cadastro de produto
 Quando preencho o campo "Nome" com "Camiseta"
 E preencho o drop "produto[condicao]" com "Usado"
-E preencho o campo "Categoria" com "Adulto"
+E preencho o drop "produto[categoria]" com "Roupas"
 E preencho o campo "Tamanho" com "M"
 E faço o upload da imagem "test_ok_jpg.jpg" no campo "Imagem"
 E clico em "Salvar"
@@ -58,7 +58,7 @@ Dado que estou logado como usuario doador A
 E que estou na página de cadastro de produto
 Quando preencho o campo "Nome" com "Camiseta"
 E preencho o drop "produto[condicao]" com "Usado"
-E preencho o campo "Categoria" com "Adulto"
+E preencho o drop "produto[categoria]" com "Roupas"
 E preencho o campo "Tamanho" com "M"
 E faço o upload da imagem "test_ok_png.png" no campo "Imagem"
 E clico em "Salvar"

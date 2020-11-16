@@ -3,6 +3,8 @@ class SessoesController < ApplicationController
    include SessoesHelper
 
    def busca
+      @categorias = Categoria.where("ativo = ?", true).map { |value| [ value.descricao, value.descricao ] }
+      @categorias.insert(0, ["Todos", ""])
       @nome = params[:nomebusca]
       if @nome == nil
          @nome = params[:nome]

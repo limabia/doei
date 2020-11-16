@@ -23,12 +23,12 @@
             </p>
             <p>
             <%= form.label :condicao %><br>
-            <%= form.select(:condicao, ['Novo', 'Usado'], {}, { :class => 'form-control' }) %>            
+            <%= form.select(:condicao, ['Novo', 'Usado'], {}, { :class => 'form-control', :selected => :condicao  }) %>            
             </p>
 
             <p>
             <%= form.label :categoria %><br>
-            <%= form.text_field :categoria, class: 'form-control' %>
+            <%= form.select(:categoria, @categoria.map { |value| [ value.descricao, value.descricao ] }, {}, { :class => 'form-control', :selected => :categoria  }) %>            
             </p>  
             <p>
             <%= form.label :tamanho %><br>

@@ -6,7 +6,9 @@ date = 121212
 
 RSpec.describe ProdutosController, :type => :controller do
   render_views
-  
+  before(:all) do
+    Categoria.create(descricao: "Roupas", ativo: true)
+  end
     describe 'listar produtos' do
         before { 
           @usuario = Usuario.create!(
@@ -78,6 +80,7 @@ RSpec.describe ProdutosController, :type => :controller do
     end
     describe 'cadastrando um produto sem imagem' do
         before { 
+          Categoria.create!(descricao: "Roupas", ativo: true)
           @usuario = Usuario.create!(
             email:"teste@teste.com", 
             password: pass, 
@@ -88,7 +91,7 @@ RSpec.describe ProdutosController, :type => :controller do
           session[:usuario_id] = @usuario.id
         }
             it 'can be created' do
-              post  :create, :params => { :produto => { nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id} }
+              post  :create, :params => { :produto => { nome:"Camiseta", condicao:"Nova", categoria:"Roupas", tamanho:"GG", usuario_id:@usuario.id} }
               produto = Produto.create(nome:"Camiseta", condicao:"Nova", categoria:"Adulto", tamanho:"GG", usuario_id:@usuario.id)
             expect(produto).not_to be_valid
         end
