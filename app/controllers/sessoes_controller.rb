@@ -15,10 +15,13 @@ class SessoesController < ApplicationController
       @categoria = params[:categoria]
       @condicao = params[:condicao]
       @tamanho = params[:tamanho]
+      @ja_doado = params[:ja_doado]
+
       @produtos = Produto.where(["lower(nome) like ?", "%#{@nome}%"])
       @produtos =  @produtos.where(["lower(categoria) = ?", "#{@categoria.downcase}"]) unless @categoria.blank?
       @produtos =  @produtos.where(["lower(condicao) = ?", "#{@condicao.downcase}"]) unless @condicao.blank?
-      @produtos =  @produtos.where(["lower(tamanho) = ?", "#{@tamanho.downcase}"]) unless @tamanho.blank?      
+      @produtos =  @produtos.where(["lower(tamanho) = ?", "#{@tamanho.downcase}"]) unless @tamanho.blank?  
+      @produtos =  @produtos.where(["lower(ja_doado) = ?", "#{@ja_doado}"]) unless @ja_doado.blank?    
       respond_to do |format|         
          format.html { render :busca }
       end
