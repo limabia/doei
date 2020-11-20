@@ -1,46 +1,54 @@
 <%= render '/layouts/info' %>
 <%= render '/layouts/header' %>
-    <div class="container">
-      <h1>Detalhes do produto</h1>
-      <table class="table table-striped">
+<div class="container">
+    <h1>Detalhes do produto</h1>
+    <table class="table table-striped">
+
+        <div class="d-flex justify-content-around">
+            <img src='/uploads/<%= @produto.imagem %>' />
+        </div>
         <tbody>
-            <div class="d-flex justify-content-around">
-                <img src='/uploads/<%= @produto.imagem %>' />
-            </div>
             <tr>
-              <th>Nome:</th>
+                <% if @produto.ja_doado == true %>
+                <div class="alert alert-danger" role="alert">
+                    Este produto já foi doado =(
+                </div>
+                <% else %>
+                <div class="alert alert-success" role="alert">
+                    Este produto ainda está disponível! Aproveite agora
+                </div>
+                <% end %>
+            </tr>
+            <tr>
+                <th>Nome:</th>
                 <td><%= @produto.nome %></td>
             </tr>
             <tr>
-              <th>Condição</th>
+                <th>Condição</th>
                 <td><%= @produto.condicao %></td>
             </tr>
             <tr>
-              <th>Categoria:</th>
+                <th>Categoria:</th>
                 <td><%= @produto.categoria %></td>
             </tr>
             <tr>
-              <th>Tamanho:</th>
+                <th>Tamanho:</th>
                 <td><%= @produto.tamanho %></td>
             </tr>
             <tr>
-              <th>Descrição:</th>
+                <th>Descrição:</th>
                 <td><%= @produto.descricao %></td>
             </tr>
-            <tr>
-              <th>Já doado?</th>
-                <td><%= @produto.ja_doado %></td>
-            </tr>
         </tbody>
-      </table>
-      <!-- Criar funções para que os botões sejam apresentados de acordo com o user -->
-      <div class="d-flex justify-content-around">
+    </table>
+    <!-- Criar funções para que os botões sejam apresentados de acordo com o user -->
+    <div class="d-flex justify-content-around">
         <% if session[:usuario_id] == @produto.usuario_id %>
         <%= link_to "Editar", edit_produto_path(@produto.id), class:"btn btn-warning" %>
         <button class="btn btn-danger">Remover</button>
         <% else %>
         <button class="btn btn-primary">Quero resgatar</button>
         <% end %>
-      </div>
     </div>
+</div>
 <%= render '/layouts/footer' %>

@@ -4,7 +4,7 @@
         <h1>Meus Produtos - Disponíveis</h1>
         <div class="row mt-4 pb-6">
             <% @produtos.each do |produto| %>
-                <% if produto.ja_doado == "Não" %>       
+                <% if not produto.ja_doado %>       
                     <div class="col-sm col-xs-12">
                         <div class="card" style="width: 18rem;">            
                             <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />
@@ -29,7 +29,7 @@
         <p class="h4 pt-3">Caso você já tenha realizado alguma doação, os itens serão apresentados abaixo!</p>
         <div class="row mt-4 pb-6">
                 <% @produtos.each do |produto| %>
-                    <% if produto.ja_doado == "Sim" %>       
+                    <% if produto.ja_doado %>       
                         <div class="col-sm col-xs-12">
                             <div class="card" style="width: 18rem;">            
                                 <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />

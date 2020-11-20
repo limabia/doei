@@ -109,6 +109,6 @@ E clico no primeiro "Detalhes"
 Então deverei ver o link "Editar"
 E clico em "Editar"
 Então deverei ver a mensagem "Editar Produto"
-Quando seleciono Sim
+Quando seleciono Já doado
 E clico em "Editar"
 Então não deverei ver a "Camiseta" do produto

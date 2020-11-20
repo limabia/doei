@@ -1,58 +1,79 @@
 <%= render '/layouts/info' %>
-<body> 
-<%= render '/layouts/header' %>
+
+<body>
+    <%= render '/layouts/header' %>
     <div class="container">
-    <h1 class="text-left mt-4">Busca Avançada</h1>    
-      <%= form_with model: @produto, method: :get, url: buscar_produto_path, local: true do |form| %>
-  <div class="row">
-    <div class="col-sm">
-      <%= form.label :nome %><br>
-      <%= form.text_field :nomebusca, class: 'form-control', value: @nome %>
-    </div>
-    <div class="col-sm">
-      <%= form.label :categoria %><br>
-      <%= form.select(:categoria, @categorias , {}, { :class => 'form-control', :selected => @categoria  }) %>                  
-    </div>
-  </div>
-   <div class="row">
-    <div class="col-sm">
-      <%= form.label :condição %><br>
-      <%= form.select(:condicao, ['','Novo', 'Usado'],  { :class => 'form-control', :selected => @condicao }) %>            
-    </div>
-    <div class="col-sm">
-            <%= form.label :tamanho %><br>
-      <%= form.text_field :tamanho, class: 'form-control', value: @tamanho %>
-    </div> 
-  </div>
-     <div class="row">
-     <div class="col-sm">
-     <br>
-         <%= form.submit 'Buscar Produto', class: "btn btn-primary btn-block" %>
-    </div>
+        <h1 class="text-left mt-4">Busca Avançada</h1>
+        <%= form_with model: @produto, method: :get, url: buscar_produto_path, local: true do |form| %>
+        <div class="row">
+            <div class="col-sm">
+                <%= form.label :nome %><br>
+                <%= form.text_field :nomebusca, class: 'form-control', value: @nome %>
+            </div>
+            <div class="col-sm">
+                <%= form.label :categoria %><br>
+                <%= form.select(:categoria, @categorias , {}, { :class => 'form-control', :selected => @categoria  }) %>
+            </div>
         </div>
-  <% end %>
-        <h2 class="text-left mt-4">Resultado da busca</h2>     
-        <% if @produtos.count == 0 %>
-         <div class="alert alert-danger" role="alert">
-         Nenhum produto encontrado
-         </div>
+        <div class="row">
+            <div class="col-sm">
+                <%= form.label :condição %><br>
+                <%= form.select(:condicao, ['','Novo', 'Usado'],  { :class => 'form-control', :selected => @condicao }) %>
+            </div>
+            <div class="col-sm">
+                <%= form.label :tamanho %><br>
+                <%= form.text_field :tamanho, class: 'form-control', value: @tamanho %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <%= form.label :'Status dos objetos buscados:' %><br>
+                <%= form.select(:ja_doado, [
+                    ['Todos', nil],
+                    ['Somente objetos não doados', 0],
+                    ['Somente objetos doados', 1]
+                  ],  { :class => 'form-control', :selected => @ja_doado }) %>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <br>
+                <%= form.submit 'Buscar Produto', class: "btn btn-primary btn-block" %>
+            </div>
+        </div>
         <% end %>
-        <div class="row mt-4 pb-6">    
- 
+        <h2 class="text-left mt-4">Resultado da busca</h2>
+        <% if @produtos.count == 0 %>
+        <div class="alert alert-danger" role="alert">
+            Nenhum produto encontrado
+        </div>
+        <% end %>
+        <div class="row mt-4 pb-6">
+
             <% @produtos.each do |produto| %>
-                <div class="col-sm col-xs-12">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src='/uploads/<%= produto.imagem %>' alt="Card image cap">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Produto: <%= produto.nome %></h5>
-                            <p class="card-text">Tamanho: <%= produto.tamanho %></p>
-                            <p class="card-text">Categoria: <%= produto.categoria %></p>
-                            <p class="card-text">Condição: <%= produto.condicao %></p>
-                            <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %>
+            <div class="col-sm col-xs-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src='/uploads/<%= produto.imagem %>' alt="Card image cap">
+                    <div class="card-body text-center">
+                        <% if produto.ja_doado == true %>
+                        <div class="alert alert-danger" role="alert">
+                            Produto doado
                         </div>
+                        <% elsif produto.ja_doado == false %>
+                        <div class="alert alert-success" role="alert">
+                            Produto disponível
+                        </div>
+                        <% end %>
+                        <h5 class="card-title">Produto: <%= produto.nome %></h5>
+                        <p class="card-text">Tamanho: <%= produto.tamanho %></p>
+                        <p class="card-text">Categoria: <%= produto.categoria %></p>
+                        <p class="card-text">Condição: <%= produto.condicao %></p>
+                        <%= button_to "Detalhes", produto, method: :show, class:"btn btn-primary" %>
                     </div>
                 </div>
+            </div>
             <% end %>
         </div>
     </div>
-<%= render '/layouts/footer' %>
+    <%= render '/layouts/footer' %>

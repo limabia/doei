@@ -19,7 +19,7 @@
             <tbody>
 
             <% @produtos.each do |produto| %>
-                <% if produto.ja_doado == "Não" %> 
+                <% if produto.ja_doado == false %> 
                     <tr>
                         <td><%= produto.nome %></td>
                         <td><%= produto.condicao %></td>

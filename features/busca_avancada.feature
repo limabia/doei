@@ -41,3 +41,23 @@ Dado que estou na tela de busca
 Então preencho o campo "nomebusca" com "inexistente"
 E clico em "Buscar Produto"
 Então deverei ver o texto "Nenhum produto encontrado"
+
+Cenário: Produto não doado
+Dado que estou na tela de busca
+Então preencho o campo "nomebusca" com "moletom"
+Então preencho o drop "ja_doado" com "Somente objetos não doados"
+E clico em "Buscar Produto"
+Então deverei ver o texto "Produto disponível"
+
+Cenário: Produto já doado
+Dado que estou na tela de busca
+Então preencho o campo "nomebusca" com "calça jeans"
+Então preencho o drop "ja_doado" com "Somente objetos doados"
+E clico em "Buscar Produto"
+Então deverei ver o texto "Produto doado"
+
+Cenário: Produto já doado
+Dado que estou na tela de busca
+E clico em "Buscar Produto"
+Então deverei ver o texto "Produto doado"
+Então deverei ver o texto "Produto disponível"
