@@ -3,44 +3,45 @@
 <div class="container">
     <h1 class="text-center mt-4">Editar Produto</h1>
     <% if flash[:notice] %>
-        <div class="alert alert-warning" role="alert">
-            <%= flash[:notice] %>
-        </div>
+    <div class="alert alert-warning" role="alert">
+        <%= flash[:notice] %>
+    </div>
     <% end %>
     <div class="d-flex justify-content-center">
-        <%= form_for @produto do |form| %> 
-            <p>
+        <%= form_for @produto do |form| %>
+        <p>
             <%= form.label :nome %><br>
             <%= form.text_field :nome, class: 'form-control' %>
-            </p>
-            <p>
-            <%= form.label :ja_doado %><br>
-            <% if @produto.ja_doado == "Não" %>
-                <%= form.select(:ja_doado, ['Sim', 'Não'], {}, { :class => 'form-control' }) %>
-            <% else %>
-                <%= form.select(:ja_doado, ['Não', 'Sim'], {}, { :class => 'form-control' }) %>
-            <% end %>
-            </p>
-            <p>
-            <%= form.label :condicao %><br>
-            <%= form.select(:condicao, ['Novo', 'Usado'], {}, { :class => 'form-control', :selected => :condicao  }) %>            
-            </p>
+        </p>
+        <p>
+            <%= form.label :'Já doado?' %><br>
+            <%= form.select(:ja_doado, [
+                  ['Não doado', false],
+                  ['Já doado', true]
+                  ], {}, { :class => 'form-control', :selected => :ja_doado }) %>
 
-            <p>
+        </p>
+
+        <p>
+            <%= form.label :condicao %><br>
+            <%= form.select(:condicao, ['Novo', 'Usado'], {}, { :class => 'form-control', :selected => :condicao  }) %>
+        </p>
+
+        <p>
             <%= form.label :categoria %><br>
-            <%= form.select(:categoria, @categoria.map { |value| [ value.descricao, value.descricao ] }, {}, { :class => 'form-control', :selected => :categoria  }) %>            
-            </p>  
-            <p>
+            <%= form.select(:categoria, @categoria.map { |value| [ value.descricao, value.descricao ] }, {}, { :class => 'form-control', :selected => :categoria  }) %>
+        </p>
+        <p>
             <%= form.label :tamanho %><br>
             <%= form.text_field :tamanho, class: 'form-control' %>
-            </p>  
-            <p>
+        </p>
+        <p>
             <%= form.label :imagem %><br>
             <%= form.file_field :imagem, class: 'form-control' %>
-            </p> 
-            <p>
+        </p>
+        <p>
             <%= form.submit 'Editar', class: "btn btn-lg btn-warning btn-block" %>
-            </p>
+        </p>
         <% end %>
     </div>
 </div>

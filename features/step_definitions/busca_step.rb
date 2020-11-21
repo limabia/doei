@@ -10,6 +10,8 @@ db.execute("DELETE FROM 'produtos' WHERE categoria = 'roupa masculina'")
 db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id) VALUES ('camiseta teste', 'Roupas2','P','Usado', '2020-10-10', '2020-10-10', #{user[0][0]})")
 db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id) VALUES ('camiseta', 'Roupas','M','Novo', '2020-10-10', '2020-10-10', #{user[0][0]})")
 
+db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id, ja_doado) VALUES ('moletom', 'Roupas','M','Novo', '2020-10-10', '2020-10-10', #{user[0][0]}, 0)")
+db.execute("INSERT INTO 'produtos' (nome, categoria, tamanho, condicao, created_at, updated_at,usuario_id, ja_doado) VALUES ('calça jeans', 'Roupas','M','Novo', '2020-10-10', '2020-10-10', #{user[0][0]}, 1)")
 
 Dado('que estou na tela de busca') do
     visit '/sessoes/busca' 

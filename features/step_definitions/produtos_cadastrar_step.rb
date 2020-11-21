@@ -38,6 +38,6 @@ end
 Então('não deverei ver a {string} do produto') do |string|
     expect(page).to have_no_content(string)
 end
-Quando('seleciono Sim') do
-    find(:xpath, '//option[contains(text(), "Sim")]').select_option
+Quando('seleciono Já doado') do
+    find(:xpath, '//option[contains(text(), "Já doado")]').select_option
 end
