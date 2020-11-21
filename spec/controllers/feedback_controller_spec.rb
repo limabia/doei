@@ -75,5 +75,37 @@ RSpec.describe FeedbacksController do
               post :curtir, :params => { :id => @feedback}                                    
             expect(@feedback).to be_valid
         end
+        it 'Remover um feedback já criado, sem o campo nome (Anônimo)' do 
+            @feedback = Feedback.create(                
+                tipo: "Elogio", 
+                curtiu: 1, 
+                descricao: "testa controller metodo remover."
+              )
+              @feedback.save
+              post :destroy, :params => { :id => @feedback}                                    
+            expect(@feedback).to be_valid
+        end
+        it 'Remover um feedback já criado, tipo elogio.' do 
+            @feedback = Feedback.create(
+                nome:"testa bruno link remover, tipo elogio.", 
+                tipo: "Elogio", 
+                curtiu: 1, 
+                descricao: "testa controller metodo remover"
+              )
+              @feedback.save
+              post :destroy, :params => { :id => @feedback}                                    
+            expect(@feedback).to be_valid
+        end
+        it 'Remover um feedback já criado, tipo reclamação.' do 
+            @feedback = Feedback.create(
+                nome:"testa bruno link remover, tipo reclamação.", 
+                tipo: "Reclamação", 
+                curtiu: 1, 
+                descricao: "testa controller metodo remover"
+              )
+              @feedback.save
+              post :destroy, :params => { :id => @feedback}                                    
+            expect(@feedback).to be_valid
+        end
     end
 end

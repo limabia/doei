@@ -73,4 +73,32 @@ RSpec.describe Feedback, type: :model do
     feedback.descricao = "teste de feedback (curtiu) model."
     expect(feedback).to be_valid
   end
+  it 'Remover o feedback sem nome (anônimo)' do
+    feedback = Feedback.new    
+    feedback.tipo = "Elogio"    
+    feedback.descricao = "teste de feedback (remover)"
+    feedback.curtiu += 1 
+    expect(feedback).to be_valid
+    feedback.destroy
+    expect(feedback).to be_valid
+  end
+  it 'Remover o feedback tipo reclamação' do
+    feedback = Feedback.new
+    feedback.nome = "bruno"
+    feedback.tipo = "Reclamação" 
+    feedback.curtiu += 1    
+    feedback.descricao = "teste de feedback (remover)"
+    expect(feedback).to be_valid
+    feedback.destroy
+    expect(feedback).to be_valid
+  end
+  it 'Remover o feedback sem descrição inválido' do
+    feedback = Feedback.new
+    feedback.nome = "teste"
+    feedback.tipo = "Elogio" 
+    feedback.curtiu += 1      
+    expect(feedback).not_to be_valid
+    feedback.destroy
+    expect(feedback).not_to be_valid
+  end
 end
