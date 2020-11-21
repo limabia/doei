@@ -61,8 +61,11 @@
                         </div> 
                       </td> 
                        <td>
-                          <%= button_to "Curtir", feedback, method: :curtir, class:"btn btn-success min-width-btn", data: {confirm: "Tem certeza que deseja curtir este feedback? #{feedback.tipo}"} %>
+                          <%= button_to "Curtir", feedback, method: :curtir, class:"btn btn-success min-width-btn", data: {confirm: "Tem certeza que deseja curtir este feedback?"} %>
                        </td>                                           
+                      <td>
+                          <%= button_to "Remover", feedback, method: :delete, class:"btn btn-danger min-width-btn", data: {confirm: "Tem certeza que deseja remover este feedback?"} %>
+                       </td>  
                   </tr>
                 <% end %>
               </tbody>

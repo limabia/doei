@@ -16,15 +16,15 @@ class FeedbacksController < ApplicationController
             render 'new'
         end                        
     end
+    def destroy  
+        @feedback = Feedback.find(params[:id])
+        @feedback.destroy
+
+        render 'avaliacoes'
+    end
     def curtir
         @feedback = Feedback.find(params[:id])
-
-        if(@feedback.curtiu == nil)            
-            @feedback.increment!(:curtiu)
-        else
-            @feedback.increment(:curtiu)            
-        end
-           
+        @feedback.increment(:curtiu)                           
         @feedback.save
 
         redirect_to @feedback
