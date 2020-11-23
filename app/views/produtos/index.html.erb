@@ -31,9 +31,7 @@
                         <td><%= button_to "Detalhes", produto, method: :show, 
                         class:"btn btn-primary" %></td>
                         <!-- os produtos que o usuário cadastrou. --> 
-                        <td><%= button_to "Remover", produto, method: :delete, 
-                        class:"btn btn-danger",
-                        data: {confirm: "Tem certeza que deseja remover o produto #{produto.nome}"} %></td>
+                        <td><%= link_to "Remover", { action: :destroy, id: produto.id }, method: :delete, data: {confirm: 'Tem certeza que deseja remover o produto?'}, class:"btn btn-danger" %></td>
                     </tr>
                 <% end %>
             <% end %>

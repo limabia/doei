@@ -195,3 +195,23 @@ Então('não deverei ver o link {string}') do |string|
     expect(page).to have_no_content(string)
 end
 
+Então('deverei acessar a página {string}') do |string|
+    visit '/produtos/new'
+    usuario = Usuario.order('id').last
+    fill_in 'Nome', :with => 'teste'
+    page.select('Novo', :from =>  'produto[condicao]') 
+    page.select('Roupas', :from =>  'produto[categoria]') 
+    fill_in 'Tamanho', :with => 'G'
+    attach_file('Imagem', Rails.root.join('features', 'upload-files', 'test_ok_png.png'))
+    click_on 'Salvar'
+    visit '/produtos'
+end
+
+
+Então('deverei clicar no link {string}') do |string|
+    find(".btn-danger", match: :first).click
+    #page.accept_confirm { click_button "Remover" }
+end
+
+
+

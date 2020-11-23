@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :categoria
   resources :usuarios  
   resources :feedbacks
-  resources :produtos, only: [:new, :create, :destroy, :edit, :show, :update]
+  resources :produtos
   post 'produtos/:id', to: 'produtos#show'
   root 'home#index'
   get 'entrar', to: 'sessoes#new'
