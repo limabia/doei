@@ -48,6 +48,12 @@
         <button class="btn btn-danger">Remover</button>
         <% else %>
         <button class="btn btn-primary">Quero resgatar</button>
+        <% if retornar_dados_doador(@produto.usuario_id,'email')%>
+            <a href="mailto:<%= retornar_dados_doador(@produto.usuario_id,'email') %>" class="btn btn-success">Enviar email</a>
+        <% end %>    
+        <% if retornar_dados_doador(@produto.usuario_id,'telefone')%>
+            <a href="https://wa.me/+<%= retornar_dados_doador(@produto.usuario_id,'telefone') %>" class="btn btn-success">Enviar Whatsapp</a>
+        <% end %>   
         <% end %>
     </div>
 </div>
