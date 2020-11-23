@@ -1,5 +1,6 @@
 class ProdutosController < ApplicationController
   skip_before_action :verify_authenticity_token
+  include ProdutosHelper
   def index  
     @produtos = Produto.order :nome
   end
@@ -86,4 +87,16 @@ class ProdutosController < ApplicationController
     @produto = Produto.find(params[:id])
     render view
   end
+
+  def retornar_dados_doador(id, dado)
+    case dado 
+    when 'telefone'
+       @usuario.retornar_dados(id,dado) 
+    when 'email'
+      "it was 2"
+    else
+      "it was something else"
+    end
+  end 
+
 end

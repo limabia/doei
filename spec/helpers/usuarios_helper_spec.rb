@@ -19,6 +19,6 @@ describe UsuariosHelper, :type => :helper do
   it "retornar path para remover usuario com admin" do
     id = @usuario.id
     helper.remover_admin(id)
-    expect(helper.remover_admin (id)).to  eql("usuarios/admin/#{id}/remover")   
+    expect(helper.remover_admin(id)).to  eql("usuarios/admin/#{id}/remover")   
   end
 end
