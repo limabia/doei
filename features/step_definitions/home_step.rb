@@ -7,7 +7,7 @@ db.results_as_hash = true
 db.execute("DELETE FROM 'categoria' WHERE descricao = 'Roupas'")
 db.execute("INSERT INTO  'categoria' (descricao,ativo, created_at, updated_at) VALUES ('Roupas', 1, '123','123')")
 db.execute("DELETE FROM 'usuarios' WHERE email = 'melzer.cai2o@gmail.com'")
-db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, cpf, dataNascimento, cep, telefone, created_at, updated_at) VALUES ('Caio Melzer','#{pass}', 'melzer.cai2o@gmail.com','37130262893','16/03/1989','05754060','11980872469','121212','121212')")
+db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, cpf, dataNascimento, cep, telefone, created_at, updated_at, ativo) VALUES ('Caio Melzer','#{pass}', 'melzer.cai2o@gmail.com','37130262893','16/03/1989','05754060','5511980872469','121212','121212', 1)")
 db.execute("DELETE FROM 'usuarios' WHERE email = 'teste.inativo@gmail.com'")
 db.execute("INSERT INTO 'usuarios' (nome, password_digest, email, ativo, created_at, updated_at) VALUES ('teste inativo','#{pass}', 'teste.inativo@gmail.com',0, 121212, 121212)")
 db.execute("DELETE FROM 'usuarios' WHERE email = 'teste@teste.com'")
@@ -85,6 +85,20 @@ Dado('que estou logado como usuario doador A') do
     click_on 'Entrar'
 end
 
+Dado('que estou logado como usuario A') do 
+    visit '/entrar'
+    fill_in 'Email', :with => 'melzer.cai2o@gmail.com'
+    fill_in 'password', :with => 'mewtwo'
+    click_on 'Entrar'
+end
+
+Dado('que estou logado como usuario') do 
+    visit '/entrar'
+    fill_in 'Email', :with => 'teste@teste.com'
+    fill_in 'password', :with => 'mewtwo'
+    click_on 'Entrar'
+end
+
 E('faço o upload da imagem {string} no campo {string}') do |nome_imagem, campo| 
     attach_file(campo, Rails.root.join('features', 'upload-files', nome_imagem))
 end
@@ -132,4 +146,52 @@ Então('o atributo {string}, que é {string} no usuário {string} deve estar com
     expect(usuario[string]).to eq(string4) 
 end    
 
+
+Então('deverei acessar a página de um produto onde o doador tem {string}') do |string|
+    visit '/entrar'
+    fill_in 'Email', :with => 'melzer.cai2o@gmail.com'
+    fill_in 'password', :with => 'mewtwo'
+    click_on 'Entrar'
+    visit '/produtos/new'
+    usuario = Usuario.order('id').last
+    fill_in 'Nome', :with => 'teste'
+    page.select('Novo', :from =>  'produto[condicao]') 
+    page.select('Roupas', :from =>  'produto[categoria]') 
+    fill_in 'Tamanho', :with => 'G'
+    attach_file('Imagem', Rails.root.join('features', 'upload-files', 'test_ok_png.png'))
+    click_on 'Salvar'
+    click_on 'Sair'
+    visit '/entrar'
+    fill_in 'Email', :with => 'teste@teste.com'
+    fill_in 'password', :with => 'mewtwo'
+    click_on 'Entrar'
+    produto = Produto.order('id').last
+    visit '/produtos/'+produto.id.to_s
+end
+
+Então('deverei acessar a página de um produto onde o doador não tem {string}') do |string|
+    visit '/entrar'
+    fill_in 'Email', :with => 'teste@teste.com'
+    fill_in 'password', :with => 'mewtwo'
+    click_on 'Entrar'
+    visit '/produtos/new'
+    usuario = Usuario.order('id').last
+    fill_in 'Nome', :with => 'teste'
+    page.select('Novo', :from =>  'produto[condicao]') 
+    page.select('Roupas', :from =>  'produto[categoria]') 
+    fill_in 'Tamanho', :with => 'G'
+    attach_file('Imagem', Rails.root.join('features', 'upload-files', 'test_ok_png.png'))
+    click_on 'Salvar'
+    click_on 'Sair'
+    visit '/entrar'
+    fill_in 'Email', :with => 'melzer.cai2o@gmail.com'
+    fill_in 'password', :with => 'mewtwo'
+    click_on 'Entrar'
+    produto = Produto.order('id').last
+    visit '/produtos/'+produto.id.to_s
+end
+
+Então('não deverei ver o link {string}') do |string|
+    expect(page).to have_no_content(string)
+end
 

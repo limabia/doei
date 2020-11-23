@@ -1,7 +1,6 @@
 class UsuariosController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :reativacao_solicitacao, :reativacao_efetivacao]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
-
   def new
     @usuario = Usuario.new
   end
@@ -86,6 +85,8 @@ class UsuariosController < ApplicationController
 
   def reativacao_solicitacao
   end 
+
+
 
   def reativacao_efetivacao
     @usuario = Usuario.find_by(email: params[:email])
