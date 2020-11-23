@@ -1,6 +1,5 @@
 class ProdutosController < ApplicationController
   skip_before_action :verify_authenticity_token
-  include ProdutosHelper
   def index  
     @produtos = Produto.order :nome
   end
