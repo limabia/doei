@@ -9,7 +9,6 @@ class FeedbacksController < ApplicationController
     end    
     def create
         @feedback = Feedback.new(feedback_params) 
-        @feedback.increment(:curtiu)  
         if @feedback.save
             redirect_to @feedback
         else
@@ -24,10 +23,10 @@ class FeedbacksController < ApplicationController
     end
     def curtir
         @feedback = Feedback.find(params[:id])
-        @feedback.increment(:curtiu)                           
+        @feedback.curtiu += 1                           
         @feedback.save
 
-        redirect_to @feedback
+        render 'avaliacoes'
     end
     def avaliacoes
         @feedback = Feedback.all
