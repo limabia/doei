@@ -4,7 +4,8 @@
         <h1>Meus Produtos - Disponíveis</h1>
         <div class="row mt-4 pb-6">
             <% @produtos.each do |produto| %>
-                <% if not produto.ja_doado %>       
+                <% if produto.ja_doado %> 
+                <% else %>      
                     <div class="col-sm col-xs-12">
                         <div class="card" style="width: 18rem;">            
                             <img class='card-img-top' src='/uploads/<%= produto.imagem %>' />
